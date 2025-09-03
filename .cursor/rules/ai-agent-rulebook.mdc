@@ -1,0 +1,201 @@
+---
+alwaysApply: true
+---
+# AI AGENT RULEBOOK - MANDATORY COMPLIANCE
+
+## 🔴 CRITICAL APP PRESERVATION RULES - ZERO TOLERANCE
+```
+NEVER DELETE OR REPLACE EXISTING CODE
+VIOLATION = PROJECT DESTRUCTION
+ALWAYS AMEND/APPEND ONLY
+```
+
+### Before ANY changes to App.tsx or core components:
+1. ✅ CHECK git history first
+2. ✅ ASK user permission before replacing files  
+3. ✅ PRESERVE original functionality
+4. ✅ USE append/amend methodology ONLY
+5. ✅ LOG all actions in @taskbook.mdc
+
+## ⚠️ CONTEXT WINDOW LIMITATIONS - MANDATORY PROTOCOLS
+
+Due to small context window, you MUST:
+- ❌ NEVER assume you know full app structure
+- ✅ ALWAYS ask before structural changes
+- ✅ ALWAYS preserve existing code
+- ✅ ALWAYS work incrementally
+- ✅ ALWAYS split code >1000 lines without breaking logic
+- ✅ ALWAYS use proper modular structure
+- ✅ ALWAYS perform security vulnerability checks
+
+## 1. CORE EXECUTION PRINCIPLES
+
+### 1.1 Strict Adherence Protocol
+- Follow user instructions EXACTLY - zero deviation
+- Ground all actions in verified facts/code/data
+- IF unclear → STOP and ask for clarification
+- NO assumptions, NO hallucinations
+
+### 1.2 Verification Requirements
+- Always verify assigned task after completion
+- Always inspect actual files, not summaries
+- Always cross-check for accuracy
+
+### 1.3 No Unauthorized Creation
+- NO sample documents unless explicitly requested
+- NO test code unless explicitly requested
+- NO placeholder content unless explicitly requested
+
+## 2. AMENDMENT/APPEND METHODOLOGY - MANDATORY
+
+### 2.1 Code Preservation Rules
+```
+AMEND = Add new functionality
+APPEND = Add to end of files
+PRESERVE = Comment out old code with date/reason
+NEVER = Delete or replace existing code
+```
+
+### 2.2 Change Protocol
+When modifying existing functionality:
+1. Comment out old code: `# [DATE] Preserved - [REASON]`
+2. Add new code below with clear labels
+3. Maintain backward compatibility
+4. Document all changes
+
+### 2.3 Deletion Policy
+- NEVER delete without explicit user approval
+- First seek confirmation: "Confirm deletion of [specific item]?"
+- Preserve commented backup unless user says otherwise
+
+## 3. TASK BOOK MANAGEMENT - MANDATORY REFERENCE
+
+### 3.1 Before Every Task
+1. READ entire @/Users/azam/Projects/TradingERP/.cursor/rules/TaskBook.mdc
+2. UNDERSTAND project history and evolution
+3. FOLLOW latest command at top
+4. ENSURE continuity with previous work
+
+### 3.2 Task Book Updates
+- LOG every command given by user
+- RECORD summary of actions performed
+- MENTION which files were touched/modified
+- EXCLUDE planning phases
+- SPECIFY which agent module was used
+
+## 4. TO-DO LIST WORKFLOW - STRUCTURED EXECUTION
+
+### 4.1 Task Breakdown Format
+```
+TO-DO LIST:
+[ ] 1. Review Task Book
+[ ] 2. Verify code base 
+[x] 3. Implement feature X (completed [date])
+[ ] 4. Test implementation
+```
+
+### 4.2 Tracking Requirements
+- Mark completed tasks: [x]
+- Track pending tasks: [ ]
+- Update progress in real-time
+- Review completion before proceeding
+
+## 5. CONTEXT WINDOW MANAGEMENT - CRITICAL
+
+### 5.1 Size Assessment
+- Evaluate if task exceeds context window BEFORE starting
+- Split large tasks into manageable sub-tasks
+- Provide progress summaries for continuity
+
+### 5.2 Session Continuity
+For new sessions:
+- Start with: "Summary of prior work: [brief recap]"
+- Reference previous progress
+- Maintain workflow continuity
+
+## 6. CODE BASE REVIEW PROTOCOL
+
+### 6.1 Full Review Requirements
+- Perform direct inspection of actual files
+- NO reliance on documentation or summaries
+- Access and analyze source material directly
+- Cross-check all elements for accuracy
+
+### 6.2 Database Considerations
+- When app changes affect database → update database
+- If unable to update → notify user of required changes
+- Maintain data consistency
+
+## 7. EXECUTION SAFETY PROTOCOLS
+
+### 7.1 Terminal Commands
+- ALWAYS use timers (30s for simple, longer for complex)
+- Auto-cancel on timeout
+- Verify outcome through code inspection
+- NO indefinite executions
+
+### 7.2 Security Protocol
+- Perform critical security vulnerability checks
+- Act as ethical hacker mindset
+- Identify and flag potential security issues
+
+## 8. SMART IMPLEMENTATION STANDARDS
+
+### 8.1 List Creation
+- Make lists searchable and smart
+- Implement filtering capabilities
+- Ensure user-friendly interfaces
+
+### 8.2 Modular Structure
+- Implement proper modular architecture
+- Maintain clean separation of concerns
+- Enable easy maintenance and updates
+
+## 9. COMMUNICATION PROTOCOLS
+
+### 9.1 Clarification Requirements
+- IF user mentions attachments but none visible → ask for clarification
+- IF instructions conflict → pause and seek guidance
+- IF uncertain about requirements → request specific details
+
+### 9.2 Error Reporting
+- Report partial successes and errors clearly
+- Specify what was achieved vs. what failed
+- Provide actionable next steps
+
+## 10. ENFORCEMENT AND COMPLIANCE
+
+### 10.1 Self-Check Protocol
+At end of every task:
+```
+SELF-REVIEW CHECKLIST:
+[ ] Followed all rulebook rules?
+[ ] Preserved existing code?
+[ ] Updated Task Book?
+[ ] Verified implementation?
+[ ] Security check completed?
+```
+
+### 10.2 Rule Updates
+- Rulebook is foundational - DO NOT replace
+- Append new sections for updates
+- Maintain rule hierarchy and structure
+
+---
+
+## QUICK REFERENCE COMMANDS
+
+```bash
+BEFORE EVERY TASK:
+1. Read TaskBook.mdc
+2. Check git history  
+3. Verify current state
+4. Create to-do list
+5. Execute incrementally
+6. Update TaskBook
+7. Self-check compliance
+```
+
+**REMEMBER: PRESERVATION > INNOVATION**
+**VERIFY > ASSUME**
+**ASK > GUESS**
