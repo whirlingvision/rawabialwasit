@@ -348,29 +348,74 @@
         }
 
         /* ==================================================
-            # Language Switcher
+            # Language Switcher - Enhanced Translation System
          ===============================================*/
-        $('.lang-btn').click(function() {
-            const lang = $(this).data('lang');
-            $('.lang-btn').removeClass('active');
-            $(this).addClass('active');
+        
+        // Language switching function
+        function switchLanguage(lang) {
+            console.log('Switching to language:', lang);
             
+            // Update button states
+            $('.lang-btn, .lang-btn-inline').removeClass('active');
+            $('.lang-btn[data-lang="' + lang + '"], .lang-btn-inline[data-lang="' + lang + '"]').addClass('active');
+            
+            // Update HTML attributes
             if (lang === 'ar') {
                 $('html').attr('dir', 'rtl').attr('lang', 'ar');
                 $('body').removeClass('lang-en').addClass('lang-ar');
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ar');
+                console.log('Applied RTL layout');
             } else {
                 $('html').attr('dir', 'ltr').attr('lang', 'en');
                 $('body').removeClass('lang-ar').addClass('lang-en');
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.documentElement.setAttribute('lang', 'en');
+                console.log('Applied LTR layout');
             }
             
             // Update all language-specific text
+            let translatedCount = 0;
             $('.lang-text').each(function() {
-                const text = $(this).data(lang);
+                const $element = $(this);
+                const text = $element.data(lang);
                 if (text) {
-                    $(this).text(text);
+                    // Handle different types of content
+                    if ($element.is('input[type="text"], input[type="email"], input[type="tel"], textarea')) {
+                        $element.attr('placeholder', text);
+                    } else if ($element.is('input[type="submit"], button')) {
+                        $element.val(text);
+                    } else {
+                        $element.text(text);
+                    }
+                    translatedCount++;
                 }
             });
+            
+            // Update page title
+            const pageTitle = $('title').data(lang);
+            if (pageTitle) {
+                $('title').text(pageTitle);
+                console.log('Updated page title to:', pageTitle);
+            }
+            
+            // Save language preference
+            localStorage.setItem('selectedLanguage', lang);
+            
+            console.log('Language switched to:', lang, '- Translated', translatedCount, 'elements');
+        }
+        
+        // Language switcher click handler
+        $('.lang-btn, .lang-btn-inline').click(function(e) {
+            e.preventDefault();
+            const lang = $(this).data('lang');
+            switchLanguage(lang);
         });
+        
+        // Load saved language preference on page load
+        const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+        console.log('Loading saved language:', savedLang);
+        switchLanguage(savedLang);
 
         /* ==================================================
             # Contact Form
