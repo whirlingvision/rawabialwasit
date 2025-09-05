@@ -72,6 +72,7 @@
     <link href="assets/css/bootsnav.css?v=3.0" rel="stylesheet"/>
     <link href="style.css?v=3.0" rel="stylesheet">
     <link href="assets/css/components.css?v=3.0" rel="stylesheet">
+    <link href="assets/css/modern-security.css?v=3.0" rel="stylesheet">
     <link href="assets/css/responsive.css?v=3.0" rel="stylesheet"/>
     
     <!-- Google Fonts for Arabic Support -->
@@ -115,11 +116,115 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/optimization.js"></script>
+    
+    <style>
+        /* EMERGENCY NAVIGATION FIX - INLINE STYLES FOR MAXIMUM OVERRIDE */
+        .navbar-nav > li > a,
+        .navbar-nav > li > a span,
+        .navbar-nav > li > a .lang-text,
+        .navbar-right > li > a,
+        .navbar-right > li > a span,
+        ul.navbar-nav li a,
+        ul.navbar-nav li a span {
+            color: #000000 !important;
+            font-weight: bold !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            text-shadow: none !important;
+        }
+        
+                 /* Additional override for bootsnav */
+         .bootsnav .navbar-nav > li > a {
+             color: #000000 !important;
+         }
+         
+         /* EMERGENCY TEXT VISIBILITY FIX */
+         .lang-text,
+         p.lang-text,
+         .banner-area .lang-text,
+         .hero .lang-text {
+             color: #2d3748 !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+             font-weight: 400 !important;
+         }
+         
+         /* White text for dark backgrounds */
+         .text-light .lang-text,
+         .banner-area .lang-text {
+             color: #ffffff !important;
+             text-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
+         }
+         
+         /* Specific fix for about section text */
+         .about-area .lang-text,
+         .about-area p.lang-text,
+         .info .lang-text,
+         .info p.lang-text {
+             color: #2d3748 !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+             font-weight: 400 !important;
+             line-height: 1.6 !important;
+         }
+         
+         /* ULTRA AGGRESSIVE TEXT VISIBILITY FIX */
+         .col-lg-6.info p.lang-text,
+         .col-lg-6.info .lang-text,
+         .about-area .col-lg-6.info p.lang-text,
+         .about-area .col-lg-6.info .lang-text,
+         .about-area .col-lg-6 p.lang-text,
+         .about-area .col-lg-6 .lang-text {
+             color: #1a202c !important;
+             background-color: rgba(255, 255, 255, 0.9) !important;
+             padding: 10px !important;
+             border-radius: 5px !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+             display: block !important;
+             font-weight: 500 !important;
+             line-height: 1.7 !important;
+             text-shadow: none !important;
+             box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+         }
+         
+         /* OVERRIDE MAIN CSS CONFLICTING STYLES */
+         .about-area .info p,
+         .about-area .info p.lang-text,
+         .about-area .info .lang-text {
+             color: #1a202c !important;
+             font-size: 1.2rem !important;
+             line-height: 1.8 !important;
+             margin-bottom: 35px !important;
+             max-width: 500px !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+             font-weight: 400 !important;
+         }
+         
+         /* NAVIGATION FIXES */
+         .navbar-brand,
+         .navbar-nav > li > a {
+             cursor: pointer !important;
+             pointer-events: auto !important;
+             text-decoration: none !important;
+         }
+         
+         .navbar-brand:hover,
+         .navbar-nav > li > a:hover {
+             text-decoration: none !important;
+         }
+         
+         .navbar-nav > li > a.active {
+             color: #f59e0b !important;
+             font-weight: 700 !important;
+         }
+    </style>
 </head>
 
 <body class="lang-en">
     <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link sr-only">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <!-- Language Switcher -->
     <div class="language-switcher" role="navigation" aria-label="Language selection">
@@ -134,12 +239,12 @@
     </div>
 
     <!-- Preloader Start -->
-    <div class="se-pre-con">
+    <!--<div class="se-pre-con">
         <div class="preloader-content">
             <div class="spinner"></div>
             <div class="loading-text lang-text" data-en="Loading..." data-ar="جاري التحميل...">Loading...</div>
         </div>
-    </div>
+    </div>-->
     <!-- Preloader Ends -->
 
     <!-- Start Header Top -->
@@ -192,8 +297,11 @@
             <div class="container">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button class="navbar-toggle" data-target="#navbar-menu" data-toggle="collapse" type="button">
-                        <i class="fa fa-bars"></i>
+                    <button class="navbar-toggle collapsed" data-target="#navbar-menu" data-toggle="collapse" type="button" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="index.html">
                         <img alt="Rawabi Alwasit Company Logo" class="logo" src="assets/img/logo.png">
@@ -204,8 +312,8 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
-                        <li class="dropdown">
-                            <a class="active" data-toggle="dropdown" href="index.html">
+                        <li>
+                            <a class="active" href="index.html">
                                 <span class="lang-text" data-en="Home" data-ar="الرئيسية">Home</span>
                             </a>
                         </li>
@@ -237,9 +345,11 @@
                                 <span class="lang-text" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</span>
                             </a>
                         </li>
-                        <a class="btn btn-theme effect btn-md mt-4" href="contact.html">
-                            <span class="lang-text" data-en="REQUEST A QUOTE" data-ar="اطلب عرض سعر">REQUEST A QUOTE</span>
-                        </a>
+                        <li class="navbar-cta">
+                            <a class="btn btn-theme effect btn-md" href="contact.html">
+                                <span class="lang-text" data-en="REQUEST A QUOTE" data-ar="اطلب عرض سعر">REQUEST A QUOTE</span>
+                            </a>
+                        </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div>
@@ -249,7 +359,7 @@
     <!-- End Header -->
 
     <!-- Start Banner -->
-    <div class="banner-area inc-content shadow shape default" id="main-content">
+    <div class="banner-area hero banner inc-content shadow shape default" id="main-content">
         <div class="carousel slide text-light carousel-fade animate_text" 
              data-ride="carousel" 
              id="bootcarousel"
@@ -359,7 +469,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="thumb">
-                        <img src="assets/img/about/11.jpg" alt="Rawabi Alwasit Company - Professional Team">
+                        <img src="assets/img/about/rawabihandshake.jpg" alt="Rawabi Alwasit Company - Professional Team">
                         <div class="overlay">
                             <div class="content">
                                 <h4 class="lang-text" data-en="25+ Years Experience" data-ar="خبرة 25+ سنة">25+ Years Experience</h4>
@@ -368,8 +478,8 @@
                     </div>
                 </div>
                 <div class="col-lg-6 info">
-                                            <h3 class="lang-text" data-en="Welcome to Rawabi Alwasit Company" data-ar="مرحباً بكم في شركة روابي الوسيط">Welcome to Rawabi Alwasit Company</h3>
-                                            <p class="lang-text" data-en="Rawabi Alwasit Company is a leading trading and contracting company based in Saudi Arabia, specializing in engineering, trading, and technology solutions. We serve various industries with high-quality products and exceptional service." data-ar="شركة روابي الوسيط هي شركة رائدة في التجارة والمقاولات مقرها المملكة العربية السعودية، متخصصة في الحلول الهندسية والتجارية والتكنولوجية. نحن نخدم مختلف الصناعات بمنتجات عالية الجودة وخدمة استثنائية">Rawabi Alwasit Company is a leading trading and contracting company based in Saudi Arabia, specializing in engineering, trading, and technology solutions. We serve various industries with high-quality products and exceptional service.</p>
+                    <h3 class="lang-text" data-en="Welcome to Rawabi Alwasit Company" data-ar="مرحباً بكم في شركة روابي الوسيط">Welcome to Rawabi Alwasit Company</h3>
+                    <p class="lang-text" data-en="Rawabi Alwasit Company is a leading trading and contracting company based in Saudi Arabia, specializing in engineering, trading, and technology solutions. We serve various industries with high-quality products and exceptional service." data-ar="شركة روابي الوسيط هي شركة رائدة في التجارة والمقاولات مقرها المملكة العربية السعودية، متخصصة في الحلول الهندسية والتجارية والتكنولوجية. نحن نخدم مختلف الصناعات بمنتجات عالية الجودة وخدمة استثنائية">Rawabi Alwasit Company is a leading trading and contracting company based in Saudi Arabia, specializing in engineering, trading, and technology solutions. We serve various industries with high-quality products and exceptional service.</p>
                     <div class="items">
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
@@ -616,6 +726,35 @@
     <script src="assets/js/count-to.js"></script>
     <script src="assets/js/bootsnav.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/modern-app.js"></script>
+
+    <!-- Navigation Fix Script -->
+    <script>
+        $(document).ready(function() {
+            // Ensure home button and navbar brand work properly
+            $('.navbar-brand, .navbar-nav > li > a[href="index.html"]').on('click', function(e) {
+                // Allow normal navigation
+                console.log('Navigation clicked:', this.href);
+                return true;
+            });
+            
+            // Fix for bootsnav interference
+            $('.navbar-nav > li > a').off('click.bootsnav').on('click', function(e) {
+                if (this.href && this.href !== '#' && !this.href.includes('javascript:')) {
+                    // Allow normal navigation for actual links
+                    return true;
+                }
+            });
+            
+            // Ensure mobile menu closes when clicking home
+            $('.navbar-nav > li > a[href="index.html"]').on('click', function() {
+                if ($(window).width() < 768) {
+                    $('.navbar-collapse').removeClass('in');
+                    $('.navbar-toggle').removeClass('active');
+                }
+            });
+        });
+    </script>
 
     <!-- Language Switcher Script -->
     <script>
@@ -645,7 +784,7 @@
 
             // Preloader - Enhanced with multiple triggers
             function hidePreloader() {
-                $('.se-pre-con').fadeOut('slow');
+                // $('.se-pre-con').fadeOut('slow'); // Preloader disabled
             }
             
             // Hide preloader when page is fully loaded

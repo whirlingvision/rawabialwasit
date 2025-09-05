@@ -37,6 +37,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- ========== End Stylesheet ========== -->
+    
+    <style>
+        /* EMERGENCY NAVIGATION FIX - INLINE STYLES FOR MAXIMUM OVERRIDE */
+        .navbar-nav > li > a,
+        .navbar-nav > li > a span,
+        .navbar-nav > li > a .lang-text,
+        .navbar-right > li > a,
+        .navbar-right > li > a span,
+        ul.navbar-nav li a,
+        ul.navbar-nav li a span {
+            color: #000000 !important;
+            font-weight: bold !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            text-shadow: none !important;
+        }
+        
+        /* Additional override for bootsnav */
+        .bootsnav .navbar-nav > li > a {
+            color: #000000 !important;
+        }
+    </style>
 </head>
 
 <body class="lang-en">
@@ -47,12 +69,12 @@
     </div>
 
     <!-- Preloader Start -->
-    <div class="se-pre-con">
+    <!--<div class="se-pre-con">
         <div class="preloader-content">
             <div class="spinner"></div>
             <div class="loading-text lang-text" data-en="Loading..." data-ar="جاري التحميل...">Loading...</div>
         </div>
-    </div>
+    </div>-->
     <!-- Preloader Ends -->
 
     <!-- Start Header Top -->
@@ -105,8 +127,11 @@
             <div class="container">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button class="navbar-toggle" data-target="#navbar-menu" data-toggle="collapse" type="button">
-                        <i class="fa fa-bars"></i>
+                    <button class="navbar-toggle collapsed" data-target="#navbar-menu" data-toggle="collapse" type="button" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="index.html">
                         <img alt="Rawabi Alwasit Company Logo" class="logo" src="assets/img/logo.png">
@@ -150,9 +175,11 @@
                                 <span class="lang-text" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</span>
                             </a>
                         </li>
-                        <a class="btn btn-theme effect btn-md mt-4" href="contact.html">
-                            <span class="lang-text" data-en="REQUEST A QUOTE" data-ar="اطلب عرض سعر">REQUEST A QUOTE</span>
-                        </a>
+                        <li class="navbar-cta">
+                            <a class="btn btn-theme effect btn-md" href="contact.html">
+                                <span class="lang-text" data-en="REQUEST A QUOTE" data-ar="اطلب عرض سعر">REQUEST A QUOTE</span>
+                            </a>
+                        </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div>
@@ -431,7 +458,7 @@
 
             // Preloader
             $(window).on('load', function() {
-                $('.se-pre-con').fadeOut('slow');
+                // $('.se-pre-con').fadeOut('slow'); // Preloader disabled
             });
         });
     </script>

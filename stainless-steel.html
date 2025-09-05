@@ -31,6 +31,28 @@
     <link href="style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet"/>
     <!-- ========== End Stylesheet ========== -->
+
+    <style>
+        /* EMERGENCY NAVIGATION FIX - INLINE STYLES FOR MAXIMUM OVERRIDE */
+        .navbar-nav > li > a,
+        .navbar-nav > li > a span,
+        .navbar-nav > li > a .lang-text,
+        .navbar-right > li > a,
+        .navbar-right > li > a span,
+        ul.navbar-nav li a,
+        ul.navbar-nav li a span {
+            color: #000000 !important;
+            font-weight: bold !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            text-shadow: none !important;
+        }
+        
+        /* Additional override for bootsnav */
+        .bootsnav .navbar-nav > li > a {
+            color: #000000 !important;
+        }
+    </style>
 </head>
 <body>
 <!-- Preloader Start -->

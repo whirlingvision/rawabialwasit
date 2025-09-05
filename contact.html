@@ -31,12 +31,36 @@
     <link href="assets/css/animate.css?v3" rel="stylesheet"/>
     <link href="assets/css/bootsnav.css?v3" rel="stylesheet"/>
     <link href="style.css?20082023" rel="stylesheet">
+    <link href="assets/css/components.css?v3" rel="stylesheet">
+    <link href="assets/css/modern-security.css?v3" rel="stylesheet">
     <link href="assets/css/responsive.css?v3" rel="stylesheet"/>
     
     <!-- Google Fonts for Arabic Support -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- ========== End Stylesheet ========== -->
+    
+    <style>
+        /* EMERGENCY NAVIGATION FIX - INLINE STYLES FOR MAXIMUM OVERRIDE */
+        .navbar-nav > li > a,
+        .navbar-nav > li > a span,
+        .navbar-nav > li > a .lang-text,
+        .navbar-right > li > a,
+        .navbar-right > li > a span,
+        ul.navbar-nav li a,
+        ul.navbar-nav li a span {
+            color: #000000 !important;
+            font-weight: bold !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            text-shadow: none !important;
+        }
+        
+        /* Additional override for bootsnav */
+        .bootsnav .navbar-nav > li > a {
+            color: #000000 !important;
+        }
+    </style>
 </head>
 
 <body class="lang-en">
@@ -47,12 +71,12 @@
     </div>
 
     <!-- Preloader Start -->
-    <div class="se-pre-con">
+    <!--<div class="se-pre-con">
         <div class="preloader-content">
             <div class="spinner"></div>
             <div class="loading-text lang-text" data-en="Loading..." data-ar="جاري التحميل...">Loading...</div>
         </div>
-    </div>
+    </div>-->
     <!-- Preloader Ends -->
 
     <!-- Start Header Top -->
@@ -182,38 +206,84 @@
                 <div class="col-lg-8">
                     <div class="contact-form">
                         <h3 class="lang-text" data-en="Send us a Message" data-ar="أرسل لنا رسالة">Send us a Message</h3>
-                        <form action="form.php" method="POST" class="contact-form">
+                        <div id="formMessages"></div>
+                        <form action="form.php" method="POST" class="contact-form" id="contactForm" novalidate>
+                            <!-- CSRF Protection -->
+                            <input type="hidden" name="csrf_token" value="<?php echo generate_csrf_token(); ?>">
+                            
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                                        <label for="name" class="form-label">Full Name *</label>
+                                        <input type="text" id="name" name="name" class="form-control" 
+                                               placeholder="Your Full Name" 
+                                               pattern="[A-Za-z\s\u0600-\u06FF]+" 
+                                               title="Please enter your full name (letters and spaces only)" 
+                                               minlength="2" maxlength="50" required
+                                               autocomplete="name">
+                                        <div class="invalid-feedback"></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" id="email" name="email" class="form-control" 
+                                               placeholder="your.email@example.com" 
+                                               required autocomplete="email">
+                                        <div class="invalid-feedback"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input type="tel" name="phone" class="form-control" placeholder="Your Phone">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" class="form-control" 
+                                               placeholder="+966 50 123 4567" 
+                                               pattern="(\+966|966|0)?[5-9][0-9]{8}"
+                                               title="Please enter a valid Saudi phone number"
+                                               autocomplete="tel">
+                                        <div class="invalid-feedback"></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input type="text" name="company" class="form-control" placeholder="Company Name">
+                                        <label for="company" class="form-label">Company Name</label>
+                                        <input type="text" id="company" name="company" class="form-control" 
+                                               placeholder="Your Company Name" 
+                                               pattern="[A-Za-z0-9\s&.\-\u0600-\u06FF]+" 
+                                               title="Company name (letters, numbers, and basic punctuation)"
+                                               maxlength="100" autocomplete="organization">
+                                        <div class="invalid-feedback"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                                <label for="subject" class="form-label">Subject *</label>
+                                <input type="text" id="subject" name="subject" class="form-control" 
+                                       placeholder="What is this regarding?" 
+                                       pattern="[A-Za-z0-9\s&.,!-\u0600-\u06FF]+" 
+                                       title="Please enter a subject for your message"
+                                       minlength="5" maxlength="100" required>
+                                <div class="invalid-feedback"></div>
                             </div>
                             <div class="form-group">
-                                <textarea name="message" class="form-control" rows="6" placeholder="Your Message" required></textarea>
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea id="message" name="message" class="form-control" rows="6" 
+                                          placeholder="Please describe your inquiry in detail..." 
+                                          minlength="10" maxlength="1000" required></textarea>
+                                <div class="form-text">Minimum 10 characters, maximum 1000 characters</div>
+                                <div class="invalid-feedback"></div>
                             </div>
-                            <button type="submit" class="btn btn-theme effect btn-md">
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input type="checkbox" id="privacy" name="privacy" class="form-check-input" required>
+                                    <label for="privacy" class="form-check-label">
+                                        I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and consent to the processing of my personal data *
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-theme effect btn-md" id="submitBtn">
                                 <span class="lang-text" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</span>
                             </button>
                         </form>
@@ -341,12 +411,16 @@
                     <div class="f-item newsletter">
                         <h4 class="lang-text" data-en="Newsletter" data-ar="النشرة الإخبارية">Newsletter</h4>
                         <p class="lang-text" data-en="Subscribe to our newsletter for updates" data-ar="اشترك في نشرتنا الإخبارية للحصول على التحديثات">Subscribe to our newsletter for updates</p>
-                        <form action="#" method="POST">
+                        <form action="#" method="POST" id="newsletter-form" aria-label="Newsletter subscription">
                             <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Enter your email">
+                                <label for="newsletter-email" class="sr-only">Email address for newsletter</label>
+                                <input type="email" id="newsletter-email" class="form-control" 
+                                       placeholder="Enter your email" 
+                                       aria-label="Email address for newsletter subscription" 
+                                       required>
                                 <div class="input-group-append">
-                                    <button class="btn btn-theme" type="submit">
-                                        <i class="fas fa-paper-plane"></i>
+                                    <button class="btn btn-theme" type="submit" aria-label="Subscribe to newsletter">
+                                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
                                     </button>
                                 </div>
                             </div>
@@ -389,6 +463,7 @@
     <script src="assets/js/count-to.js"></script>
     <script src="assets/js/bootsnav.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/modern-app.js"></script>
 
     <!-- Language Switcher Script -->
     <script>
@@ -418,23 +493,135 @@
 
             // Preloader
             $(window).on('load', function() {
-                $('.se-pre-con').fadeOut('slow');
+                // $('.se-pre-con').fadeOut('slow'); // Preloader disabled
             });
 
-            // Contact form submission
-            $('.contact-form').submit(function(e) {
+            // Modern form validation and submission
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            // Real-time validation
+            function validateField(field) {
+                const value = field.value.trim();
+                const feedback = field.nextElementSibling;
+                let isValid = true;
+                let message = '';
+                
+                // Remove existing validation classes
+                field.classList.remove('is-valid', 'is-invalid');
+                
+                if (field.hasAttribute('required') && !value) {
+                    isValid = false;
+                    message = 'This field is required.';
+                } else if (field.type === 'email' && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                    isValid = false;
+                    message = 'Please enter a valid email address.';
+                } else if (field.type === 'tel' && value && !/^(\+966|966|0)?[5-9][0-9]{8}$/.test(value.replace(/[\s-]/g, ''))) {
+                    isValid = false;
+                    message = 'Please enter a valid Saudi phone number.';
+                } else if (field.hasAttribute('minlength') && value.length < field.getAttribute('minlength')) {
+                    isValid = false;
+                    message = `Minimum ${field.getAttribute('minlength')} characters required.`;
+                } else if (field.hasAttribute('maxlength') && value.length > field.getAttribute('maxlength')) {
+                    isValid = false;
+                    message = `Maximum ${field.getAttribute('maxlength')} characters allowed.`;
+                } else if (field.hasAttribute('pattern') && value && !new RegExp(field.getAttribute('pattern')).test(value)) {
+                    isValid = false;
+                    message = field.getAttribute('title') || 'Invalid format.';
+                }
+                
+                if (isValid) {
+                    field.classList.add('is-valid');
+                    feedback.textContent = '';
+                } else {
+                    field.classList.add('is-invalid');
+                    feedback.textContent = message;
+                }
+                
+                return isValid;
+            }
+            
+            // Add event listeners for real-time validation
+            form.querySelectorAll('input, textarea').forEach(field => {
+                field.addEventListener('blur', () => validateField(field));
+                field.addEventListener('input', () => {
+                    if (field.classList.contains('is-invalid')) {
+                        validateField(field);
+                    }
+                });
+            });
+            
+            // Form submission with enhanced validation
+            form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Get form data
-                const formData = new FormData(this);
+                let isFormValid = true;
+                const formData = new FormData(form);
                 
-                // Show success message
-                alert('Thank you for your message! We will get back to you soon.');
+                // Validate all fields
+                form.querySelectorAll('input[required], textarea[required]').forEach(field => {
+                    if (!validateField(field)) {
+                        isFormValid = false;
+                    }
+                });
                 
-                // Reset form
-                this.reset();
+                // Check privacy policy agreement
+                const privacyCheck = form.querySelector('#privacy');
+                if (!privacyCheck.checked) {
+                    isFormValid = false;
+                    alert('Please agree to the Privacy Policy to continue.');
+                }
+                
+                if (!isFormValid) {
+                    // Focus on first invalid field
+                    const firstInvalid = form.querySelector('.is-invalid');
+                    if (firstInvalid) {
+                        firstInvalid.focus();
+                    }
+                    return;
+                }
+                
+                // Disable submit button and show loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Sending...';
+                
+                // Submit form
+                fetch('form.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    if (data.includes('success') || window.location.href.includes('success=1')) {
+                        $('#formMessages').html('<div class="alert alert-success"><strong>Thank you!</strong> Your message has been sent successfully. We will get back to you soon.</div>');
+                        form.reset();
+                        form.querySelectorAll('.is-valid, .is-invalid').forEach(field => {
+                            field.classList.remove('is-valid', 'is-invalid');
+                        });
+                    } else {
+                        $('#formMessages').html('<div class="alert alert-danger"><strong>Error!</strong> There was a problem sending your message. Please try again.</div>');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    $('#formMessages').html('<div class="alert alert-danger"><strong>Error!</strong> There was a problem sending your message. Please try again.</div>');
+                })
+                .finally(() => {
+                    // Re-enable submit button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<span class="lang-text" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</span>';
+                });
             });
+
+            // Check for success parameter in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === '1') {
+                $('#formMessages').html('<div class="alert alert-success"><strong>Thank you!</strong> Your message has been sent successfully. We will get back to you soon.</div>');
+                // Clean URL by removing the success parameter
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
         });
     </script>
 </body>
+</html>
 </html>
