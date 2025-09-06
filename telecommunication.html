@@ -29,10 +29,38 @@
     <link href="assets/css/animate.css" rel="stylesheet"/>
     <link href="assets/css/bootsnav.css" rel="stylesheet"/>
     <link href="style.css" rel="stylesheet">
+    <link href="assets/css/modern-security.css?v3" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet"/>
     <!-- ========== End Stylesheet ========== -->
 
     <style>
+        /* ========== TEXT VISIBILITY FIXES FOR PRODUCT PAGES ========== */
+        /* Fix text visibility for all content */
+        body, body * {
+            color: #1e293b !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: #1e293b !important;
+            font-weight: 600 !important;
+        }
+        
+        p, div, span, li, td, th {
+            color: #374151 !important;
+        }
+        
+        .content, .info, .description {
+            color: #374151 !important;
+        }
+        
+        .title, .heading {
+            color: #1e293b !important;
+            font-weight: 600 !important;
+        }
+        
+        /* EMERGENCY NAVIGATION FIX - INLINE STYLES FOR MAXIMUM OVERRIDE */
         /* EMERGENCY NAVIGATION FIX - INLINE STYLES FOR MAXIMUM OVERRIDE */
         .navbar-nav > li > a,
         .navbar-nav > li > a span,
@@ -52,6 +80,88 @@
         .bootsnav .navbar-nav > li > a {
             color: #000000 !important;
         }
+    
+        /* ========== HEADER TEXT VISIBILITY FIXES ========== */
+        /* Fix text visibility in top bar header */
+        .top-bar-area,
+        .top-bar-area * {
+            color: #a71a1a !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .top-bar-area .list li,
+        .top-bar-area .list li * {
+            color: #050303 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .top-bar-area .list li a {
+            color: #180c0c !important;
+            text-decoration: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .top-bar-area .list li a:hover {
+            color: #04b9bf !important;
+        }
+        
+        .top-bar-area .lang-text {
+            color: #050303 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    
+         /* ========== NAVIGATION BAR COLORS - MATCH IMAGE ========== */
+         /* Light gray navigation bar background to match image */
+         .navbar-default,
+         .navbar,
+         .bootsnav {
+             background-color: #f8f9fa !important;
+             border: none !important;
+         }
+         
+         /* Dark text for navigation links to match image */
+         .navbar-nav > li > a,
+         .navbar-nav > li > a span,
+         .navbar-nav > li > a .lang-text {
+             color: #212529 !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+         }
+         
+         .navbar-nav > li > a:hover,
+         .navbar-nav > li > a:hover span,
+         .navbar-nav > li > a:hover .lang-text {
+             color: #495057 !important;
+         }
+         
+         /* Dark text for logo to match image */
+         .navbar-brand,
+         .navbar-brand * {
+             color: #212529 !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+         }
+         
+         /* Dark text for REQUEST A QUOTE button to match image */
+         .navbar-cta a,
+         .navbar-cta a * {
+             color: #212529 !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+         }
+         
+         /* Social media icons - Red color to match image */
+         .social li a i {
+             color: #dc3545 !important;
+         }
+         
+         .social li a:hover i {
+             color: #c82333 !important;
+         }
     </style>
 </head>
 <body>
@@ -77,7 +187,7 @@
             <div class="col-lg-9 info float-right text-right">
                 <div class="info box">
                     <ul class="list">
-                        <li><i class="fas fa-map-marker-alt"></i> Saudi Arabia</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Prince Muhammad Ibn Fahad Rd, Ash Shati Ash Sharqi Dist., Dammam, Saudi Arabia</li>
                         <li><i class="fas fa-envelope-open"></i> <a
                                 href="mailto: info@rawabialwasit.com"> info@rawabialwasit.com</a></li>
                     </ul>
@@ -363,13 +473,8 @@
                 <div class="col-lg-4 col-md-6 single-item">
                     <div class="f-item contact">
                         <h4 class="widget-title">Contact Us</h4>
-                        <p>
-                            4364 King Fahd Road, <br> Al Fawazia Industrial Area, <br>
-                            7722 طريق ابن عبد العزيز, <br>
-                            Al Khobar 34627
-                        </p>
                         <ul>
-                            <li><i class="fas fa-map-marker-alt"></i> Saudi Arabia</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Prince Muhammad Ibn Fahad Rd, Ash Shati Ash Sharqi Dist., Dammam, Saudi Arabia</li>
                             <li><i class="fas fa-envelope-open"></i> <a
                                     href="mailto: info@rawabialwasit.com"> info@rawabialwasit.com</a></li>
                         </ul>

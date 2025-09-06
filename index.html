@@ -46,7 +46,15 @@
     <script src="assets/js/optimization.js"></script>
     
     <style>
-        /* EMERGENCY NAVIGATION FIX - INLINE STYLES FOR MAXIMUM OVERRIDE */
+        /* PROFESSIONAL NAVIGATION STYLING - INLINE STYLES FOR MAXIMUM OVERRIDE */
+        .navbar-default,
+        .navbar,
+        .bootsnav {
+            background-color: #8e9296 !important; /* Professional off-white */
+            border-bottom: 1px solid #e2e8f0 !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+        }
+        
         .navbar-nav > li > a,
         .navbar-nav > li > a span,
         .navbar-nav > li > a .lang-text,
@@ -54,8 +62,8 @@
         .navbar-right > li > a span,
         ul.navbar-nav li a,
         ul.navbar-nav li a span {
-            color: #000000 !important;
-            font-weight: bold !important;
+            color: #1e293b !important; /* Dark gray for excellent contrast */
+            font-weight: 600 !important;
             opacity: 1 !important;
             visibility: visible !important;
             text-shadow: none !important;
@@ -63,18 +71,28 @@
         
                  /* Additional override for bootsnav */
          .bootsnav .navbar-nav > li > a {
-             color: #000000 !important;
+             color: #1e293b !important; /* Dark gray for excellent contrast */
          }
          
-         /* EMERGENCY TEXT VISIBILITY FIX */
+         /* PROFESSIONAL TEXT VISIBILITY FIX */
          .lang-text,
          p.lang-text,
          .banner-area .lang-text,
          .hero .lang-text {
-             color: #2d3748 !important;
+             color: #1e293b !important; /* Dark gray for excellent readability */
              opacity: 1 !important;
              visibility: visible !important;
              font-weight: 400 !important;
+         }
+         
+         /* Professional content area styling */
+         .banner-area,
+         .hero,
+         section,
+         .about-area,
+         .info {
+             background-color: #f8fafc !important; /* Professional off-white */
+             color: #1e293b !important; /* Dark text for excellent readability */
          }
          
          /* White text for dark backgrounds */
@@ -84,27 +102,27 @@
              text-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
          }
          
-         /* Specific fix for about section text */
+         /* Professional about section text styling */
          .about-area .lang-text,
          .about-area p.lang-text,
          .info .lang-text,
          .info p.lang-text {
-             color: #2d3748 !important;
+             color: #1e293b !important; /* Dark gray for excellent readability */
              opacity: 1 !important;
              visibility: visible !important;
              font-weight: 400 !important;
              line-height: 1.6 !important;
          }
          
-         /* ULTRA AGGRESSIVE TEXT VISIBILITY FIX */
+         /* PROFESSIONAL TEXT VISIBILITY FIX */
          .col-lg-6.info p.lang-text,
          .col-lg-6.info .lang-text,
          .about-area .col-lg-6.info p.lang-text,
          .about-area .col-lg-6.info .lang-text,
          .about-area .col-lg-6 p.lang-text,
          .about-area .col-lg-6 .lang-text {
-             color: #1a202c !important;
-             background-color: rgba(255, 255, 255, 0.9) !important;
+             color: #1e293b !important; /* Dark gray for excellent readability */
+             background-color: #f8fafc !important; /* Professional off-white background */
              padding: 10px !important;
              border-radius: 5px !important;
              opacity: 1 !important;
@@ -114,13 +132,14 @@
              line-height: 1.7 !important;
              text-shadow: none !important;
              box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+             border: 1px solid #e2e8f0 !important; /* Subtle border */
          }
          
-         /* OVERRIDE MAIN CSS CONFLICTING STYLES */
+         /* PROFESSIONAL OVERRIDE FOR MAIN CSS CONFLICTING STYLES */
          .about-area .info p,
          .about-area .info p.lang-text,
          .about-area .info .lang-text {
-             color: #1a202c !important;
+             color: #1e293b !important; /* Dark gray for excellent readability */
              font-size: 1.2rem !important;
              line-height: 1.8 !important;
              margin-bottom: 35px !important;
@@ -128,6 +147,199 @@
              opacity: 1 !important;
              visibility: visible !important;
              font-weight: 400 !important;
+         }
+         
+         /* PROFESSIONAL DROPDOWN MENU STYLING */
+         .dropdown-menu {
+             background-color: #f8fafc !important; /* Professional off-white */
+             border: 1px solid #e2e8f0 !important;
+             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+             border-radius: 8px !important;
+             padding: 8px 0 !important;
+             min-width: 300px !important; /* Increased minimum width */
+             max-width: 400px !important; /* Increased maximum width */
+             width: auto !important; /* Auto width based on content */
+             z-index: 9999 !important; /* Ensure it's on top */
+         }
+         
+         .dropdown-menu a,
+         .dropdown-menu li > a,
+         .dropdown-menu .dropdown-item,
+         .dropdown-menu li,
+         .dropdown-menu ul li a {
+             color: #1e293b !important; /* Dark gray for excellent visibility */
+             font-weight: 500 !important;
+             padding: 15px 20px !important; /* Increased padding for better spacing */
+             display: block !important;
+             text-decoration: none !important;
+             transition: all 0.3s ease !important;
+             border-bottom: 1px solid #f1f5f9 !important;
+             background-color: transparent !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+             line-height: 1.4 !important; /* Ensure proper line height */
+             white-space: normal !important; /* Allow text wrapping */
+             overflow: visible !important; /* Show full text */
+             text-overflow: unset !important; /* Remove ellipsis */
+             min-height: auto !important; /* Auto height for content */
+             margin: 0 !important; /* Remove any margins */
+             position: relative !important; /* Ensure proper positioning */
+             width: 100% !important; /* Full width */
+             max-width: none !important; /* No width restrictions */
+         }
+         
+         /* Ensure all dropdown text is visible */
+         .dropdown-menu * {
+             color: #1e293b !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+         }
+         
+         /* Specific fix for products dropdown text visibility */
+         .dropdown-menu .lang-text,
+         .dropdown-menu span,
+         .dropdown-menu a span,
+         .dropdown-menu li span {
+             color: #1e293b !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+             display: inline !important;
+             white-space: normal !important;
+             overflow: visible !important;
+             text-overflow: unset !important;
+             width: auto !important;
+             max-width: none !important;
+         }
+         
+         /* ========== SIMPLE DROPDOWN STYLING ========== */
+         /* Clean, simple dropdown styling for products menu */
+         
+         /* ========== TEXT VISIBILITY FIXES ========== */
+         /* Fix text visibility for about section and hero features */
+         .overlay .content h4,
+         .overlay h4 {
+             color: #ffffff !important;
+             font-weight: 600 !important;
+             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+         }
+         
+         .info h3,
+         .about-section h3 {
+             color: #1e293b !important;
+             font-weight: 600 !important;
+         }
+         
+         .info p,
+         .about-section p {
+             color: #374151 !important;
+             line-height: 1.6 !important;
+         }
+         
+         .items .item h4,
+         .feature-item h4 {
+             color: #1e293b !important;
+             font-weight: 600 !important;
+         }
+         
+         .items .item p,
+         .feature-item p {
+             color: #6b7280 !important;
+         }
+         
+         .feature-item span {
+             color: #1e293b !important;
+             font-weight: 500 !important;
+         }
+         
+         /* Additional text visibility fixes */
+         .hero-features .feature-item,
+         .hero-features .feature-item * {
+             color: #1e293b !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+         }
+         
+         .about-section .info,
+         .about-section .info * {
+             color: #1e293b !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+         }
+         
+         .about-section .items .item,
+         .about-section .items .item * {
+             color: #1e293b !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+         }
+         
+         /* ========== HEADER TEXT VISIBILITY FIXES ========== */
+         /* Fix text visibility in top bar header */
+         .top-bar-area,
+         .top-bar-area * {
+             color: #a71a1a !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+         }
+         
+         .top-bar-area .list li,
+         .top-bar-area .list li * {
+             color: #050303 !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+         }
+         
+         .top-bar-area .list li a {
+             color: #180c0c !important;
+             text-decoration: none !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+         }
+         
+         .top-bar-area .list li a:hover {
+             color: #04b9bf !important;
+         }
+         
+         .top-bar-area .lang-text {
+             color: #ffffff !important;
+             opacity: 1 !important;
+             visibility: visible !important;
+         }
+         
+         /* Fix dropdown positioning and layout */
+         .dropdown {
+             position: relative !important;
+         }
+         
+         .dropdown-menu {
+             position: absolute !important;
+             top: 100% !important;
+             left: 0 !important;
+             right: auto !important;
+             float: none !important;
+             clear: both !important;
+             margin: 0 !important;
+             list-style: none !important;
+         }
+         
+         /* Prevent text overlap in dropdown items */
+         .dropdown-menu li {
+             display: block !important;
+             width: 100% !important;
+             clear: both !important;
+             margin: 0 !important;
+             padding: 0 !important;
+             position: relative !important;
+         }
+         
+         .dropdown-menu a:hover,
+         .dropdown-menu li > a:hover,
+         .dropdown-menu .dropdown-item:hover,
+         .dropdown-menu li:hover,
+         .dropdown-menu ul li a:hover {
+             background-color: #f1f5f9 !important;
+             color: #1e3a8a !important;
+             padding-left: 25px !important;
          }
          
          /* NAVIGATION FIXES */
@@ -144,7 +356,7 @@
          }
          
          .navbar-nav > li > a.active {
-             color: #f59e0b !important;
+             color: #db9410 !important;
              font-weight: 700 !important;
          }
     </style>
@@ -250,55 +462,22 @@
                                 <span class="lang-text" data-en="About" data-ar="من نحن">About</span>
                             </a>
                         </li>
-                        <li class="dropdown mega-menu">
+                        <li class="dropdown">
                             <a class="dropdown-toggle smooth-menu" data-toggle="dropdown" href="#">
                                 <span class="lang-text" data-en="Products" data-ar="المنتجات">Products</span>
                             </a>
-                            <ul class="dropdown-menu mega-dropdown">
-                                <li class="mega-menu-content">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-6">
-                                                <h5 class="mega-title"><span class="lang-text" data-en="Safety Gear" data-ar="معدات السلامة">Safety Gear</span></h5>
-                                                <ul class="mega-links">
-                                                    <li><a href="safety.html"><span class="lang-text" data-en="Safety Products" data-ar="منتجات السلامة">Safety Products</span></a></li>
-                                                    <li><a href="headprotection.html"><span class="lang-text" data-en="Head Protection" data-ar="حماية الرأس">Head Protection</span></a></li>
-                                                    <li><a href="eyeprotection.html"><span class="lang-text" data-en="Eye Protection" data-ar="حماية العين">Eye Protection</span></a></li>
-                                                    <li><a href="fall-protetction.html"><span class="lang-text" data-en="Fall Protection" data-ar="حماية من السقوط">Fall Protection</span></a></li>
-                                                    <li><a href="safety-shoes.html"><span class="lang-text" data-en="Safety Shoes" data-ar="أحذية السلامة">Safety Shoes</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3 col-md-6">
-                                                <h5 class="mega-title"><span class="lang-text" data-en="Industrial Materials" data-ar="المواد الصناعية">Industrial Materials</span></h5>
-                                                <ul class="mega-links">
-                                                    <li><a href="steel.html"><span class="lang-text" data-en="Steel Products" data-ar="منتجات الصلب">Steel Products</span></a></li>
-                                                    <li><a href="stainless-steel.html"><span class="lang-text" data-en="Stainless Steel" data-ar="الفولاذ المقاوم للصدأ">Stainless Steel</span></a></li>
-                                                    <li><a href="aluminium.html"><span class="lang-text" data-en="Aluminium Products" data-ar="منتجات الألمنيوم">Aluminium Products</span></a></li>
-                                                    <li><a href="fiber.html"><span class="lang-text" data-en="FRP Products" data-ar="منتجات FRP">FRP Products</span></a></li>
-                                                    <li><a href="fasteners.html"><span class="lang-text" data-en="Fasteners" data-ar="المثبتات">Fasteners</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3 col-md-6">
-                                                <h5 class="mega-title"><span class="lang-text" data-en="Equipment & Systems" data-ar="المعدات والأنظمة">Equipment & Systems</span></h5>
-                                                <ul class="mega-links">
-                                                    <li><a href="electrical.html"><span class="lang-text" data-en="Electrical Products" data-ar="المنتجات الكهربائية">Electrical Products</span></a></li>
-                                                    <li><a href="mechanical.html"><span class="lang-text" data-en="Mechanical Products" data-ar="المنتجات الميكانيكية">Mechanical Products</span></a></li>
-                                                    <li><a href="telecommunication.html"><span class="lang-text" data-en="Telecommunication" data-ar="الاتصالات">Telecommunication</span></a></li>
-                                                    <li><a href="industrial-supplies.html"><span class="lang-text" data-en="Industrial Supplies" data-ar="المستلزمات الصناعية">Industrial Supplies</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3 col-md-6">
-                                                <h5 class="mega-title"><span class="lang-text" data-en="Services & Solutions" data-ar="الخدمات والحلول">Services & Solutions</span></h5>
-                                                <ul class="mega-links">
-                                                    <li><a href="Office-Setup.html"><span class="lang-text" data-en="Office Setup" data-ar="تجهيز المكاتب">Office Setup</span></a></li>
-                                                    <li><a href="manpower-services.html"><span class="lang-text" data-en="Manpower Services" data-ar="خدمات القوى العاملة">Manpower Services</span></a></li>
-                                                    <li><a href="construction-maintenance.html"><span class="lang-text" data-en="Construction & Maintenance" data-ar="البناء والصيانة">Construction & Maintenance</span></a></li>
-                                                    <li><a href="operation-maintenance.html"><span class="lang-text" data-en="Operation & Maintenance" data-ar="التشغيل والصيانة">Operation & Maintenance</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                            <ul class="dropdown-menu">
+                                <li><a href="steel.html"><span class="lang-text" data-en="Steel Products" data-ar="منتجات الصلب">Steel Products</span></a></li>
+                                <li><a href="electrical.html"><span class="lang-text" data-en="Electrical Products" data-ar="المنتجات الكهربائية">Electrical Products</span></a></li>
+                                <li><a href="stainless-steel.html"><span class="lang-text" data-en="Stainless Steel Products" data-ar="منتجات الفولاذ المقاوم للصدأ">Stainless Steel Products</span></a></li>
+                                <li><a href="aluminium.html"><span class="lang-text" data-en="Aluminium Products" data-ar="منتجات الألمنيوم">Aluminium Products</span></a></li>
+                                <li><a href="safety.html"><span class="lang-text" data-en="Safety Products" data-ar="منتجات السلامة">Safety Products</span></a></li>
+                                <li><a href="mechanical.html"><span class="lang-text" data-en="Mechanical Products" data-ar="المنتجات الميكانيكية">Mechanical Products</span></a></li>
+                                <li><a href="fiber.html"><span class="lang-text" data-en="FRP Products" data-ar="منتجات FRP">FRP Products</span></a></li>
+                                <li><a href="industrial-supplies.html"><span class="lang-text" data-en="Industrial Supplies" data-ar="المستلزمات الصناعية">Industrial Supplies</span></a></li>
+                                <li><a href="fasteners.html"><span class="lang-text" data-en="Fasteners" data-ar="المثبتات">Fasteners</span></a></li>
+                                <li><a href="telecommunication.html"><span class="lang-text" data-en="Telecommunication Products" data-ar="منتجات الاتصالات">Telecommunication Products</span></a></li>
+                                <li><a href="Office-Setup.html"><span class="lang-text" data-en="Office Setup" data-ar="تجهيز المكاتب">Office Setup</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -718,6 +897,9 @@
                     $('.navbar-toggle').removeClass('active');
                 }
             });
+            
+            // ========== SIMPLE DROPDOWN FIXES ==========
+            // Simple dropdown functionality for products menu
         });
     </script>
 

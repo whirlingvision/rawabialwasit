@@ -56,10 +56,19 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
-    # Remove .html extension
+    # Redirect .html to clean URLs (301 permanent redirect)
+    RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+    RewriteRule ^ /%1? [NC,L,R=301]
+    
+    # Handle clean URLs (serve .html files without extension)
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^([^\.]+)$ $1.html [NC,L]
+    RewriteRule ^([^/]+)/?$ $1.html [NC,L]
+    
+    # Handle subdirectories
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([^/]+)/([^/]+)/?$ $1/$2.html [NC,L]
     
     # Redirect www to non-www
     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]

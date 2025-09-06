@@ -1,7 +1,15 @@
 /* ========== MODERN SECURITY & ENHANCED STYLES ========== */
 
-/* ========== CRITICAL NAVIGATION FIX - MAXIMUM OVERRIDE ========== */
-/* Fix invisible navigation text issue - FORCE VISIBILITY */
+/* ========== PROFESSIONAL NAVIGATION STYLING ========== */
+/* Professional navigation with enhanced visibility */
+.navbar-default,
+.navbar,
+.bootsnav {
+    background-color: var(--white, #f8fafc) !important; /* Professional off-white */
+    border-bottom: 1px solid var(--gray-200, #e2e8f0) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
 .navbar-default .navbar-nav > li > a,
 .navbar-nav > li > a,
 nav .navbar-nav > li > a,
@@ -9,8 +17,8 @@ nav .navbar-nav > li > a,
 .bootsnav .navbar-nav > li > a,
 ul.navbar-nav > li > a,
 .navbar-right > li > a {
-    color: #000000 !important; /* Pure black for maximum visibility */
-    font-weight: 700 !important;
+    color: var(--gray-800, #1e293b) !important; /* Dark gray for excellent contrast */
+    font-weight: 600 !important;
     padding: 15px 20px !important;
     transition: all 0.3s ease;
     position: relative;
@@ -28,8 +36,9 @@ ul.navbar-nav > li > a,
 .navbar-nav > li.active > a,
 nav .navbar-nav > li > a:hover,
 nav .navbar-nav > li.active > a {
-    color: #f59e0b !important; /* Accent color on hover */
-    background: rgba(49, 130, 206, 0.1) !important;
+    color: var(--primary-color, #1e3a8a) !important; /* Professional blue on hover */
+    background: var(--gray-100, #f1f5f9) !important; /* Light gray background */
+    border-radius: 4px;
 }
 
 .navbar-default .navbar-nav > li > a:focus,
@@ -41,17 +50,227 @@ nav .navbar-nav > li > a:focus {
     outline-offset: 2px;
 }
 
-/* Ensure dropdown text is also visible */
+/* Professional dropdown menu styling */
+.dropdown-menu {
+    background-color: var(--white, #f8fafc) !important; /* Professional off-white */
+    border: 1px solid var(--gray-200, #e2e8f0) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 8px 0 !important;
+    min-width: 300px !important; /* Increased minimum width */
+    max-width: 400px !important; /* Increased maximum width */
+    width: auto !important; /* Auto width based on content */
+    z-index: 9999 !important; /* Ensure it's on top */
+}
+
 .dropdown-menu a,
 .dropdown-menu li > a {
-    color: #1a202c !important;
+    color: var(--gray-800, #1e293b) !important; /* Dark gray for excellent visibility */
     font-weight: 500 !important;
+    padding: 15px 20px !important; /* Increased padding for better spacing */
+    display: block !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    border-bottom: 1px solid var(--gray-100, #f1f5f9) !important;
+    line-height: 1.4 !important; /* Ensure proper line height */
+    white-space: nowrap !important; /* Prevent text wrapping */
+    overflow: hidden !important; /* Hide overflow */
+    text-overflow: ellipsis !important; /* Add ellipsis for long text */
+    min-height: 20px !important; /* Minimum height for each item */
 }
 
 .dropdown-menu a:hover,
 .dropdown-menu li > a:hover {
-    color: #f59e0b !important;
-    background: rgba(49, 130, 206, 0.1) !important;
+    background-color: var(--gray-100, #f1f5f9) !important;
+    color: var(--primary-color, #1e3a8a) !important;
+    padding-left: 25px !important;
+}
+
+.dropdown-menu a:focus,
+.dropdown-menu li > a:focus {
+    background-color: var(--gray-100, #f1f5f9) !important;
+    color: var(--primary-color, #1e3a8a) !important;
+    outline: 2px solid var(--primary-color, #1e3a8a) !important;
+    outline-offset: -2px !important;
+}
+
+/* Specific styling for products dropdown */
+.dropdown-menu .dropdown-item,
+.dropdown-menu li a,
+.dropdown-menu li,
+.dropdown-menu ul li a {
+    color: var(--gray-800, #1e293b) !important;
+    font-weight: 500 !important;
+    padding: 15px 20px !important; /* Increased padding */
+    display: block !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    border-bottom: 1px solid var(--gray-100, #f1f5f9) !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    line-height: 1.4 !important; /* Proper line height */
+    white-space: normal !important; /* Allow text wrapping */
+    overflow: visible !important; /* Show full text */
+    text-overflow: unset !important; /* Remove ellipsis */
+    min-height: auto !important; /* Auto height for content */
+    margin: 0 !important; /* Remove any margins */
+    position: relative !important; /* Ensure proper positioning */
+    width: 100% !important; /* Full width */
+    max-width: none !important; /* No width restrictions */
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu li a:hover,
+.dropdown-menu li:hover,
+.dropdown-menu ul li a:hover {
+    background-color: var(--gray-100, #f1f5f9) !important;
+    color: var(--primary-color, #1e3a8a) !important;
+    padding-left: 25px !important;
+}
+
+/* Ensure all dropdown text is visible */
+.dropdown-menu * {
+    color: var(--gray-800, #1e293b) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Specific fix for products dropdown text visibility */
+.dropdown-menu .lang-text,
+.dropdown-menu span,
+.dropdown-menu a span,
+.dropdown-menu li span {
+    color: var(--gray-800, #1e293b) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    width: auto !important;
+    max-width: none !important;
+}
+
+/* ========== SIMPLE DROPDOWN STYLING ========== */
+/* Clean, simple dropdown styling for products menu */
+
+/* ========== TEXT VISIBILITY FIXES ========== */
+/* Fix text visibility for about section and hero features */
+.overlay .content h4,
+.overlay h4 {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+}
+
+.info h3,
+.about-section h3 {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+.info p,
+.about-section p {
+    color: #374151 !important;
+    line-height: 1.6 !important;
+}
+
+.items .item h4,
+.feature-item h4 {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+.items .item p,
+.feature-item p {
+    color: #6b7280 !important;
+}
+
+.feature-item span {
+    color: #1e293b !important;
+    font-weight: 500 !important;
+}
+
+/* Additional text visibility fixes */
+.hero-features .feature-item,
+.hero-features .feature-item * {
+    color: #1e293b !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.about-section .info,
+.about-section .info * {
+    color: #1e293b !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.about-section .items .item,
+.about-section .items .item * {
+    color: #1e293b !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* ========== HEADER TEXT VISIBILITY FIXES ========== */
+/* Fix text visibility in top bar header */
+.top-bar-area,
+.top-bar-area * {
+    color: #a71a1a !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.top-bar-area .list li,
+.top-bar-area .list li * {
+    color: #050303 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.top-bar-area .list li a {
+    color: #180c0c !important;
+    text-decoration: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.top-bar-area .list li a:hover {
+    color: #04b9bf !important;
+}
+
+.top-bar-area .lang-text {
+    color: #050303 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Fix dropdown positioning and layout */
+.dropdown {
+    position: relative !important;
+}
+
+.dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+    float: none !important;
+    clear: both !important;
+    margin: 0 !important;
+    list-style: none !important;
+}
+
+/* Prevent text overlap in dropdown items */
+.dropdown-menu li {
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
 }
 
 /* Language text spans inside navigation - FORCE BLACK */
@@ -266,18 +485,18 @@ section .lang-text {
     --error-color: #ef4444;
     --info-color: #06b6d4;
     
-    /* Neutral Colors */
-    --white: #ffffff;
-    --gray-50: #f8fafc;
-    --gray-100: #f1f5f9;
-    --gray-200: #e2e8f0;
-    --gray-300: #cbd5e1;
-    --gray-400: #94a3b8;
-    --gray-500: #64748b;
-    --gray-600: #475569;
-    --gray-700: #334155;
-    --gray-800: #1e293b;
-    --gray-900: #0f172a;
+    /* Neutral Colors - Professional Light Gray Theme */
+    --white: #f8fafc; /* Professional off-white instead of pure white */
+    --gray-50: #f1f5f9; /* Very light gray */
+    --gray-100: #e2e8f0; /* Light gray */
+    --gray-200: #cbd5e1; /* Medium light gray */
+    --gray-300: #94a3b8; /* Medium gray */
+    --gray-400: #64748b; /* Darker gray */
+    --gray-500: #475569; /* Dark gray */
+    --gray-600: #334155; /* Very dark gray */
+    --gray-700: #1e293b; /* Almost black */
+    --gray-800: #0f172a; /* Black */
+    --gray-900: #020617; /* Pure black */
     
     /* Typography */
     --font-family-primary: 'Cairo', 'Yantramanav', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -458,6 +677,70 @@ section .lang-text {
 .btn-outline-light:hover:not(:disabled) {
     background-color: var(--white);
     color: var(--primary-color);
+}
+
+/* ========== PROFESSIONAL CONTENT AREAS ========== */
+/* Main content sections with professional background */
+.banner-area,
+.hero,
+section,
+.about-area,
+.info,
+.text-light,
+.bg-light,
+.bg-white {
+    background-color: var(--white, #f8fafc) !important; /* Professional off-white */
+    color: var(--gray-800, #1e293b) !important; /* Dark text for excellent readability */
+}
+
+/* Ensure text visibility in all sections */
+.banner-area h1,
+.banner-area h2,
+.banner-area h3,
+.banner-area p,
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p,
+section h1,
+section h2,
+section h3,
+section h4,
+section h5,
+section h6,
+section p {
+    color: var(--gray-800, #1e293b) !important; /* Dark text for maximum readability */
+    text-shadow: none !important;
+}
+
+/* Professional card styling */
+.card,
+.panel,
+.well {
+    background-color: var(--white, #f8fafc) !important;
+    border: 1px solid var(--gray-200, #e2e8f0) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    color: var(--gray-800, #1e293b) !important;
+}
+
+/* Professional form styling */
+.form-control,
+input,
+textarea,
+select {
+    background-color: var(--white, #f8fafc) !important;
+    border: 1px solid var(--gray-300, #cbd5e1) !important;
+    color: var(--gray-800, #1e293b) !important;
+}
+
+.form-control:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    background-color: var(--white, #f8fafc) !important;
+    border-color: var(--primary-color, #1e3a8a) !important;
+    color: var(--gray-800, #1e293b) !important;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1) !important;
 }
 
 /* ========== MODERN ALERT STYLES ========== */
@@ -649,6 +932,14 @@ section .lang-text {
     
     .card-body {
         padding: var(--space-4);
+    }
+    
+    /* Mobile dropdown fixes */
+    .dropdown-menu {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
     }
 }
 

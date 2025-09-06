@@ -677,7 +677,7 @@ body {
     font-family: 'Yantramanav', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
 }
 
 h1, h2, h3, h4, h5, h6 {
