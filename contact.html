@@ -41,7 +41,15 @@
     <!-- ========== End Stylesheet ========== -->
     
     <style>
-        /* EMERGENCY NAVIGATION FIX - INLINE STYLES FOR MAXIMUM OVERRIDE */
+        /* PROFESSIONAL NAVIGATION STYLING - MATCHING INDEX PAGE */
+        .navbar-default,
+        .navbar,
+        .bootsnav {
+            background-color: #8e9296 !important; /* Professional off-white */
+            border-bottom: 1px solid #e2e8f0 !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+        }
+        
         .navbar-nav > li > a,
         .navbar-nav > li > a span,
         .navbar-nav > li > a .lang-text,
@@ -49,8 +57,8 @@
         .navbar-right > li > a span,
         ul.navbar-nav li a,
         ul.navbar-nav li a span {
-            color: #000000 !important;
-            font-weight: bold !important;
+            color: #1e293b !important; /* Dark gray for excellent contrast */
+            font-weight: 600 !important;
             opacity: 1 !important;
             visibility: visible !important;
             text-shadow: none !important;
@@ -58,7 +66,84 @@
         
         /* Additional override for bootsnav */
         .bootsnav .navbar-nav > li > a {
-            color: #000000 !important;
+            color: #1e293b !important; /* Dark gray for excellent contrast */
+        }
+        
+        /* PROFESSIONAL DROPDOWN MENU STYLING */
+        .dropdown-menu {
+            background-color: #f8fafc !important; /* Professional off-white */
+            border: 1px solid #e2e8f0 !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+            border-radius: 8px !important;
+            padding: 8px 0 !important;
+            min-width: 300px !important;
+            max-width: 400px !important;
+            width: auto !important;
+            z-index: 9999 !important;
+        }
+        
+        .dropdown-menu a,
+        .dropdown-menu li > a,
+        .dropdown-menu .dropdown-item,
+        .dropdown-menu li,
+        .dropdown-menu ul li a {
+            color: #1e293b !important; /* Dark gray for excellent visibility */
+            font-weight: 500 !important;
+            padding: 15px 20px !important;
+            display: block !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+            border-bottom: 1px solid #f1f5f9 !important;
+            background-color: transparent !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            line-height: 1.4 !important;
+            white-space: normal !important;
+            overflow: visible !important;
+            text-overflow: unset !important;
+            min-height: auto !important;
+            margin: 0 !important;
+            position: relative !important;
+            width: 100% !important;
+            max-width: none !important;
+        }
+        
+        /* Ensure all dropdown text is visible */
+        .dropdown-menu * {
+            color: #1e293b !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* Specific fix for products dropdown text visibility */
+        .dropdown-menu .lang-text,
+        .dropdown-menu span,
+        .dropdown-menu a span,
+        .dropdown-menu li span {
+            color: #1e293b !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: inline !important;
+            white-space: normal !important;
+            overflow: visible !important;
+            text-overflow: unset !important;
+            width: auto !important;
+            max-width: none !important;
+        }
+        
+        .dropdown-menu a:hover,
+        .dropdown-menu li > a:hover,
+        .dropdown-menu .dropdown-item:hover,
+        .dropdown-menu li:hover,
+        .dropdown-menu ul li a:hover {
+            background-color: #f1f5f9 !important;
+            color: #1e3a8a !important;
+            padding-left: 25px !important;
+        }
+        
+        .navbar-nav > li > a.active {
+            color: #db9410 !important;
+            font-weight: 700 !important;
         }
         
         /* ========== HEADER TEXT VISIBILITY FIXES ========== */
@@ -89,7 +174,7 @@
         }
         
         .top-bar-area .lang-text {
-            color: #050303 !important;
+            color: #ffffff !important;
             opacity: 1 !important;
             visibility: visible !important;
         }
