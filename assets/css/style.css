@@ -147,21 +147,16 @@ a:hover {
 
 .header .navbar {
     padding: 15px 0;
-    height: 80px; /* Fixed navbar height */
-    overflow: hidden; /* Hide any overflow from large logo */
-    display: flex;
-    align-items: center; /* Center content vertically */
 }
 
 .logo {
-    height: 270px; /* Keep your desired logo size */
+    height: 270px; /* 50% larger - increased from 180px to 270px */
     width: auto;
-    max-width: 750px; /* Keep your desired max-width */
+    max-width: 750px; /* Increased max-width to accommodate much larger logo */
     transition: var(--transition-smooth);
-    margin: -120px 0; /* Increased negative margin to contain logo within navbar */
+    margin: -40px 0; /* Increased negative margin to prevent navbar expansion */
     position: relative;
     z-index: 10;
-    object-fit: contain; /* Ensure logo fits properly */
 }
 
 .logo:hover {

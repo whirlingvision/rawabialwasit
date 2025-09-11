@@ -167,12 +167,10 @@
     
     .navbar-brand .logo {
         height: 40px;
-        margin: 0; /* Reset margin on mobile */
     }
     
     .header .navbar {
         padding: 10px 0;
-        height: 60px; /* Smaller fixed height on mobile */
     }
 }
 
