@@ -1,960 +1,350 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
-    <!-- ========== Meta Tags ========== -->
-    <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="Rawabi Al Wasit" name="description">
-
-    <!-- ========== Page Title ========== -->
-    <title data-en="Rawabi Alwasit Company | Trading and Contracting Company" data-ar="شركة روابي الوسيط | شركة تجارية ومقاولات">Rawabi Alwasit Company | شركة روابي الوسيط | Trading and Contracting Company</title>
-    <meta content="Rawabi Alwasit Company is a leading trading and contracting company in Saudi Arabia. We specialize in engineering, trading, and technology solutions." name="description">
-    <meta content="Steel Mechanical, trading, contracting, engineering, technology, Saudi Arabia" name="keywords">
-    <meta content="index, follow" name="robots">
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta content="English" name="language">
-
-    <!-- ========== Favicon Icon ========== -->
-    <link href="assets/img/logo_icon.png" rel="shortcut icon" type="image/x-icon">
-
-    <!-- ========== Start Stylesheet ========== -->
-    <link href="assets/css/bootstrap.min.css?v=3.0" rel="stylesheet"/>
-    <link href="assets/css/font-awesome.min.css?v=3.0" rel="stylesheet"/>
-    <link href="assets/css/icofont.min.css?v=3.0" rel="stylesheet"/>
-    <link href="assets/css/themify-icons.css?v=3.0" rel="stylesheet"/>
-    <link href="assets/css/flaticon-set.css?v=3.0" rel="stylesheet"/>
-    <link href="assets/css/magnific-popup.css?v=3.0" rel="stylesheet"/>
-    <link href="assets/css/owl.carousel.min.css?v=3.0" rel="stylesheet"/>
-    <link href="assets/css/owl.theme.default.min.css?v=3.0" rel="stylesheet"/>
-    <link href="assets/css/animate.css?v=3.0" rel="stylesheet"/>
-    <link href="assets/css/bootsnav.css?v=3.0" rel="stylesheet"/>
-    <link href="style.css?v=3.0" rel="stylesheet">
-    <link href="assets/css/components.css?v=3.0" rel="stylesheet">
-    <link href="assets/css/modern-security.css?v=3.0" rel="stylesheet">
-    <link href="assets/css/responsive.css?v=3.0" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rawabi Alwasit Company - شركة روابي الوسيط</title>
+    <meta name="description" content="Rawabi Alwasit Company - Leading industrial supplies and services provider in Saudi Arabia. Fabrication, maintenance, and trading services.">
+    <meta name="keywords" content="industrial supplies, fabrication, maintenance, trading, Saudi Arabia, steel, safety equipment">
     
-    <!-- Google Fonts for Arabic Support -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/logos/logo_icon.png">
     
-    <!-- ========== End Stylesheet ========== -->
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     
-    <!-- ========== Critical JavaScript ========== -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/optimization.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <style>
-        /* PROFESSIONAL NAVIGATION STYLING - INLINE STYLES FOR MAXIMUM OVERRIDE */
-        .navbar-default,
-        .navbar,
-        .bootsnav {
-            background-color: #8e9296 !important; /* Professional off-white */
-            border-bottom: 1px solid #e2e8f0 !important;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-        }
-        
-        .navbar-nav > li > a,
-        .navbar-nav > li > a span,
-        .navbar-nav > li > a .lang-text,
-        .navbar-right > li > a,
-        .navbar-right > li > a span,
-        ul.navbar-nav li a,
-        ul.navbar-nav li a span {
-            color: #1e293b !important; /* Dark gray for excellent contrast */
-            font-weight: 600 !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-            text-shadow: none !important;
-        }
-        
-                 /* Additional override for bootsnav */
-         .bootsnav .navbar-nav > li > a {
-             color: #1e293b !important; /* Dark gray for excellent contrast */
-         }
-         
-         /* PROFESSIONAL TEXT VISIBILITY FIX */
-         .lang-text,
-         p.lang-text,
-         .banner-area .lang-text,
-         .hero .lang-text {
-             color: #1e293b !important; /* Dark gray for excellent readability */
-             opacity: 1 !important;
-             visibility: visible !important;
-             font-weight: 400 !important;
-         }
-         
-         /* Professional content area styling */
-         .banner-area,
-         .hero,
-         section,
-         .about-area,
-         .info {
-             background-color: #f8fafc !important; /* Professional off-white */
-             color: #1e293b !important; /* Dark text for excellent readability */
-         }
-         
-         /* White text for dark backgrounds */
-         .text-light .lang-text,
-         .banner-area .lang-text {
-             color: #ffffff !important;
-             text-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
-         }
-         
-         /* Professional about section text styling */
-         .about-area .lang-text,
-         .about-area p.lang-text,
-         .info .lang-text,
-         .info p.lang-text {
-             color: #1e293b !important; /* Dark gray for excellent readability */
-             opacity: 1 !important;
-             visibility: visible !important;
-             font-weight: 400 !important;
-             line-height: 1.6 !important;
-         }
-         
-         /* PROFESSIONAL TEXT VISIBILITY FIX */
-         .col-lg-6.info p.lang-text,
-         .col-lg-6.info .lang-text,
-         .about-area .col-lg-6.info p.lang-text,
-         .about-area .col-lg-6.info .lang-text,
-         .about-area .col-lg-6 p.lang-text,
-         .about-area .col-lg-6 .lang-text {
-             color: #1e293b !important; /* Dark gray for excellent readability */
-             background-color: #f8fafc !important; /* Professional off-white background */
-             padding: 10px !important;
-             border-radius: 5px !important;
-             opacity: 1 !important;
-             visibility: visible !important;
-             display: block !important;
-             font-weight: 500 !important;
-             line-height: 1.7 !important;
-             text-shadow: none !important;
-             box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
-             border: 1px solid #e2e8f0 !important; /* Subtle border */
-         }
-         
-         /* PROFESSIONAL OVERRIDE FOR MAIN CSS CONFLICTING STYLES */
-         .about-area .info p,
-         .about-area .info p.lang-text,
-         .about-area .info .lang-text {
-             color: #1e293b !important; /* Dark gray for excellent readability */
-             font-size: 1.2rem !important;
-             line-height: 1.8 !important;
-             margin-bottom: 35px !important;
-             max-width: 500px !important;
-             opacity: 1 !important;
-             visibility: visible !important;
-             font-weight: 400 !important;
-         }
-         
-         /* PROFESSIONAL DROPDOWN MENU STYLING */
-         .dropdown-menu {
-             background-color: #f8fafc !important; /* Professional off-white */
-             border: 1px solid #e2e8f0 !important;
-             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-             border-radius: 8px !important;
-             padding: 8px 0 !important;
-             min-width: 300px !important; /* Increased minimum width */
-             max-width: 400px !important; /* Increased maximum width */
-             width: auto !important; /* Auto width based on content */
-             z-index: 9999 !important; /* Ensure it's on top */
-         }
-         
-         .dropdown-menu a,
-         .dropdown-menu li > a,
-         .dropdown-menu .dropdown-item,
-         .dropdown-menu li,
-         .dropdown-menu ul li a {
-             color: #1e293b !important; /* Dark gray for excellent visibility */
-             font-weight: 500 !important;
-             padding: 15px 20px !important; /* Increased padding for better spacing */
-             display: block !important;
-             text-decoration: none !important;
-             transition: all 0.3s ease !important;
-             border-bottom: 1px solid #f1f5f9 !important;
-             background-color: transparent !important;
-             opacity: 1 !important;
-             visibility: visible !important;
-             line-height: 1.4 !important; /* Ensure proper line height */
-             white-space: normal !important; /* Allow text wrapping */
-             overflow: visible !important; /* Show full text */
-             text-overflow: unset !important; /* Remove ellipsis */
-             min-height: auto !important; /* Auto height for content */
-             margin: 0 !important; /* Remove any margins */
-             position: relative !important; /* Ensure proper positioning */
-             width: 100% !important; /* Full width */
-             max-width: none !important; /* No width restrictions */
-         }
-         
-         /* Ensure all dropdown text is visible */
-         .dropdown-menu * {
-             color: #1e293b !important;
-             opacity: 1 !important;
-             visibility: visible !important;
-         }
-         
-         /* Specific fix for products dropdown text visibility */
-         .dropdown-menu .lang-text,
-         .dropdown-menu span,
-         .dropdown-menu a span,
-         .dropdown-menu li span {
-             color: #1e293b !important;
-             opacity: 1 !important;
-             visibility: visible !important;
-             display: inline !important;
-             white-space: normal !important;
-             overflow: visible !important;
-             text-overflow: unset !important;
-             width: auto !important;
-             max-width: none !important;
-         }
-         
-         /* ========== SIMPLE DROPDOWN STYLING ========== */
-         /* Clean, simple dropdown styling for products menu */
-         
-         /* ========== TEXT VISIBILITY FIXES ========== */
-         /* Fix text visibility for about section and hero features */
-         .overlay .content h4,
-         .overlay h4 {
-             color: #ffffff !important;
-             font-weight: 600 !important;
-             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
-         }
-         
-         .info h3,
-         .about-section h3 {
-             color: #1e293b !important;
-             font-weight: 600 !important;
-         }
-         
-         .info p,
-         .about-section p {
-             color: #374151 !important;
-             line-height: 1.6 !important;
-         }
-         
-         .items .item h4,
-         .feature-item h4 {
-             color: #1e293b !important;
-             font-weight: 600 !important;
-         }
-         
-         .items .item p,
-         .feature-item p {
-             color: #6b7280 !important;
-         }
-         
-         .feature-item span {
-             color: #1e293b !important;
-             font-weight: 500 !important;
-         }
-         
-         /* Additional text visibility fixes */
-         .hero-features .feature-item,
-         .hero-features .feature-item * {
-             color: #1e293b !important;
-             opacity: 1 !important;
-             visibility: visible !important;
-         }
-         
-         .about-section .info,
-         .about-section .info * {
-             color: #1e293b !important;
-             opacity: 1 !important;
-             visibility: visible !important;
-         }
-         
-         .about-section .items .item,
-         .about-section .items .item * {
-             color: #1e293b !important;
-             opacity: 1 !important;
-             visibility: visible !important;
-         }
-         
-         /* ========== HEADER TEXT VISIBILITY FIXES ========== */
-         /* Fix text visibility in top bar header */
-         .top-bar-area,
-         .top-bar-area * {
-             color: #a71a1a !important;
-             opacity: 1 !important;
-             visibility: visible !important;
-         }
-         
-         .top-bar-area .list li,
-         .top-bar-area .list li * {
-             color: #050303 !important;
-             opacity: 1 !important;
-             visibility: visible !important;
-         }
-         
-         .top-bar-area .list li a {
-             color: #180c0c !important;
-             text-decoration: none !important;
-             opacity: 1 !important;
-             visibility: visible !important;
-         }
-         
-         .top-bar-area .list li a:hover {
-             color: #04b9bf !important;
-         }
-         
-         .top-bar-area .lang-text {
-             color: #ffffff !important;
-             opacity: 1 !important;
-             visibility: visible !important;
-         }
-         
-         /* Fix dropdown positioning and layout */
-         .dropdown {
-             position: relative !important;
-         }
-         
-         .dropdown-menu {
-             position: absolute !important;
-             top: 100% !important;
-             left: 0 !important;
-             right: auto !important;
-             float: none !important;
-             clear: both !important;
-             margin: 0 !important;
-             list-style: none !important;
-         }
-         
-         /* Prevent text overlap in dropdown items */
-         .dropdown-menu li {
-             display: block !important;
-             width: 100% !important;
-             clear: both !important;
-             margin: 0 !important;
-             padding: 0 !important;
-             position: relative !important;
-         }
-         
-         .dropdown-menu a:hover,
-         .dropdown-menu li > a:hover,
-         .dropdown-menu .dropdown-item:hover,
-         .dropdown-menu li:hover,
-         .dropdown-menu ul li a:hover {
-             background-color: #f1f5f9 !important;
-             color: #1e3a8a !important;
-             padding-left: 25px !important;
-         }
-         
-         /* NAVIGATION FIXES */
-         .navbar-brand,
-         .navbar-nav > li > a {
-             cursor: pointer !important;
-             pointer-events: auto !important;
-             text-decoration: none !important;
-         }
-         
-         .navbar-brand:hover,
-         .navbar-nav > li > a:hover {
-             text-decoration: none !important;
-         }
-         
-         .navbar-nav > li > a.active {
-             color: #db9410 !important;
-             font-weight: 700 !important;
-         }
-    </style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
-<body class="lang-en">
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Language Switcher -->
-    <div class="language-switcher" role="navigation" aria-label="Language selection">
-        <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
-        <button class="lang-btn" data-lang="ar" aria-pressed="false">عربي</button>
-    </div>
-
-    <div id="cookiePopup">
-        <h4 class="lang-text" data-en="Cookie Consent" data-ar="موافقة ملفات تعريف الارتباط">Cookie Consent</h4>
-        <p class="lang-text" data-en="Our website uses cookies to provide your browsing experience and relevant information. Before continuing to use our website, you agree & accept of our Cookie Policy & Privacy" data-ar="يستخدم موقعنا ملفات تعريف الارتباط لتوفير تجربة التصفح والمعلومات ذات الصلة. قبل الاستمرار في استخدام موقعنا، فإنك توافق وتقبل سياسة ملفات تعريف الارتباط والخصوصية">Our website uses cookies to provide your browsing experience and relevant information. Before continuing to use our website, you agree & accept of our <a href="#">Cookie Policy & Privacy</a></p>
-        <button id="acceptCookie" class="lang-text" data-en="Accept" data-ar="قبول">Accept</button>
-    </div>
-
-    <!-- Preloader Start -->
-    <!--<div class="se-pre-con">
-        <div class="preloader-content">
-            <div class="spinner"></div>
-            <div class="loading-text lang-text" data-en="Loading..." data-ar="جاري التحميل...">Loading...</div>
-        </div>
-    </div>-->
-    <!-- Preloader Ends -->
-
-    <!-- Start Header Top -->
-    <div class="top-bar-area bg-dark text-light">
-        <div class="container">
-            <div class="row align-center">
-                <div class="col-lg-3 shape">
-                    <ul class="social">
-                        <li class="facebook">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li class="twitter">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li class="pinterest">
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                        </li>
-                        <li class="linkedin">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-9 info float-right text-right">
-                    <div class="info box">
-                        <ul class="list">
-                            <li>
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span class="lang-text" data-en="Saudi Arabia" data-ar="المملكة العربية السعودية">Saudi Arabia</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-envelope-open"></i>
-                                <a href="mailto:info@rawabialwasit.com">info@rawabialwasit.com</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-phone"></i>
-                                <a href="tel:+966582627405">+966 58 262 7405</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Header Top -->
-
+<body>
     <!-- Header -->
-    <header id="home">
-        <!-- Start Navigation -->
-        <nav class="navbar navbar-default navbar-sticky bootsnav">
-            <div class="container">
-                <!-- Start Header Navigation -->
-                <div class="navbar-header">
-                    <button class="navbar-toggle collapsed" data-target="#navbar-menu" data-toggle="collapse" type="button" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html">
-                        <img alt="Rawabi Alwasit Company Logo" class="logo" src="assets/img/logo.png">
-                    </a>
-                </div>
-                <!-- End Header Navigation -->
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="navbar-menu">
-                    <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
-                        <li>
-                            <a class="active" href="index.html">
-                                <span class="lang-text" data-en="Home" data-ar="الرئيسية">Home</span>
-                            </a>
+    <header class="header fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/logos/logoC.png" alt="Rawabi Alwasit Company" class="logo">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="./about-us.html">
-                                <span class="lang-text" data-en="About" data-ar="من نحن">About</span>
-                            </a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/about.html" data-en="About Us" data-ar="من نحن">About Us</a>
                         </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle smooth-menu" data-toggle="dropdown" href="#">
-                                <span class="lang-text" data-en="Products" data-ar="المنتجات">Products</span>
-                            </a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-en="Services" data-ar="الخدمات">Services</a>
                             <ul class="dropdown-menu">
-                                <li><a href="steel.html"><span class="lang-text" data-en="Steel Products" data-ar="منتجات الصلب">Steel Products</span></a></li>
-                                <li><a href="electrical.html"><span class="lang-text" data-en="Electrical Products" data-ar="المنتجات الكهربائية">Electrical Products</span></a></li>
-                                <li><a href="stainless-steel.html"><span class="lang-text" data-en="Stainless Steel Products" data-ar="منتجات الفولاذ المقاوم للصدأ">Stainless Steel Products</span></a></li>
-                                <li><a href="aluminium.html"><span class="lang-text" data-en="Aluminium Products" data-ar="منتجات الألمنيوم">Aluminium Products</span></a></li>
-                                <li><a href="safety.html"><span class="lang-text" data-en="Safety Products" data-ar="منتجات السلامة">Safety Products</span></a></li>
-                                <li><a href="mechanical.html"><span class="lang-text" data-en="Mechanical Products" data-ar="المنتجات الميكانيكية">Mechanical Products</span></a></li>
-                                <li><a href="fiber.html"><span class="lang-text" data-en="FRP Products" data-ar="منتجات FRP">FRP Products</span></a></li>
-                                <li><a href="industrial-supplies.html"><span class="lang-text" data-en="Industrial Supplies" data-ar="المستلزمات الصناعية">Industrial Supplies</span></a></li>
-                                <li><a href="fasteners.html"><span class="lang-text" data-en="Fasteners" data-ar="المثبتات">Fasteners</span></a></li>
-                                <li><a href="telecommunication.html"><span class="lang-text" data-en="Telecommunication Products" data-ar="منتجات الاتصالات">Telecommunication Products</span></a></li>
-                                <li><a href="Office-Setup.html"><span class="lang-text" data-en="Office Setup" data-ar="تجهيز المكاتب">Office Setup</span></a></li>
+                                <li><a class="dropdown-item" href="pages/mechanical.html" data-en="Mechanical" data-ar="الميكانيكية">Mechanical</a></li>
+                                <li><a class="dropdown-item" href="pages/electrical.html" data-en="Electrical" data-ar="الكهربائية">Electrical</a></li>
+                                <li><a class="dropdown-item" href="pages/construction.html" data-en="Construction & Maintenance" data-ar="البناء والصيانة">Construction & Maintenance</a></li>
+                                <li><a class="dropdown-item" href="pages/operation.html" data-en="Operation & Maintenance" data-ar="التشغيل والصيانة">Operation & Maintenance</a></li>
+                                <li><a class="dropdown-item" href="pages/manpower.html" data-en="Manpower Services" data-ar="خدمات القوى العاملة">Manpower Services</a></li>
+                                <li><a class="dropdown-item" href="pages/office-setup.html" data-en="Office Setup" data-ar="إعداد المكاتب">Office Setup</a></li>
+                                <li><a class="dropdown-item" href="pages/telecommunication.html" data-en="Telecommunication" data-ar="الاتصالات">Telecommunication</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="contact.html">
-                                <span class="lang-text" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</span>
-                            </a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-en="Products" data-ar="المنتجات">Products</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="pages/industrial-supplies.html" data-en="Industrial Supplies" data-ar="الإمدادات الصناعية">Industrial Supplies</a></li>
+                                <li><a class="dropdown-item" href="pages/steel.html" data-en="Steel" data-ar="الفولاذ">Steel</a></li>
+                                <li><a class="dropdown-item" href="pages/stainless-steel.html" data-en="Stainless Steel" data-ar="الفولاذ المقاوم للصدأ">Stainless Steel</a></li>
+                                <li><a class="dropdown-item" href="pages/aluminium.html" data-en="Aluminium" data-ar="الألمنيوم">Aluminium</a></li>
+                                <li><a class="dropdown-item" href="pages/fasteners.html" data-en="Fasteners" data-ar="المثبتات">Fasteners</a></li>
+                                <li><a class="dropdown-item" href="pages/fiber.html" data-en="Fiber" data-ar="الألياف">Fiber</a></li>
+                            </ul>
                         </li>
-                        <li class="navbar-cta">
-                            <a class="btn btn-theme effect btn-md" href="contact.html">
-                                <span class="lang-text" data-en="REQUEST A QUOTE" data-ar="اطلب عرض سعر">REQUEST A QUOTE</span>
-                            </a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-en="Safety" data-ar="السلامة">Safety</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="pages/safety.html" data-en="Safety Overview" data-ar="نظرة عامة على السلامة">Safety Overview</a></li>
+                                <li><a class="dropdown-item" href="pages/head-protection.html" data-en="Head Protection" data-ar="حماية الرأس">Head Protection</a></li>
+                                <li><a class="dropdown-item" href="pages/eye-protection.html" data-en="Eye Protection" data-ar="حماية العين">Eye Protection</a></li>
+                                <li><a class="dropdown-item" href="pages/face-shields.html" data-en="Face Shields" data-ar="واقيات الوجه">Face Shields</a></li>
+                                <li><a class="dropdown-item" href="pages/hearing-protection.html" data-en="Hearing Protection" data-ar="حماية السمع">Hearing Protection</a></li>
+                                <li><a class="dropdown-item" href="pages/hand-protection.html" data-en="Hand Protection" data-ar="حماية اليد">Hand Protection</a></li>
+                                <li><a class="dropdown-item" href="pages/fall-protection.html" data-en="Fall Protection" data-ar="حماية من السقوط">Fall Protection</a></li>
+                                <li><a class="dropdown-item" href="pages/protective-workwear.html" data-en="Protective Workwear" data-ar="ملابس العمل الواقية">Protective Workwear</a></li>
+                                <li><a class="dropdown-item" href="pages/safety-shoes.html" data-en="Safety Shoes" data-ar="أحذية السلامة">Safety Shoes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
                         </li>
                     </ul>
-                </div><!-- /.navbar-collapse -->
-            </div>
-        </nav>
-        <!-- End Navigation -->
+                    
+                    <div class="header-actions">
+                        <button class="language-toggle" onclick="toggleLanguage()">
+                            <span class="lang-en">العربية</span>
+                            <span class="lang-ar">English</span>
+                        </button>
+                        <a href="pages/contact.html" class="btn btn-primary cta-btn" data-en="Get Quote" data-ar="احصل على عرض">Get Quote</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
-    <!-- End Header -->
 
-    <!-- Start Banner -->
-    <div class="banner-area hero banner inc-content shadow shape default" id="main-content">
-        <div class="carousel slide text-light carousel-fade animate_text" 
-             data-ride="carousel" 
-             id="bootcarousel"
-             role="banner"
-             aria-label="Company banner slideshow">
-            <!-- Indicators for slides -->
-            <div class="carousel-indicator">
-                <ol class="carousel-indicators">
-                    <li class="active" data-slide-to="0" data-target="#bootcarousel"></li>
-                    <li data-slide-to="1" data-target="#bootcarousel"></li>
-                    <li data-slide-to="2" data-target="#bootcarousel"></li>
-                </ol>
-            </div>
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner carousel-zoom">
-                <div class="carousel-item active">
-                    <div class="slider-thumb bg-cover" style="background-image: url(assets/img/banner/office-banner.jpeg);"></div>
-                    <div class="box-table">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="content">
-                                            <h2 data-animation="animated slideInDown" class="lang-text" data-en="Trusted Industrial Supplier in Saudi Arabia" data-ar="مورد صناعي موثوق في المملكة العربية السعودية">Trusted Industrial Supplier in Saudi Arabia</h2>
-                                            <p data-animation="animated slideInRight" class="lang-text" data-en="We Deliver Convenient, Cost-Effective Products And Solutions." data-ar="نحن نقدم منتجات وحلول مريحة وفعالة من حيث التكلفة">We Deliver Convenient, Cost-Effective Products And Solutions.</p>
-                                            <div class="hero-features">
-                                                <div class="feature-item">
-                                                    <i class="fas fa-check-circle"></i>
-                                                    <span class="lang-text" data-en="Quality Products" data-ar="منتجات عالية الجودة">Quality Products</span>
-                                                </div>
-                                                <div class="feature-item">
-                                                    <i class="fas fa-check-circle"></i>
-                                                    <span class="lang-text" data-en="Expert Support" data-ar="دعم خبراء">Expert Support</span>
-                                                </div>
-                                                <div class="feature-item">
-                                                    <i class="fas fa-check-circle"></i>
-                                                    <span class="lang-text" data-en="Fast Delivery" data-ar="توصيل سريع">Fast Delivery</span>
-                                                </div>
-                                            </div>
-                                            <a class="btn btn-theme effect btn-md" data-animation="animated slideInUp" href="about-us.html">
-                                                <span class="lang-text" data-en="Learn More" data-ar="اعرف المزيد">Learn More</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="slider-thumb bg-cover" style="background-image: url(assets/img/banner/9.jpg);"></div>
-                    <div class="box-table">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="content">
-                                            <h2 data-animation="animated slideInDown" class="lang-text" data-en="Your Partner in Engineering Excellence" data-ar="شريكك في التميز الهندسي">Your Partner in Engineering Excellence</h2>
-                                            <p data-animation="animated slideInRight" class="lang-text" data-en="Comprehensive solutions for all your industrial needs" data-ar="حلول شاملة لجميع احتياجاتك الصناعية">Comprehensive solutions for all your industrial needs</p>
-                                            <a class="btn btn-theme effect btn-md" data-animation="animated slideInUp" href="about-us.html">
-                                                <span class="lang-text" data-en="Learn More" data-ar="اعرف المزيد">Learn More</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="slider-thumb bg-cover" style="background-image: url(assets/img/banner/17.jpg);"></div>
-                    <div class="box-table">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="content">
-                                            <h2 data-animation="animated slideInDown" class="lang-text" data-en="Quality Industrial Solutions" data-ar="حلول صناعية عالية الجودة">Quality Industrial Solutions</h2>
-                                            <p data-animation="animated slideInRight" class="lang-text" data-en="Delivering excellence in every project and partnership" data-ar="نقدم التميز في كل مشروع وشراكة">Delivering excellence in every project and partnership</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-en="Trusted Industrial Supplier in Saudi Arabia" data-ar="مورد صناعي موثوق في المملكة العربية السعودية">
+                    Trusted Industrial Supplier in Saudi Arabia
+                </h1>
+                <p class="hero-subtitle" data-en="We provide fabrication services, maintenance solutions, and act as a bridge between manufacturers and end users." data-ar="نحن نقدم خدمات التصنيع وحلول الصيانة ونعمل كجسر بين المصنعين والمستخدمين النهائيين.">
+                    We provide fabrication services, maintenance solutions, and act as a bridge between manufacturers and end users.
+                </p>
+                <div class="hero-actions">
+                    <a href="pages/about.html" class="btn btn-primary" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
+                    <a href="pages/contact.html" class="btn btn-outline" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Banner -->
+    </section>
 
-    <!-- Start About Area -->
-    <div class="about-area default-padding animate-on-scroll">
+    <!-- About Preview Section -->
+    <section class="about-preview">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="section-title text-center">
-                        <h2 class="lang-text" data-en="About Rawabi Alwasit Company" data-ar="عن شركة روابي الوسيط">About Rawabi Alwasit Company</h2>
-                        <p class="lang-text" data-en="Your Trusted Partner in Industrial Excellence" data-ar="شريكك الموثوق في التميز الصناعي">Your Trusted Partner in Industrial Excellence</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="thumb">
-                        <img src="assets/img/about/rawabihandshake.jpg" alt="Rawabi Alwasit Company - Professional Team">
-                        <div class="overlay">
-                            <div class="content">
-                                <h4 class="lang-text" data-en="25+ Years Experience" data-ar="خبرة 25+ سنة">25+ Years Experience</h4>
+                    <div class="about-content">
+                        <h2 data-en="About Rawabi Alwasit Company" data-ar="حول شركة روابي الوسيط">About Rawabi Alwasit Company</h2>
+                        <p data-en="Rawabi Alwasit Company is a professional industrial supplies and services provider specializing in fabrication, maintenance, and trading. We connect manufacturers to end users, acting as a trusted bridge in the supply chain." data-ar="شركة روابي الوسيط هي مزود محترف للإمدادات والخدمات الصناعية متخصص في التصنيع والصيانة والتجارة. نحن نربط المصنعين بالمستخدمين النهائيين، ونعمل كجسر موثوق في سلسلة التوريد.">
+                            Rawabi Alwasit Company is a professional industrial supplies and services provider specializing in fabrication, maintenance, and trading. We connect manufacturers to end users, acting as a trusted bridge in the supply chain.
+                        </p>
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span data-en="Professional Fabrication Services" data-ar="خدمات التصنيع المهنية">Professional Fabrication Services</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span data-en="Comprehensive Maintenance Solutions" data-ar="حلول الصيانة الشاملة">Comprehensive Maintenance Solutions</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span data-en="Trusted Trading Partner" data-ar="شريك تجاري موثوق">Trusted Trading Partner</span>
                             </div>
                         </div>
+                        <a href="pages/about.html" class="btn btn-primary" data-en="Read More" data-ar="اقرأ المزيد">Read More</a>
                     </div>
                 </div>
-                <div class="col-lg-6 info">
-                    <h3 class="lang-text" data-en="Welcome to Rawabi Alwasit Company" data-ar="مرحباً بكم في شركة روابي الوسيط">Welcome to Rawabi Alwasit Company</h3>
-                    <p class="lang-text" data-en="Rawabi Alwasit Company is a leading trading and contracting company based in Saudi Arabia, specializing in engineering, trading, and technology solutions. We serve various industries with high-quality products and exceptional service." data-ar="شركة روابي الوسيط هي شركة رائدة في التجارة والمقاولات مقرها المملكة العربية السعودية، متخصصة في الحلول الهندسية والتجارية والتكنولوجية. نحن نخدم مختلف الصناعات بمنتجات عالية الجودة وخدمة استثنائية">Rawabi Alwasit Company is a leading trading and contracting company based in Saudi Arabia, specializing in engineering, trading, and technology solutions. We serve various industries with high-quality products and exceptional service.</p>
-                    <div class="items">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="item">
-                                    <div class="icon">
-                                        <i class="fas fa-cogs"></i>
-                                    </div>
-                                    <div class="info">
-                                        <h4 class="lang-text" data-en="Engineering Solutions" data-ar="الحلول الهندسية">Engineering Solutions</h4>
-                                        <p class="lang-text" data-en="Comprehensive engineering services" data-ar="خدمات هندسية شاملة">Comprehensive engineering services</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="item">
-                                    <div class="icon">
-                                        <i class="fas fa-shipping-fast"></i>
-                                    </div>
-                                    <div class="info">
-                                        <h4 class="lang-text" data-en="Fast Delivery" data-ar="توصيل سريع">Fast Delivery</h4>
-                                        <p class="lang-text" data-en="Quick and reliable shipping" data-ar="شحن سريع وموثوق">Quick and reliable shipping</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="assets/img/products/industrial-supplies/industry.jpg" alt="Industrial Services" class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End About Area -->
+    </section>
 
-    <!-- Start Services Area -->
-    <div class="services-area default-padding bg-gray animate-on-scroll">
+    <!-- Services Section -->
+    <section class="services-preview">
         <div class="container">
+            <div class="section-header text-center">
+                <h2 data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
+                <p data-en="Comprehensive industrial services tailored to your needs" data-ar="خدمات صناعية شاملة مصممة خصيصاً لاحتياجاتك">Comprehensive industrial services tailored to your needs</p>
+            </div>
             <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="section-title text-center">
-                        <h2 class="lang-text" data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
-                        <p class="lang-text" data-en="We provide comprehensive solutions for all your industrial needs" data-ar="نحن نقدم حلول شاملة لجميع احتياجاتك الصناعية">We provide comprehensive solutions for all your industrial needs</p>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 data-en="Mechanical Services" data-ar="الخدمات الميكانيكية">Mechanical Services</h3>
+                        <p data-en="Professional mechanical engineering solutions and equipment maintenance" data-ar="حلول الهندسة الميكانيكية المهنية وصيانة المعدات">Professional mechanical engineering solutions and equipment maintenance</p>
+                        <a href="pages/mechanical.html" class="service-link" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
                     </div>
                 </div>
-            </div>
-            <div class="services-box text-center">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-item">
-                            <div class="service-image">
-                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Industrial tools and pipes stack for supplies service">
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-industry"></i>
-                            </div>
-                            <h4 class="lang-text" data-en="Industrial Supplies" data-ar="المستلزمات الصناعية">Industrial Supplies</h4>
-                            <p class="lang-text" data-en="Premium industrial tools and materials sourced globally for operational excellence" data-ar="أدوات ومواد صناعية متميزة مصدرة عالمياً للتميز التشغيلي">Premium industrial tools and materials sourced globally for operational excellence</p>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
                         </div>
+                        <h3 data-en="Electrical Services" data-ar="الخدمات الكهربائية">Electrical Services</h3>
+                        <p data-en="Electrical system design, installation, and maintenance services" data-ar="تصميم الأنظمة الكهربائية وخدمات التركيب والصيانة">Electrical system design, installation, and maintenance services</p>
+                        <a href="pages/electrical.html" class="service-link" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-item">
-                            <div class="service-image">
-                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Toolbox and wrench for technical support">
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-tools"></i>
-                            </div>
-                            <h4 class="lang-text" data-en="Technical Support" data-ar="الدعم الفني">Technical Support</h4>
-                            <p class="lang-text" data-en="Expert troubleshooting and consultation for seamless industrial workflows" data-ar="حل المشاكل والخبرة الاستشارية لسير العمل الصناعي السلس">Expert troubleshooting and consultation for seamless industrial workflows</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hard-hat"></i>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-item">
-                            <div class="service-image">
-                                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Construction equipment and blueprints for contracting">
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h4 class="lang-text" data-en="Contracting" data-ar="المقاولات">Contracting</h4>
-                            <p class="lang-text" data-en="End-to-end project management and installation for industrial projects" data-ar="إدارة المشاريع والتركيب الشامل للمشاريع الصناعية">End-to-end project management and installation for industrial projects</p>
-                        </div>
+                        <h3 data-en="Construction & Maintenance" data-ar="البناء والصيانة">Construction & Maintenance</h3>
+                        <p data-en="Complete construction project management and building maintenance services" data-ar="إدارة مشاريع البناء الكاملة وخدمات صيانة المباني">Complete construction project management and building maintenance services</p>
+                        <a href="pages/construction.html" class="service-link" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Services Area -->
+    </section>
 
-    <!-- Start Statistics Section -->
-    <div class="statistics-area default-padding bg-dark text-light">
+    <!-- Products Section -->
+    <section class="products-preview">
         <div class="container">
+            <div class="section-header text-center">
+                <h2 data-en="Our Products" data-ar="منتجاتنا">Our Products</h2>
+                <p data-en="High-quality industrial supplies and materials" data-ar="إمدادات ومواد صناعية عالية الجودة">High-quality industrial supplies and materials</p>
+            </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item text-center">
-                        <div class="icon">
-                            <i class="fas fa-users"></i>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/products/steel/s-h-beam.jpg" alt="Steel Products" class="img-fluid">
                         </div>
-                        <h3 class="counter">500+</h3>
-                        <p class="lang-text" data-en="Happy Clients" data-ar="عميل سعيد">Happy Clients</p>
+                        <div class="product-content">
+                            <h3 data-en="Steel Products" data-ar="منتجات الفولاذ">Steel Products</h3>
+                            <p data-en="High-grade steel materials and fabrication" data-ar="مواد فولاذية عالية الجودة والتصنيع">High-grade steel materials and fabrication</p>
+                            <a href="pages/steel.html" class="product-link" data-en="View Products" data-ar="عرض المنتجات">View Products</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item text-center">
-                        <div class="icon">
-                            <i class="fas fa-project-diagram"></i>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/products/stainless-steel/stainless-steel.jpg" alt="Stainless Steel" class="img-fluid">
                         </div>
-                        <h3 class="counter">1000+</h3>
-                        <p class="lang-text" data-en="Projects Completed" data-ar="مشروع مكتمل">Projects Completed</p>
+                        <div class="product-content">
+                            <h3 data-en="Stainless Steel" data-ar="الفولاذ المقاوم للصدأ">Stainless Steel</h3>
+                            <p data-en="Corrosion-resistant stainless steel products" data-ar="منتجات الفولاذ المقاوم للصدأ والتآكل">Corrosion-resistant stainless steel products</p>
+                            <a href="pages/stainless-steel.html" class="product-link" data-en="View Products" data-ar="عرض المنتجات">View Products</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item text-center">
-                        <div class="icon">
-                            <i class="fas fa-award"></i>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/products/safety/safety.jpg" alt="Safety Equipment" class="img-fluid">
                         </div>
-                        <h3 class="counter">25+</h3>
-                        <p class="lang-text" data-en="Years Experience" data-ar="سنة خبرة">Years Experience</p>
+                        <div class="product-content">
+                            <h3 data-en="Safety Equipment" data-ar="معدات السلامة">Safety Equipment</h3>
+                            <p data-en="Comprehensive workplace safety solutions" data-ar="حلول السلامة الشاملة لمكان العمل">Comprehensive workplace safety solutions</p>
+                            <a href="pages/safety.html" class="product-link" data-en="View Products" data-ar="عرض المنتجات">View Products</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item text-center">
-                        <div class="icon">
-                            <i class="fas fa-globe"></i>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/products/aluminium/aluminium.jpg" alt="Aluminium Products" class="img-fluid">
                         </div>
-                        <h3 class="counter">50+</h3>
-                        <p class="lang-text" data-en="Countries Served" data-ar="دولة نخدمها">Countries Served</p>
+                        <div class="product-content">
+                            <h3 data-en="Aluminium Products" data-ar="منتجات الألمنيوم">Aluminium Products</h3>
+                            <p data-en="Lightweight aluminum solutions and fabrication" data-ar="حلول الألمنيوم خفيفة الوزن والتصنيع">Lightweight aluminum solutions and fabrication</p>
+                            <a href="pages/aluminium.html" class="product-link" data-en="View Products" data-ar="عرض المنتجات">View Products</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Statistics Section -->
+    </section>
 
-    <!-- Start Call to Action Section -->
-    <div class="cta-area default-padding">
+    <!-- Contact CTA Section -->
+    <section class="contact-cta">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <div class="cta-content">
-                        <h2 class="lang-text" data-en="Ready to Start Your Project?" data-ar="هل أنت مستعد لبدء مشروعك؟">Ready to Start Your Project?</h2>
-                        <p class="lang-text" data-en="Get in touch with us today and let's discuss how we can help you achieve your industrial goals." data-ar="تواصل معنا اليوم ودعنا نناقش كيف يمكننا مساعدتك في تحقيق أهدافك الصناعية">Get in touch with us today and let's discuss how we can help you achieve your industrial goals.</p>
-                    </div>
+                    <h2 data-en="Ready to Get Started?" data-ar="هل أنت مستعد للبدء؟">Ready to Get Started?</h2>
+                    <p data-en="Contact us today for professional industrial solutions tailored to your needs." data-ar="اتصل بنا اليوم للحصول على حلول صناعية مهنية مصممة خصيصاً لاحتياجاتك.">Contact us today for professional industrial solutions tailored to your needs.</p>
                 </div>
-                <div class="col-lg-4 text-lg-end">
-                    <div class="cta-buttons">
-                        <a href="about-us.html" class="btn btn-outline-light btn-lg">
-                            <span class="lang-text" data-en="Learn More" data-ar="اعرف المزيد">Learn More</span>
-                        </a>
-                    </div>
+                <div class="col-lg-4 text-end">
+                    <a href="pages/contact.html" class="btn btn-primary btn-lg" data-en="Contact Us Now" data-ar="اتصل بنا الآن">Contact Us Now</a>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Call to Action Section -->
+    </section>
 
-    <!-- Start Footer -->
-    <footer class="bg-dark text-light">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="f-item about">
-                                            <img src="assets/img/logo.png" alt="Rawabi Alwasit Company">
-                    <p class="lang-text" data-en="Rawabi Alwasit Company is your trusted partner for all industrial and contracting needs in Saudi Arabia." data-ar="شركة روابي الوسيط هي شريكك الموثوق لجميع احتياجاتك الصناعية والمقاولات في المملكة العربية السعودية">Rawabi Alwasit Company is your trusted partner for all industrial and contracting needs in Saudi Arabia.</p>
-                        <div class="address">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span class="lang-text" data-en="Prince Muhammad Ibn Fahad Rd, Ash Shati Ash Sharqi Dist., Dammam, Saudi Arabia" data-ar="طريق الأمير محمد بن فهد، حي الشاطئ الشرقي، الدمام، المملكة العربية السعودية">Prince Muhammad Ibn Fahad Rd, Ash Shati Ash Sharqi Dist., Dammam, Saudi Arabia</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-phone"></i>
-                                    <a href="tel:+966582627405">+966 58 262 7405</a>
-                                </li>
-                                <li>
-                                    <i class="fas fa-envelope"></i>
-                                    <a href="mailto:info@rawabialwasit.com">info@rawabialwasit.com</a>
-                                </li>
-                            </ul>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <img src="assets/img/logos/logoC.png" alt="Rawabi Alwasit Company" class="footer-logo">
+                        <p data-en="Professional industrial supplies and services provider in Saudi Arabia. We specialize in fabrication, maintenance, and trading services." data-ar="مزود محترف للإمدادات والخدمات الصناعية في المملكة العربية السعودية. نحن متخصصون في خدمات التصنيع والصيانة والتجارة.">
+                            Professional industrial supplies and services provider in Saudi Arabia. We specialize in fabrication, maintenance, and trading services.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Services" data-ar="الخدمات">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="pages/mechanical.html" data-en="Mechanical" data-ar="الميكانيكية">Mechanical</a></li>
+                            <li><a href="pages/electrical.html" data-en="Electrical" data-ar="الكهربائية">Electrical</a></li>
+                            <li><a href="pages/construction.html" data-en="Construction" data-ar="البناء">Construction</a></li>
+                            <li><a href="pages/manpower.html" data-en="Manpower" data-ar="القوى العاملة">Manpower</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Products" data-ar="المنتجات">Products</h4>
+                        <ul class="footer-links">
+                            <li><a href="pages/steel.html" data-en="Steel" data-ar="الفولاذ">Steel</a></li>
+                            <li><a href="pages/stainless-steel.html" data-en="Stainless Steel" data-ar="الفولاذ المقاوم للصدأ">Stainless Steel</a></li>
+                            <li><a href="pages/safety.html" data-en="Safety Equipment" data-ar="معدات السلامة">Safety Equipment</a></li>
+                            <li><a href="pages/aluminium.html" data-en="Aluminium" data-ar="الألمنيوم">Aluminium</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Prince Muhammad Ibn Fahad Rd, Ash Shati Ash Sharqi Dist., Dammam, Saudi Arabia" data-ar="طريق الأمير محمد بن فهد، حي الشاطئ الشرقي، الدمام، المملكة العربية السعودية">Prince Muhammad Ibn Fahad Rd, Ash Shati Ash Sharqi Dist., Dammam, Saudi Arabia</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+966 58 262 7405</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@rawabialwasit.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <span data-en="8 AM to 5 PM, Sunday to Thursday" data-ar="8 صباحاً إلى 5 مساءً، الأحد إلى الخميس">8 AM to 5 PM, Sunday to Thursday</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <div class="f-item link">
-                        <h4 class="lang-text" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
-                        <ul>
-                            <li><a href="about-us.html"><span class="lang-text" data-en="About Us" data-ar="من نحن">About Us</span></a></li>
-                            <li><a href="services.html"><span class="lang-text" data-en="Services" data-ar="الخدمات">Services</span></a></li>
-                            <li><a href="contact.html"><span class="lang-text" data-en="Contact" data-ar="اتصل بنا">Contact</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="f-item link">
-                        <h4 class="lang-text" data-en="Products" data-ar="المنتجات">Products</h4>
-                        <ul>
-                            <li><a href="steel.html"><span class="lang-text" data-en="Steel Products" data-ar="منتجات الصلب">Steel Products</span></a></li>
-                            <li><a href="electrical.html"><span class="lang-text" data-en="Electrical" data-ar="كهربائي">Electrical</span></a></li>
-                            <li><a href="safety.html"><span class="lang-text" data-en="Safety Equipment" data-ar="معدات السلامة">Safety Equipment</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="f-item newsletter">
-                        <h4 class="lang-text" data-en="Newsletter" data-ar="النشرة الإخبارية">Newsletter</h4>
-                        <p class="lang-text" data-en="Subscribe to our newsletter for updates" data-ar="اشترك في نشرتنا الإخبارية للحصول على التحديثات">Subscribe to our newsletter for updates</p>
-                        <form action="#" method="POST">
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Enter your email">
-                                <div class="input-group-append">
-                                    <button class="btn btn-theme" type="submit">
-                                        <i class="fas fa-paper-plane"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class="bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <p>&copy; 2024 Rawabi Alwasit Company. <span class="lang-text" data-en="All rights reserved." data-ar="جميع الحقوق محفوظة">All rights reserved.</span></p>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p data-en="© 2024 Rawabi Alwasit Company. All rights reserved." data-ar="© 2024 شركة روابي الوسيط. جميع الحقوق محفوظة.">&copy; 2024 Rawabi Alwasit Company. All rights reserved.</p>
                     </div>
-                    <div class="col-lg-6 text-right">
-                        <ul>
-                            <li><a href="#"><span class="lang-text" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</span></a></li>
-                            <li><a href="#"><span class="lang-text" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</span></a></li>
-                        </ul>
+                    <div class="col-md-6 text-end">
+                        <a href="pages/privacy-policy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- End Footer -->
 
-    <!-- jQuery Frameworks -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.appear.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/modernizr.custom.13711.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/progress-bar.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/count-to.js"></script>
-    <script src="assets/js/bootsnav.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/modern-app.js"></script>
-
-    <!-- Navigation Fix Script -->
-    <script>
-        $(document).ready(function() {
-            // Ensure home button and navbar brand work properly
-            $('.navbar-brand, .navbar-nav > li > a[href="index.html"]').on('click', function(e) {
-                // Allow normal navigation
-                console.log('Navigation clicked:', this.href);
-                return true;
-            });
-            
-            // Fix for bootsnav interference
-            $('.navbar-nav > li > a').off('click.bootsnav').on('click', function(e) {
-                if (this.href && this.href !== '#' && !this.href.includes('javascript:')) {
-                    // Allow normal navigation for actual links
-                    return true;
-                }
-            });
-            
-            // Ensure mobile menu closes when clicking home
-            $('.navbar-nav > li > a[href="index.html"]').on('click', function() {
-                if ($(window).width() < 768) {
-                    $('.navbar-collapse').removeClass('in');
-                    $('.navbar-toggle').removeClass('active');
-                }
-            });
-            
-            // ========== SIMPLE DROPDOWN FIXES ==========
-            // Simple dropdown functionality for products menu
-        });
-    </script>
-
-    <!-- Language Switcher Script -->
-    <script>
-        $(document).ready(function() {
-            // Language switching functionality
-            $('.lang-btn').click(function() {
-                const lang = $(this).data('lang');
-                $('.lang-btn').removeClass('active');
-                $(this).addClass('active');
-                
-                if (lang === 'ar') {
-                    $('html').attr('dir', 'rtl').attr('lang', 'ar');
-                    $('body').removeClass('lang-en').addClass('lang-ar');
-                } else {
-                    $('html').attr('dir', 'ltr').attr('lang', 'en');
-                    $('body').removeClass('lang-ar').addClass('lang-en');
-                }
-                
-                // Update all language-specific text
-                $('.lang-text').each(function() {
-                    const text = $(this).data(lang);
-                    if (text) {
-                        $(this).text(text);
-                    }
-                });
-            });
-
-            // Preloader - Enhanced with multiple triggers
-            function hidePreloader() {
-                // $('.se-pre-con').fadeOut('slow'); // Preloader disabled
-            }
-            
-            // Hide preloader when page is fully loaded
-            $(window).on('load', hidePreloader);
-            
-            // Fallback: Hide preloader after 2 seconds even if load event doesn't fire
-            setTimeout(hidePreloader, 2000);
-            
-            // Also hide when DOM is ready (as backup)
-            $(document).ready(function() {
-                setTimeout(hidePreloader, 1000);
-            });
-
-            // Cookie consent
-            $('#acceptCookie').click(function() {
-                $('#cookiePopup').fadeOut();
-                localStorage.setItem('cookieAccepted', 'true');
-            });
-
-            if (localStorage.getItem('cookieAccepted')) {
-                $('#cookiePopup').hide();
-            }
-        });
-    </script>
 </body>
 </html>
+

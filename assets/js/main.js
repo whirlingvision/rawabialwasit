@@ -1,501 +1,572 @@
-/* ===================================================================
+// Rawabi Alwasit Company - Main JavaScript
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all components
+    initializeNavigation();
+    initializeLanguageToggle();
+    initializeScrollEffects();
+    initializeAnimations();
+    initializeMobileMenu();
+    initializeDropdowns();
+    initializeFormValidation();
+});
+
+// Navigation functionality
+function initializeNavigation() {
+    const header = document.querySelector('.header');
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    Author          : Valid Theme (Adapted for Rawabi Al Wasit)
-    Template Name   : Rawabi Al Wasit - Bilingual Website
-    Version         : 2.0
-    
-* ================================================================= */
-
-(function($) {
-    "use strict";
-
-    $(document).ready(function () {
-
-        /* ==================================================
-            # Preloader - Handled by inline script in HTML
-         ===============================================*/
-
-        /* ==================================================
-            # Wow Init
-         ===============================================*/
-        if (typeof WOW !== 'undefined') {
-            var wow = new WOW({
-                boxClass: 'wow',
-                animateClass: 'animated',
-                offset: 0,
-                mobile: true,
-                live: true
-            });
-            wow.init();
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
+        } else {
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
         }
-
-        /* ==================================================
-            # Banner Animation
-        ===============================================*/
-        function doAnimations(elems) {
-            var animEndEv = 'webkitAnimationEnd animationend';
-            elems.each(function() {
-                var $this = $(this),
-                    $animationType = $this.data('animation');
-                $this.addClass($animationType).one(animEndEv, function() {
-                    $this.removeClass($animationType);
+    });
+    
+    // Active navigation highlighting
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
-            });
-        }
+            }
+        });
+    });
+}
 
-        // Variables on page load
-        var $immortalCarousel = $('.animate_text'),
-            $firstAnimatingElems = $immortalCarousel.find('.item:first').find("[data-animation ^= 'animated']");
+// Language toggle functionality
+function initializeLanguageToggle() {
+    const languageToggle = document.querySelector('.language-toggle');
+    const html = document.documentElement;
+    
+    // Get current language from localStorage or default to English
+    let currentLang = localStorage.getItem('language') || 'en';
+    setLanguage(currentLang);
+    
+    if (languageToggle) {
+        languageToggle.addEventListener('click', function() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            setLanguage(currentLang);
+            localStorage.setItem('language', currentLang);
+        });
+    }
+    
+    function setLanguage(lang) {
+        if (lang === 'ar') {
+            html.setAttribute('dir', 'rtl');
+            html.setAttribute('lang', 'ar');
+            updateTextContent('ar');
+        } else {
+            html.setAttribute('dir', 'ltr');
+            html.setAttribute('lang', 'en');
+            updateTextContent('en');
+        }
+    }
+    
+    function updateTextContent(lang) {
+        const elements = document.querySelectorAll('[data-en][data-ar]');
+        elements.forEach(element => {
+            const text = element.getAttribute(`data-${lang}`);
+            if (text) {
+                element.textContent = text;
+            }
+        });
+    }
+}
+
+// Scroll effects and animations
+function initializeScrollEffects() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+                
+                // Animate counters if present
+                const counters = entry.target.querySelectorAll('.counter');
+                counters.forEach(counter => {
+                    animateCounter(counter);
+                });
+            }
+        });
+    }, observerOptions);
+    
+    // Observe sections for animation
+    const sections = document.querySelectorAll('.section, .service-card, .product-card');
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+}
+
+// Counter animation
+function animateCounter(counter) {
+    const target = parseInt(counter.getAttribute('data-target') || counter.textContent);
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+            counter.textContent = target;
+            clearInterval(timer);
+        } else {
+            counter.textContent = Math.floor(current);
+        }
+    }, 16);
+}
+
+// Initialize animations
+function initializeAnimations() {
+    // Add hover effects to cards
+    const cards = document.querySelectorAll('.service-card, .product-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
         
-        // Initialize carousel if it exists
-        if ($immortalCarousel.length && typeof $.fn.carousel !== 'undefined') {
-            $immortalCarousel.carousel();
-            // Animate captions in first slide on page load
-            doAnimations($firstAnimatingElems);
-            // Other slides to be animated on carousel slide event
-            $immortalCarousel.on('slide.bs.carousel', function(e) {
-                var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
-                doAnimations($animatingElems);
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Button hover effects
+    const buttons = document.querySelectorAll('.btn-primary');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+}
+
+// Mobile menu functionality
+function initializeMobileMenu() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    if (navbarToggler && navbarCollapse) {
+        navbarToggler.addEventListener('click', function() {
+            navbarCollapse.classList.toggle('show');
+            
+            // Animate hamburger icon
+            this.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = navbarCollapse.querySelectorAll('.nav-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navbarCollapse.classList.remove('show');
+                navbarToggler.classList.remove('active');
             });
-        }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+                navbarCollapse.classList.remove('show');
+                navbarToggler.classList.remove('active');
+            }
+        });
+    }
+}
 
-        /* ==================================================
-            # imagesLoaded active
-        ===============================================*/
-        if ($('#portfolio-grid, .blog-masonry').length && typeof $.fn.imagesLoaded !== 'undefined') {
-            $('#portfolio-grid,.blog-masonry').imagesLoaded(function() {
-
-                /* Filter menu */
-                $('.mix-item-menu').on('click', 'button', function() {
-                    var filterValue = $(this).attr('data-filter');
-                    if ($grid && typeof $.fn.isotope !== 'undefined') {
-                        $grid.isotope({
-                            filter: filterValue
-                        });
-                    }
-                });
-
-                /* filter menu active class  */
-                $('.mix-item-menu button').on('click', function(event) {
-                    $(this).siblings('.active').removeClass('active');
-                    $(this).addClass('active');
-                    event.preventDefault();
-                });
-
-                /* Filter active */
-                if (typeof $.fn.isotope !== 'undefined') {
-                    var $grid = $('#portfolio-grid').isotope({
-                        itemSelector: '.pf-item',
-                        percentPosition: true,
-                        masonry: {
-                            columnWidth: '.pf-item',
-                        }
-                    });
-
-                    /* Filter active */
-                    $('.blog-masonry').isotope({
-                        itemSelector: '.blog-item',
-                        percentPosition: true,
-                        masonry: {
-                            columnWidth: '.blog-item',
-                        }
-                    });
-                }
-            });
-        }
-
-        /* ==================================================
-            # Fun Factor Init
-        ===============================================*/
-        if ($('.timer').length && typeof $.fn.countTo !== 'undefined') {
-            $('.timer').countTo();
-        }
-
-        /* ==================================================
-            # Magnific popup init
-         ===============================================*/
-        if ($.fn.magnificPopup) {
-            $(".popup-link").magnificPopup({
-                type: 'image'
-            });
-
-            $(".popup-gallery").magnificPopup({
-                type: 'image',
-                gallery: {
-                    enabled: true
-                }
-            });
-
-            $(".popup-youtube, .popup-vimeo, .popup-gmaps").magnificPopup({
-                type: "iframe",
-                mainClass: "mfp-fade",
-                removalDelay: 160,
-                preloader: false,
-                fixedContentPos: false
-            });
-
-            $('.magnific-mix-gallery').each(function() {
-                var $container = $(this);
-                var $imageLinks = $container.find('.item');
-
-                var items = [];
-                $imageLinks.each(function() {
-                    var $item = $(this);
-                    var type = 'image';
-                    if ($item.hasClass('magnific-iframe')) {
-                        type = 'iframe';
-                    }
-                    var magItem = {
-                        src: $item.attr('href'),
-                        type: type
-                    };
-                    magItem.title = $item.data('title');
-                    items.push(magItem);
-                });
-
-                $imageLinks.magnificPopup({
-                    mainClass: 'mfp-fade',
-                    items: items,
-                    gallery: {
-                        enabled: true,
-                        tPrev: $(this).data('prev-text'),
-                        tNext: $(this).data('next-text')
-                    },
-                    type: 'image',
-                    callbacks: {
-                        beforeOpen: function() {
-                            var index = $imageLinks.index(this.st.el);
-                            if (-1 !== index) {
-                                this.goTo(index);
+// Dropdown functionality with improved stability
+function initializeDropdowns() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    let activeDropdown = null;
+    let dropdownTimeout = null;
+    
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        if (toggle && menu) {
+            // Desktop behavior
+            if (window.innerWidth >= 992) {
+                // Show dropdown on hover with delay
+                dropdown.addEventListener('mouseenter', function() {
+                    clearTimeout(dropdownTimeout);
+                    
+                    // Close other dropdowns
+                    dropdowns.forEach(d => {
+                        if (d !== dropdown) {
+                            const m = d.querySelector('.dropdown-menu');
+                            if (m) {
+                                m.style.display = 'none';
+                                m.style.opacity = '0';
+                                m.style.transform = 'translateY(-10px)';
                             }
                         }
-                    }
+                    });
+                    
+                    // Show current dropdown
+                    menu.style.display = 'block';
+                    setTimeout(() => {
+                        menu.style.opacity = '1';
+                        menu.style.transform = 'translateY(0)';
+                    }, 10);
+                    
+                    activeDropdown = dropdown;
                 });
-            });
-        }
-
-        /* ==================================================
-            # Services Carousel
-         ===============================================*/
-        if ($.fn.owlCarousel && $('.services-carousel').length) {
-            $('.services-carousel').owlCarousel({
-                loop: false,
-                margin: 30,
-                nav: false,
-                navText: [
-                    "<i class='fa fa-angle-left'></i>",
-                    "<i class='fa fa-angle-right'></i>"
-                ],
-                dots: true,
-                autoplay: false,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    800: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 3
-                    }
-                }
-            });
-        }
-
-        /* ==================================================
-            # Testimonials Carousel
-         ===============================================*/
-        if ($.fn.owlCarousel && $('.testimonials-carousel').length) {
-            $('.testimonials-carousel').owlCarousel({
-                loop: true,
-                margin: 30,
-                nav: false,
-                navText: [
-                    "<i class='fa fa-angle-left'></i>",
-                    "<i class='fa fa-angle-right'></i>"
-                ],
-                dots: true,
-                autoplay: true,
-                autoplayTimeout: 5000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    768: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 3
-                    }
-                }
-            });
-        }
-
-        /* ==================================================
-            # Team Carousel
-         ===============================================*/
-        if ($.fn.owlCarousel && $('.team-carousel').length) {
-            $('.team-carousel').owlCarousel({
-                loop: true,
-                margin: 30,
-                nav: false,
-                navText: [
-                    "<i class='fa fa-angle-left'></i>",
-                    "<i class='fa fa-angle-right'></i>"
-                ],
-                dots: true,
-                autoplay: true,
-                autoplayTimeout: 5000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    768: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 4
-                    }
-                }
-            });
-        }
-
-        /* ==================================================
-            # Blog Carousel
-         ===============================================*/
-        if ($.fn.owlCarousel && $('.blog-carousel').length) {
-            $('.blog-carousel').owlCarousel({
-                loop: true,
-                margin: 30,
-                nav: false,
-                navText: [
-                    "<i class='fa fa-angle-left'></i>",
-                    "<i class='fa fa-angle-right'></i>"
-                ],
-                dots: true,
-                autoplay: true,
-                autoplayTimeout: 5000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    768: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 3
-                    }
-                }
-            });
-        }
-
-        /* ==================================================
-            # Smooth Scrolling
-         ===============================================*/
-        $('a[href*="#"]:not([href="#"])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html, body').animate({
-                        scrollTop: target.offset().top - 80
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-
-        /* ==================================================
-            # Navbar Scroll Effect
-         ===============================================*/
-        $(window).scroll(function() {
-            if ($(window).scrollTop() > 50) {
-                $('.navbar-default').addClass('navbar-scrolled');
-            } else {
-                $('.navbar-default').removeClass('navbar-scrolled');
-            }
-        });
-
-        /* ==================================================
-            # Back to Top Button
-         ===============================================*/
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 200) {
-                $('.back-to-top').fadeIn();
-            } else {
-                $('.back-to-top').fadeOut();
-            }
-        });
-
-        $('.back-to-top').click(function() {
-            $('html, body').animate({scrollTop: 0}, 800);
-            return false;
-        });
-
-        /* ==================================================
-            # Cookie Consent
-         ===============================================*/
-        $('#acceptCookie').click(function() {
-            $('#cookiePopup').fadeOut();
-            localStorage.setItem('cookieAccepted', 'true');
-        });
-
-        if (localStorage.getItem('cookieAccepted')) {
-            $('#cookiePopup').hide();
-        }
-
-        /* ==================================================
-            # Language Switcher - Enhanced Translation System
-         ===============================================*/
-        
-        // Language switching function
-        function switchLanguage(lang) {
-            console.log('Switching to language:', lang);
-            
-            // Update button states
-            $('.lang-btn, .lang-btn-inline').removeClass('active');
-            $('.lang-btn[data-lang="' + lang + '"], .lang-btn-inline[data-lang="' + lang + '"]').addClass('active');
-            
-            // Update HTML attributes
-            if (lang === 'ar') {
-                $('html').attr('dir', 'rtl').attr('lang', 'ar');
-                $('body').removeClass('lang-en').addClass('lang-ar');
-                document.documentElement.setAttribute('dir', 'rtl');
-                document.documentElement.setAttribute('lang', 'ar');
-                console.log('Applied RTL layout');
-            } else {
-                $('html').attr('dir', 'ltr').attr('lang', 'en');
-                $('body').removeClass('lang-ar').addClass('lang-en');
-                document.documentElement.setAttribute('dir', 'ltr');
-                document.documentElement.setAttribute('lang', 'en');
-                console.log('Applied LTR layout');
-            }
-            
-            // Update all language-specific text
-            let translatedCount = 0;
-            $('.lang-text').each(function() {
-                const $element = $(this);
-                const text = $element.data(lang);
-                if (text) {
-                    // Handle different types of content
-                    if ($element.is('input[type="text"], input[type="email"], input[type="tel"], textarea')) {
-                        $element.attr('placeholder', text);
-                    } else if ($element.is('input[type="submit"], button')) {
-                        $element.val(text);
-                    } else {
-                        $element.text(text);
-                    }
-                    translatedCount++;
-                }
-            });
-            
-            // Update page title
-            const pageTitle = $('title').data(lang);
-            if (pageTitle) {
-                $('title').text(pageTitle);
-                console.log('Updated page title to:', pageTitle);
-            }
-            
-            // Save language preference
-            localStorage.setItem('selectedLanguage', lang);
-            
-            console.log('Language switched to:', lang, '- Translated', translatedCount, 'elements');
-        }
-        
-        // Language switcher click handler
-        $('.lang-btn, .lang-btn-inline').click(function(e) {
-            e.preventDefault();
-            const lang = $(this).data('lang');
-            switchLanguage(lang);
-        });
-        
-        // Load saved language preference on page load
-        const savedLang = localStorage.getItem('selectedLanguage') || 'en';
-        console.log('Loading saved language:', savedLang);
-        switchLanguage(savedLang);
-
-        /* ==================================================
-            # Contact Form
-         ===============================================*/
-        $('.contact-form').submit(function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            
-            // Show success message
-            alert('Thank you for your message! We will get back to you soon.');
-            
-            // Reset form
-            this.reset();
-        });
-
-        /* ==================================================
-            # Newsletter Form
-         ===============================================*/
-        $('.newsletter-form').submit(function(e) {
-            e.preventDefault();
-            
-            // Get email
-            const email = $(this).find('input[type="email"]').val();
-            
-            if (email) {
-                alert('Thank you for subscribing to our newsletter!');
-                $(this).find('input[type="email"]').val('');
-            }
-        });
-
-        /* ==================================================
-            # Navigation Menu
-         ===============================================*/
-        // Mobile menu toggle
-        $('.navbar-toggle').click(function() {
-            $(this).toggleClass('active');
-            $('.navbar-collapse').toggleClass('in');
-        });
-
-        // Close mobile menu when clicking on links
-        $('.navbar-nav a').click(function() {
-            if ($(window).width() < 768) {
-                $('.navbar-collapse').removeClass('in');
-                $('.navbar-toggle').removeClass('active');
-            }
-        });
-
-        /* ==================================================
-            # Smooth Animations
-         ===============================================*/
-        // Add animation classes to elements when they come into view
-        $(window).scroll(function() {
-            $('.animate-on-scroll').each(function() {
-                var elementTop = $(this).offset().top;
-                var elementBottom = elementTop + $(this).outerHeight();
-                var viewportTop = $(window).scrollTop();
-                var viewportBottom = viewportTop + $(window).height();
                 
-                if (elementBottom > viewportTop && elementTop < viewportBottom) {
-                    $(this).addClass('animated');
+                // Hide dropdown on leave with delay
+                dropdown.addEventListener('mouseleave', function() {
+                    dropdownTimeout = setTimeout(() => {
+                        if (activeDropdown === dropdown) {
+                            menu.style.opacity = '0';
+                            menu.style.transform = 'translateY(-10px)';
+                            setTimeout(() => {
+                                menu.style.display = 'none';
+                            }, 200);
+                            activeDropdown = null;
+                        }
+                    }, 500); // Increased delay to 500ms
+                });
+                
+                // Keep dropdown open when hovering over menu items
+                menu.addEventListener('mouseenter', function() {
+                    clearTimeout(dropdownTimeout);
+                });
+                
+                menu.addEventListener('mouseleave', function() {
+                    dropdownTimeout = setTimeout(() => {
+                        menu.style.opacity = '0';
+                        menu.style.transform = 'translateY(-10px)';
+                        setTimeout(() => {
+                            menu.style.display = 'none';
+                        }, 200);
+                        activeDropdown = null;
+                    }, 300);
+                });
+            }
+            
+            // Mobile and tablet click behavior
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (window.innerWidth < 992) {
+                    const isOpen = menu.style.display === 'block';
+                    
+                    // Close all other dropdowns
+                    dropdowns.forEach(d => {
+                        const m = d.querySelector('.dropdown-menu');
+                        if (m && m !== menu) {
+                            m.style.display = 'none';
+                            m.style.opacity = '0';
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    if (isOpen) {
+                        menu.style.display = 'none';
+                        menu.style.opacity = '0';
+                        activeDropdown = null;
+                    } else {
+                        menu.style.display = 'block';
+                        menu.style.opacity = '1';
+                        activeDropdown = dropdown;
+                    }
+                } else {
+                    // Desktop click behavior - toggle dropdown
+                    const isOpen = menu.style.display === 'block' && menu.style.opacity === '1';
+                    
+                    if (isOpen) {
+                        menu.style.opacity = '0';
+                        menu.style.transform = 'translateY(-10px)';
+                        setTimeout(() => {
+                            menu.style.display = 'none';
+                        }, 200);
+                        activeDropdown = null;
+                    } else {
+                        // Close other dropdowns
+                        dropdowns.forEach(d => {
+                            if (d !== dropdown) {
+                                const m = d.querySelector('.dropdown-menu');
+                                if (m) {
+                                    m.style.display = 'none';
+                                    m.style.opacity = '0';
+                                    m.style.transform = 'translateY(-10px)';
+                                }
+                            }
+                        });
+                        
+                        // Show current dropdown
+                        menu.style.display = 'block';
+                        setTimeout(() => {
+                            menu.style.opacity = '1';
+                            menu.style.transform = 'translateY(0)';
+                        }, 10);
+                        activeDropdown = dropdown;
+                    }
                 }
             });
-        });
-
-        // Initialize animations on page load
-        $('.animate-on-scroll').each(function() {
-            var elementTop = $(this).offset().top;
-            var elementBottom = elementTop + $(this).outerHeight();
-            var viewportTop = $(window).scrollTop();
-            var viewportBottom = viewportTop + $(window).height();
             
-            if (elementBottom > viewportTop && elementTop < viewportBottom) {
-                $(this).addClass('animated');
+            // Prevent dropdown from closing when clicking inside menu
+            menu.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            dropdowns.forEach(dropdown => {
+                const menu = dropdown.querySelector('.dropdown-menu');
+                if (menu) {
+                    menu.style.display = 'none';
+                    menu.style.opacity = '0';
+                    menu.style.transform = 'translateY(-10px)';
+                }
+            });
+            activeDropdown = null;
+            clearTimeout(dropdownTimeout);
+        }
+    });
+    
+    // Close dropdowns on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && activeDropdown) {
+            const menu = activeDropdown.querySelector('.dropdown-menu');
+            if (menu) {
+                menu.style.opacity = '0';
+                menu.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    menu.style.display = 'none';
+                }, 200);
+            }
+            activeDropdown = null;
+            clearTimeout(dropdownTimeout);
+        }
+    });
+}
+
+// Form validation and submission
+function initializeFormValidation() {
+    const forms = document.querySelectorAll('form');
+    
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const isValid = validateForm(this);
+            
+            if (isValid) {
+                submitForm(this, formData);
             }
         });
-
-        console.log('Rawabi Al Wasit website initialized successfully!');
     });
+}
 
-})(jQuery); // End jQuery
+function validateForm(form) {
+    const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+    let isValid = true;
+    
+    inputs.forEach(input => {
+        const value = input.value.trim();
+        const errorElement = input.parentNode.querySelector('.error-message');
+        
+        // Remove existing error
+        if (errorElement) {
+            errorElement.remove();
+        }
+        
+        input.classList.remove('error');
+        
+        // Validate required fields
+        if (!value) {
+            showFieldError(input, 'This field is required');
+            isValid = false;
+            return;
+        }
+        
+        // Validate email
+        if (input.type === 'email' && !isValidEmail(value)) {
+            showFieldError(input, 'Please enter a valid email address');
+            isValid = false;
+            return;
+        }
+        
+        // Validate phone (Saudi format)
+        if (input.type === 'tel' && !isValidSaudiPhone(value)) {
+            showFieldError(input, 'Please enter a valid Saudi phone number');
+            isValid = false;
+            return;
+        }
+    });
+    
+    return isValid;
+}
+
+function showFieldError(input, message) {
+    input.classList.add('error');
+    const errorElement = document.createElement('div');
+    errorElement.className = 'error-message';
+    errorElement.textContent = message;
+    input.parentNode.appendChild(errorElement);
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function isValidSaudiPhone(phone) {
+    const phoneRegex = /^(\+966|966|0)?[5][0-9]{8}$/;
+    return phoneRegex.test(phone.replace(/\s+/g, ''));
+}
+
+async function submitForm(form, formData) {
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    
+    // Show loading state
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    
+    try {
+        // Add Web3Forms access key
+        formData.append('access_key', 'c6f1aa00-834a-40d4-8ca2-b77b600fdc83');
+        
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            showFormMessage(form, 'Thank you! Your message has been sent successfully.', 'success');
+            form.reset();
+        } else {
+            throw new Error(result.message || 'Form submission failed');
+        }
+    } catch (error) {
+        showFormMessage(form, 'Sorry, there was an error sending your message. Please try again.', 'error');
+        console.error('Form submission error:', error);
+    } finally {
+        // Reset button state
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+    }
+}
+
+function showFormMessage(form, message, type) {
+    const existingMessage = form.querySelector('.form-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    const messageElement = document.createElement('div');
+    messageElement.className = `form-message ${type}`;
+    messageElement.textContent = message;
+    
+    form.insertBefore(messageElement, form.firstChild);
+    
+    // Auto-remove message after 5 seconds
+    setTimeout(() => {
+        messageElement.remove();
+    }, 5000);
+}
+
+// Utility functions
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// Performance optimizations
+const debouncedResize = debounce(() => {
+    // Reinitialize components that depend on window size
+    initializeDropdowns();
+}, 250);
+
+window.addEventListener('resize', debouncedResize);
+
+// Lazy loading for images
+function initializeLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+}
+
+// Initialize lazy loading if images with data-src exist
+if (document.querySelectorAll('img[data-src]').length > 0) {
+    initializeLazyLoading();
+}
+
+// Error handling
+window.addEventListener('error', function(e) {
+    console.error('JavaScript error:', e.error);
+});
+
+// Service Worker registration (for PWA capabilities)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('ServiceWorker registration successful');
+            })
+            .catch(function(err) {
+                console.log('ServiceWorker registration failed');
+            });
+    });
+}
 
