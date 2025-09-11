@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation & Maintenance Services - Rawabi Alwasit Company</title>
+    <meta name="description" content="Professional operation and maintenance services for industrial facilities by Rawabi Alwasit Company.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/responsive.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/img/logos/logoC.png" alt="Rawabi Alwasit Company" class="logo">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="services.html" data-en="Services" data-ar="الخدمات">Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="mechanical.html" data-en="Mechanical" data-ar="الميكانيكية">Mechanical</a></li>
+                                <li><a class="dropdown-item" href="electrical.html" data-en="Electrical" data-ar="الكهربائية">Electrical</a></li>
+                                <li><a class="dropdown-item" href="construction.html" data-en="Construction & Maintenance" data-ar="البناء والصيانة">Construction & Maintenance</a></li>
+                                <li><a class="dropdown-item active" href="operation.html" data-en="Operation & Maintenance" data-ar="التشغيل والصيانة">Operation & Maintenance</a></li>
+                                <li><a class="dropdown-item" href="manpower.html" data-en="Manpower Services" data-ar="خدمات القوى العاملة">Manpower Services</a></li>
+                                <li><a class="dropdown-item" href="office-setup.html" data-en="Office Setup" data-ar="إعداد المكاتب">Office Setup</a></li>
+                                <li><a class="dropdown-item" href="telecommunication.html" data-en="Telecommunication" data-ar="الاتصالات">Telecommunication</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="steel.html" data-en="Steel Products" data-ar="منتجات الصلب">Steel Products</a></li>
+                                <li><a class="dropdown-item" href="stainless-steel.html" data-en="Stainless Steel" data-ar="الستانلس ستيل">Stainless Steel</a></li>
+                                <li><a class="dropdown-item" href="aluminium.html" data-en="Aluminium Products" data-ar="منتجات الألومنيوم">Aluminium Products</a></li>
+                                <li><a class="dropdown-item" href="fasteners.html" data-en="Fasteners" data-ar="المثبتات">Fasteners</a></li>
+                                <li><a class="dropdown-item" href="fiber.html" data-en="Fiber Products" data-ar="منتجات الألياف">Fiber Products</a></li>
+                                <li><a class="dropdown-item" href="industrial-supplies.html" data-en="Industrial Supplies" data-ar="الإمدادات الصناعية">Industrial Supplies</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="safety.html" data-en="Safety" data-ar="السلامة">Safety</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="head-protection.html" data-en="Head Protection" data-ar="حماية الرأس">Head Protection</a></li>
+                                <li><a class="dropdown-item" href="eye-protection.html" data-en="Eye Protection" data-ar="حماية العين">Eye Protection</a></li>
+                                <li><a class="dropdown-item" href="face-shields.html" data-en="Face Shields" data-ar="واقيات الوجه">Face Shields</a></li>
+                                <li><a class="dropdown-item" href="hearing-protection.html" data-en="Hearing Protection" data-ar="حماية السمع">Hearing Protection</a></li>
+                                <li><a class="dropdown-item" href="hand-protection.html" data-en="Hand Protection" data-ar="حماية اليد">Hand Protection</a></li>
+                                <li><a class="dropdown-item" href="fall-protection.html" data-en="Fall Protection" data-ar="حماية من السقوط">Fall Protection</a></li>
+                                <li><a class="dropdown-item" href="protective-workwear.html" data-en="Protective Workwear" data-ar="ملابس العمل الواقية">Protective Workwear</a></li>
+                                <li><a class="dropdown-item" href="safety-shoes.html" data-en="Safety Shoes" data-ar="أحذية السلامة">Safety Shoes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="header-actions">
+                        <button class="language-toggle" onclick="toggleLanguage()">
+                            <span class="lang-en">العربية</span>
+                            <span class="lang-ar">English</span>
+                        </button>
+                        <a href="contact.html" class="btn btn-primary cta-btn" data-en="Get Quote" data-ar="احصل على عرض">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                            <li class="breadcrumb-item"><a href="services.html" data-en="Services" data-ar="الخدمات">Services</a></li>
+                            <li class="breadcrumb-item active" data-en="Operation & Maintenance" data-ar="التشغيل والصيانة">Operation & Maintenance</li>
+                        </ol>
+                    </nav>
+                    <h1 class="page-title" data-en="Operation & Maintenance Services" data-ar="خدمات التشغيل والصيانة">Operation & Maintenance Services</h1>
+                    <p class="page-subtitle" data-en="Comprehensive facility operation and preventive maintenance solutions" data-ar="حلول تشغيل المرافق والصيانة الوقائية الشاملة">Comprehensive facility operation and preventive maintenance solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="service-overview section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="service-content">
+                        <h2 data-en="Professional Operation & Maintenance Solutions" data-ar="حلول التشغيل والصيانة المهنية">Professional Operation & Maintenance Solutions</h2>
+                        <p data-en="Our operation and maintenance division provides comprehensive facility management services to ensure optimal performance and cost-effective operations. We specialize in preventive maintenance programs, equipment operation, and facility management solutions." data-ar="يوفر قسم التشغيل والصيانة لدينا خدمات إدارة المرافق الشاملة لضمان الأداء الأمثل والعمليات الفعالة من حيث التكلفة. نحن متخصصون في برامج الصيانة الوقائية وتشغيل المعدات وحلول إدارة المرافق.">Our operation and maintenance division provides comprehensive facility management services to ensure optimal performance and cost-effective operations. We specialize in preventive maintenance programs, equipment operation, and facility management solutions.</p>
+                        <p data-en="With experienced technicians and advanced maintenance technologies, we help extend equipment lifespan, reduce downtime, and optimize operational efficiency." data-ar="مع الفنيين ذوي الخبرة وتقنيات الصيانة المتقدمة، نساعد في إطالة عمر المعدات وتقليل وقت التوقف وتحسين الكفاءة التشغيلية.">With experienced technicians and advanced maintenance technologies, we help extend equipment lifespan, reduce downtime, and optimize operational efficiency.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-image">
+                        <img src="../assets/img/services/operation.jpg" alt="Operation & Maintenance Services" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operation Services -->
+    <section class="operation-services section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 data-en="Our Operation & Maintenance Services" data-ar="خدمات التشغيل والصيانة لدينا">Our Operation & Maintenance Services</h2>
+                        <p data-en="Comprehensive solutions to keep your facilities running at peak performance" data-ar="حلول شاملة للحفاظ على تشغيل مرافقك بأقصى أداء">Comprehensive solutions to keep your facilities running at peak performance</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/banner/5.jpg" alt="Preventive Maintenance" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Preventive Maintenance" data-ar="الصيانة الوقائية">Preventive Maintenance</h4>
+                            <p data-en="Scheduled maintenance programs to prevent equipment failures and extend operational life through regular inspections and servicing." data-ar="برامج الصيانة المجدولة لمنع أعطال المعدات وإطالة العمر التشغيلي من خلال الفحوصات والخدمة المنتظمة.">Scheduled maintenance programs to prevent equipment failures and extend operational life through regular inspections and servicing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/banner/6.jpg" alt="Equipment Operation" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Equipment Operation" data-ar="تشغيل المعدات">Equipment Operation</h4>
+                            <p data-en="Professional equipment operation services with trained operators to ensure safe and efficient facility operations." data-ar="خدمات تشغيل المعدات المهنية مع المشغلين المدربين لضمان عمليات المرافق الآمنة والفعالة.">Professional equipment operation services with trained operators to ensure safe and efficient facility operations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/about/7.jpg" alt="Facility Management" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Facility Management" data-ar="إدارة المرافق">Facility Management</h4>
+                            <p data-en="Complete facility management services including utilities management, security, cleaning, and general facility operations." data-ar="خدمات إدارة المرافق الكاملة بما في ذلك إدارة المرافق والأمن والتنظيف وعمليات المرافق العامة.">Complete facility management services including utilities management, security, cleaning, and general facility operations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/about/8.jpg" alt="Corrective Maintenance" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Corrective Maintenance" data-ar="الصيانة التصحيحية">Corrective Maintenance</h4>
+                            <p data-en="Emergency repair services and corrective maintenance to quickly restore equipment functionality and minimize downtime." data-ar="خدمات الإصلاح الطارئة والصيانة التصحيحية لاستعادة وظائف المعدات بسرعة وتقليل وقت التوقف.">Emergency repair services and corrective maintenance to quickly restore equipment functionality and minimize downtime.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/banner/9.jpg" alt="Performance Monitoring" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Performance Monitoring" data-ar="مراقبة الأداء">Performance Monitoring</h4>
+                            <p data-en="Continuous monitoring and analysis of equipment performance to optimize efficiency and predict maintenance needs." data-ar="المراقبة والتحليل المستمر لأداء المعدات لتحسين الكفاءة والتنبؤ باحتياجات الصيانة.">Continuous monitoring and analysis of equipment performance to optimize efficiency and predict maintenance needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/projects/10.jpg" alt="Documentation" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Documentation & Reporting" data-ar="التوثيق والتقارير">Documentation & Reporting</h4>
+                            <p data-en="Comprehensive documentation of all maintenance activities and detailed reporting for compliance and optimization." data-ar="التوثيق الشامل لجميع أنشطة الصيانة والتقارير المفصلة للامتثال والتحسين.">Comprehensive documentation of all maintenance activities and detailed reporting for compliance and optimization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maintenance Programs -->
+    <section class="maintenance-programs section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 data-en="Our Maintenance Programs" data-ar="برامج الصيانة لدينا">Our Maintenance Programs</h2>
+                        <p data-en="Tailored maintenance solutions for different industrial needs" data-ar="حلول الصيانة المصممة خصيصاً للاحتياجات الصناعية المختلفة">Tailored maintenance solutions for different industrial needs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h4 data-en="Basic Maintenance Package" data-ar="حزمة الصيانة الأساسية">Basic Maintenance Package</h4>
+                            <div class="program-price">
+                                <span data-en="Starting from" data-ar="ابتداءً من">Starting from</span>
+                                <strong data-en="SAR 5,000/month" data-ar="5,000 ريال/شهر">SAR 5,000/month</strong>
+                            </div>
+                        </div>
+                        <div class="program-features">
+                            <ul>
+                                <li data-en="Monthly equipment inspections" data-ar="فحوصات المعدات الشهرية">Monthly equipment inspections</li>
+                                <li data-en="Basic preventive maintenance" data-ar="الصيانة الوقائية الأساسية">Basic preventive maintenance</li>
+                                <li data-en="Emergency repair services" data-ar="خدمات الإصلاح الطارئة">Emergency repair services</li>
+                                <li data-en="Monthly maintenance reports" data-ar="تقارير الصيانة الشهرية">Monthly maintenance reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="program-card featured">
+                        <div class="program-header">
+                            <h4 data-en="Comprehensive Maintenance Package" data-ar="حزمة الصيانة الشاملة">Comprehensive Maintenance Package</h4>
+                            <div class="program-price">
+                                <span data-en="Starting from" data-ar="ابتداءً من">Starting from</span>
+                                <strong data-en="SAR 15,000/month" data-ar="15,000 ريال/شهر">SAR 15,000/month</strong>
+                            </div>
+                        </div>
+                        <div class="program-features">
+                            <ul>
+                                <li data-en="Weekly equipment inspections" data-ar="فحوصات المعدات الأسبوعية">Weekly equipment inspections</li>
+                                <li data-en="Complete preventive maintenance" data-ar="الصيانة الوقائية الكاملة">Complete preventive maintenance</li>
+                                <li data-en="24/7 emergency support" data-ar="دعم طوارئ 24/7">24/7 emergency support</li>
+                                <li data-en="Performance monitoring" data-ar="مراقبة الأداء">Performance monitoring</li>
+                                <li data-en="Spare parts management" data-ar="إدارة قطع الغيار">Spare parts management</li>
+                                <li data-en="Detailed analytics reports" data-ar="تقارير تحليلية مفصلة">Detailed analytics reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Served -->
+    <section class="industries-served section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 data-en="Industries We Serve" data-ar="الصناعات التي نخدمها">Industries We Serve</h2>
+                        <p data-en="Our operation and maintenance services cater to various industrial sectors" data-ar="تلبي خدمات التشغيل والصيانة لدينا القطاعات الصناعية المختلفة">Our operation and maintenance services cater to various industrial sectors</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="industry-card text-center">
+                        <div class="industry-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h5 data-en="Manufacturing" data-ar="التصنيع">Manufacturing</h5>
+                        <p data-en="Production facilities and manufacturing plants" data-ar="مرافق الإنتاج ومصانع التصنيع">Production facilities and manufacturing plants</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="industry-card text-center">
+                        <div class="industry-icon">
+                            <i class="fas fa-oil-can"></i>
+                        </div>
+                        <h5 data-en="Oil & Gas" data-ar="النفط والغاز">Oil & Gas</h5>
+                        <p data-en="Refineries and petrochemical facilities" data-ar="المصافي ومرافق البتروكيماويات">Refineries and petrochemical facilities</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="industry-card text-center">
+                        <div class="industry-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h5 data-en="Healthcare" data-ar="الرعاية الصحية">Healthcare</h5>
+                        <p data-en="Hospitals and medical facilities" data-ar="المستشفيات والمرافق الطبية">Hospitals and medical facilities</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="industry-card text-center">
+                        <div class="industry-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h5 data-en="Commercial" data-ar="التجاري">Commercial</h5>
+                        <p data-en="Office buildings and commercial complexes" data-ar="المباني المكتبية والمجمعات التجارية">Office buildings and commercial complexes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 data-en="Need Operation & Maintenance Services?" data-ar="تحتاج خدمات التشغيل والصيانة؟">Need Operation & Maintenance Services?</h2>
+                    <p data-en="Contact us today to discuss your facility operation and maintenance needs and get a customized solution for your business." data-ar="اتصل بنا اليوم لمناقشة احتياجات تشغيل وصيانة مرافقك والحصول على حل مخصص لعملك.">Contact us today to discuss your facility operation and maintenance needs and get a customized solution for your business.</p>
+                </div>
+                <div class="col-lg-4 text-end">
+                    <a href="contact.html" class="btn btn-outline btn-lg" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <img src="../assets/img/logos/logoC.png" alt="Rawabi Alwasit Company" class="footer-logo">
+                        <p data-en="Professional industrial supplies and services provider specializing in fabrication, maintenance, and trading." data-ar="مزود محترف للإمدادات والخدمات الصناعية متخصص في التصنيع والصيانة والتجارة.">Professional industrial supplies and services provider specializing in fabrication, maintenance, and trading.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                            <li><a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a></li>
+                            <li><a href="services.html" data-en="Services" data-ar="الخدمات">Services</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Services" data-ar="الخدمات">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="mechanical.html" data-en="Mechanical" data-ar="الميكانيكية">Mechanical</a></li>
+                            <li><a href="electrical.html" data-en="Electrical" data-ar="الكهربائية">Electrical</a></li>
+                            <li><a href="construction.html" data-en="Construction" data-ar="البناء">Construction</a></li>
+                            <li><a href="manpower.html" data-en="Manpower" data-ar="القوى العاملة">Manpower</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+966 58 262 7405</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@rawabialwasit.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Dammam, Saudi Arabia" data-ar="الدمام، المملكة العربية السعودية">Dammam, Saudi Arabia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p data-en="&copy; 2024 Rawabi Alwasit Company. All rights reserved." data-ar="&copy; 2024 شركة روابي الوسيط. جميع الحقوق محفوظة.">&copy; 2024 Rawabi Alwasit Company. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manpower Services - Rawabi Alwasit Company</title>
+    <meta name="description" content="Professional manpower services including skilled workforce provision and training programs by Rawabi Alwasit Company.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/responsive.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/img/logos/logoC.png" alt="Rawabi Alwasit Company" class="logo">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="services.html" data-en="Services" data-ar="الخدمات">Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="mechanical.html" data-en="Mechanical" data-ar="الميكانيكية">Mechanical</a></li>
+                                <li><a class="dropdown-item" href="electrical.html" data-en="Electrical" data-ar="الكهربائية">Electrical</a></li>
+                                <li><a class="dropdown-item" href="construction.html" data-en="Construction & Maintenance" data-ar="البناء والصيانة">Construction & Maintenance</a></li>
+                                <li><a class="dropdown-item" href="operation.html" data-en="Operation & Maintenance" data-ar="التشغيل والصيانة">Operation & Maintenance</a></li>
+                                <li><a class="dropdown-item active" href="manpower.html" data-en="Manpower Services" data-ar="خدمات القوى العاملة">Manpower Services</a></li>
+                                <li><a class="dropdown-item" href="office-setup.html" data-en="Office Setup" data-ar="إعداد المكاتب">Office Setup</a></li>
+                                <li><a class="dropdown-item" href="telecommunication.html" data-en="Telecommunication" data-ar="الاتصالات">Telecommunication</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="steel.html" data-en="Steel Products" data-ar="منتجات الصلب">Steel Products</a></li>
+                                <li><a class="dropdown-item" href="stainless-steel.html" data-en="Stainless Steel" data-ar="الستانلس ستيل">Stainless Steel</a></li>
+                                <li><a class="dropdown-item" href="aluminium.html" data-en="Aluminium Products" data-ar="منتجات الألومنيوم">Aluminium Products</a></li>
+                                <li><a class="dropdown-item" href="fasteners.html" data-en="Fasteners" data-ar="المثبتات">Fasteners</a></li>
+                                <li><a class="dropdown-item" href="fiber.html" data-en="Fiber Products" data-ar="منتجات الألياف">Fiber Products</a></li>
+                                <li><a class="dropdown-item" href="industrial-supplies.html" data-en="Industrial Supplies" data-ar="الإمدادات الصناعية">Industrial Supplies</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="safety.html" data-en="Safety" data-ar="السلامة">Safety</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="head-protection.html" data-en="Head Protection" data-ar="حماية الرأس">Head Protection</a></li>
+                                <li><a class="dropdown-item" href="eye-protection.html" data-en="Eye Protection" data-ar="حماية العين">Eye Protection</a></li>
+                                <li><a class="dropdown-item" href="face-shields.html" data-en="Face Shields" data-ar="واقيات الوجه">Face Shields</a></li>
+                                <li><a class="dropdown-item" href="hearing-protection.html" data-en="Hearing Protection" data-ar="حماية السمع">Hearing Protection</a></li>
+                                <li><a class="dropdown-item" href="hand-protection.html" data-en="Hand Protection" data-ar="حماية اليد">Hand Protection</a></li>
+                                <li><a class="dropdown-item" href="fall-protection.html" data-en="Fall Protection" data-ar="حماية من السقوط">Fall Protection</a></li>
+                                <li><a class="dropdown-item" href="protective-workwear.html" data-en="Protective Workwear" data-ar="ملابس العمل الواقية">Protective Workwear</a></li>
+                                <li><a class="dropdown-item" href="safety-shoes.html" data-en="Safety Shoes" data-ar="أحذية السلامة">Safety Shoes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="header-actions">
+                        <button class="language-toggle" onclick="toggleLanguage()">
+                            <span class="lang-en">العربية</span>
+                            <span class="lang-ar">English</span>
+                        </button>
+                        <a href="contact.html" class="btn btn-primary cta-btn" data-en="Get Quote" data-ar="احصل على عرض">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                            <li class="breadcrumb-item"><a href="services.html" data-en="Services" data-ar="الخدمات">Services</a></li>
+                            <li class="breadcrumb-item active" data-en="Manpower Services" data-ar="خدمات القوى العاملة">Manpower Services</li>
+                        </ol>
+                    </nav>
+                    <h1 class="page-title" data-en="Manpower Services" data-ar="خدمات القوى العاملة">Manpower Services</h1>
+                    <p class="page-subtitle" data-en="Skilled workforce provision and professional training solutions" data-ar="توفير القوى العاملة الماهرة وحلول التدريب المهني">Skilled workforce provision and professional training solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="service-overview section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="service-content">
+                        <h2 data-en="Professional Manpower Solutions" data-ar="حلول القوى العاملة المهنية">Professional Manpower Solutions</h2>
+                        <p data-en="Our manpower services division provides comprehensive workforce solutions for industrial projects. We specialize in recruiting, training, and deploying skilled professionals across various industrial sectors to meet your specific project requirements." data-ar="يوفر قسم خدمات القوى العاملة لدينا حلول القوى العاملة الشاملة للمشاريع الصناعية. نحن متخصصون في توظيف وتدريب ونشر المهنيين المهرة عبر القطاعات الصناعية المختلفة لتلبية متطلبات مشروعك المحددة.">Our manpower services division provides comprehensive workforce solutions for industrial projects. We specialize in recruiting, training, and deploying skilled professionals across various industrial sectors to meet your specific project requirements.</p>
+                        <p data-en="With a vast network of qualified professionals and comprehensive training programs, we ensure that you have access to the right talent at the right time for your projects." data-ar="مع شبكة واسعة من المهنيين المؤهلين وبرامج التدريب الشاملة، نضمن حصولك على الموهبة المناسبة في الوقت المناسب لمشاريعك.">With a vast network of qualified professionals and comprehensive training programs, we ensure that you have access to the right talent at the right time for your projects.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-image">
+                        <img src="../assets/img/services/manpower.jpg" alt="Manpower Services" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manpower Services -->
+    <section class="manpower-services section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 data-en="Our Manpower Services" data-ar="خدمات القوى العاملة لدينا">Our Manpower Services</h2>
+                        <p data-en="Comprehensive workforce solutions for all your industrial needs" data-ar="حلول القوى العاملة الشاملة لجميع احتياجاتك الصناعية">Comprehensive workforce solutions for all your industrial needs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/worker/1.jpg" alt="Recruitment Services" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Recruitment Services" data-ar="خدمات التوظيف">Recruitment Services</h4>
+                            <p data-en="Professional recruitment services to find and hire qualified personnel for your industrial projects with thorough screening and verification processes." data-ar="خدمات التوظيف المهنية للعثور على الموظفين المؤهلين وتوظيفهم لمشاريعك الصناعية مع عمليات الفحص والتحقق الشاملة.">Professional recruitment services to find and hire qualified personnel for your industrial projects with thorough screening and verification processes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/team/6.jpg" alt="Training Programs" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Training Programs" data-ar="برامج التدريب">Training Programs</h4>
+                            <p data-en="Comprehensive training programs including safety training, technical skills development, and certification courses for industrial workers." data-ar="برامج التدريب الشاملة بما في ذلك تدريب السلامة وتطوير المهارات التقنية ودورات الشهادات للعمال الصناعيين.">Comprehensive training programs including safety training, technical skills development, and certification courses for industrial workers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/worker/2.jpg" alt="Workforce Deployment" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Workforce Deployment" data-ar="نشر القوى العاملة">Workforce Deployment</h4>
+                            <p data-en="Strategic deployment of skilled workforce to your project sites with proper coordination and management to ensure optimal productivity." data-ar="النشر الاستراتيجي للقوى العاملة الماهرة في مواقع مشروعك مع التنسيق والإدارة المناسبة لضمان الإنتاجية المثلى.">Strategic deployment of skilled workforce to your project sites with proper coordination and management to ensure optimal productivity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/worker/3.jpg" alt="Quality Assurance" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Quality Assurance" data-ar="ضمان الجودة">Quality Assurance</h4>
+                            <p data-en="Continuous monitoring and quality assurance of workforce performance to maintain high standards and project requirements." data-ar="المراقبة المستمرة وضمان جودة أداء القوى العاملة للحفاظ على المعايير العالية ومتطلبات المشروع.">Continuous monitoring and quality assurance of workforce performance to maintain high standards and project requirements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/service-con/1.jpg" alt="Contract Management" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Contract Management" data-ar="إدارة العقود">Contract Management</h4>
+                            <p data-en="Complete contract management services including payroll, benefits administration, and compliance with labor regulations." data-ar="خدمات إدارة العقود الكاملة بما في ذلك كشوف المرتبات وإدارة المزايا والامتثال للوائح العمل.">Complete contract management services including payroll, benefits administration, and compliance with labor regulations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/construction/2.jpg" alt="Support Services" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Support Services" data-ar="خدمات الدعم">Support Services</h4>
+                            <p data-en="Ongoing support services including HR management, performance evaluation, and workforce optimization for maximum efficiency." data-ar="خدمات الدعم المستمرة بما في ذلك إدارة الموارد البشرية وتقييم الأداء وتحسين القوى العاملة لتحقيق أقصى كفاءة.">Ongoing support services including HR management, performance evaluation, and workforce optimization for maximum efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skilled Categories -->
+    <section class="skilled-categories section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 data-en="Skilled Worker Categories" data-ar="فئات العمال المهرة">Skilled Worker Categories</h2>
+                        <p data-en="We provide qualified professionals across various industrial specializations" data-ar="نحن نوفر المهنيين المؤهلين عبر التخصصات الصناعية المختلفة">We provide qualified professionals across various industrial specializations</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h5 data-en="Mechanical Technicians" data-ar="الفنيون الميكانيكيون">Mechanical Technicians</h5>
+                        <ul class="category-list">
+                            <li data-en="Welders" data-ar="اللحامون">Welders</li>
+                            <li data-en="Fitters" data-ar="المركبون">Fitters</li>
+                            <li data-en="Machinists" data-ar="المشغلون">Machinists</li>
+                            <li data-en="Maintenance Technicians" data-ar="فنيو الصيانة">Maintenance Technicians</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h5 data-en="Electrical Specialists" data-ar="المتخصصون الكهربائيون">Electrical Specialists</h5>
+                        <ul class="category-list">
+                            <li data-en="Electricians" data-ar="الكهربائيون">Electricians</li>
+                            <li data-en="Instrument Technicians" data-ar="فنيو الأجهزة">Instrument Technicians</li>
+                            <li data-en="Control System Engineers" data-ar="مهندسو أنظمة التحكم">Control System Engineers</li>
+                            <li data-en="Power System Technicians" data-ar="فنيو أنظمة الطاقة">Power System Technicians</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h5 data-en="Construction Workers" data-ar="عمال البناء">Construction Workers</h5>
+                        <ul class="category-list">
+                            <li data-en="Civil Engineers" data-ar="المهندسون المدنيون">Civil Engineers</li>
+                            <li data-en="Construction Supervisors" data-ar="مشرفو البناء">Construction Supervisors</li>
+                            <li data-en="Heavy Equipment Operators" data-ar="مشغلو المعدات الثقيلة">Heavy Equipment Operators</li>
+                            <li data-en="Safety Officers" data-ar="ضباط السلامة">Safety Officers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h5 data-en="Technical Support" data-ar="الدعم التقني">Technical Support</h5>
+                        <ul class="category-list">
+                            <li data-en="Quality Inspectors" data-ar="مفتشو الجودة">Quality Inspectors</li>
+                            <li data-en="Project Coordinators" data-ar="منسقو المشاريع">Project Coordinators</li>
+                            <li data-en="Technical Supervisors" data-ar="المشرفون التقنيون">Technical Supervisors</li>
+                            <li data-en="Documentation Specialists" data-ar="متخصصو التوثيق">Documentation Specialists</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Programs -->
+    <section class="training-programs section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 data-en="Professional Training Programs" data-ar="برامج التدريب المهني">Professional Training Programs</h2>
+                        <p data-en="Comprehensive training solutions to enhance workforce capabilities" data-ar="حلول التدريب الشاملة لتعزيز قدرات القوى العاملة">Comprehensive training solutions to enhance workforce capabilities</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="training-card">
+                        <div class="training-header">
+                            <h4 data-en="Safety Training Program" data-ar="برنامج تدريب السلامة">Safety Training Program</h4>
+                            <span class="training-duration" data-en="Duration: 40 Hours" data-ar="المدة: 40 ساعة">Duration: 40 Hours</span>
+                        </div>
+                        <div class="training-content">
+                            <ul>
+                                <li data-en="Workplace safety protocols" data-ar="بروتوكولات السلامة في مكان العمل">Workplace safety protocols</li>
+                                <li data-en="Personal protective equipment (PPE)" data-ar="معدات الحماية الشخصية">Personal protective equipment (PPE)</li>
+                                <li data-en="Emergency response procedures" data-ar="إجراءات الاستجابة للطوارئ">Emergency response procedures</li>
+                                <li data-en="Risk assessment and management" data-ar="تقييم وإدارة المخاطر">Risk assessment and management</li>
+                                <li data-en="Safety certification" data-ar="شهادة السلامة">Safety certification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="training-card">
+                        <div class="training-header">
+                            <h4 data-en="Technical Skills Development" data-ar="تطوير المهارات التقنية">Technical Skills Development</h4>
+                            <span class="training-duration" data-en="Duration: 80 Hours" data-ar="المدة: 80 ساعة">Duration: 80 Hours</span>
+                        </div>
+                        <div class="training-content">
+                            <ul>
+                                <li data-en="Equipment operation training" data-ar="تدريب تشغيل المعدات">Equipment operation training</li>
+                                <li data-en="Maintenance procedures" data-ar="إجراءات الصيانة">Maintenance procedures</li>
+                                <li data-en="Quality control methods" data-ar="طرق مراقبة الجودة">Quality control methods</li>
+                                <li data-en="Technical documentation" data-ar="التوثيق التقني">Technical documentation</li>
+                                <li data-en="Industry-specific certifications" data-ar="الشهادات الخاصة بالصناعة">Industry-specific certifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 data-en="Need Skilled Workforce?" data-ar="تحتاج قوى عاملة ماهرة؟">Need Skilled Workforce?</h2>
+                    <p data-en="Contact us today to discuss your manpower requirements and get access to qualified professionals for your projects." data-ar="اتصل بنا اليوم لمناقشة متطلبات القوى العاملة الخاصة بك والحصول على المهنيين المؤهلين لمشاريعك.">Contact us today to discuss your manpower requirements and get access to qualified professionals for your projects.</p>
+                </div>
+                <div class="col-lg-4 text-end">
+                    <a href="contact.html" class="btn btn-outline btn-lg" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <img src="../assets/img/logos/logoC.png" alt="Rawabi Alwasit Company" class="footer-logo">
+                        <p data-en="Professional industrial supplies and services provider specializing in fabrication, maintenance, and trading." data-ar="مزود محترف للإمدادات والخدمات الصناعية متخصص في التصنيع والصيانة والتجارة.">Professional industrial supplies and services provider specializing in fabrication, maintenance, and trading.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                            <li><a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a></li>
+                            <li><a href="services.html" data-en="Services" data-ar="الخدمات">Services</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Services" data-ar="الخدمات">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="mechanical.html" data-en="Mechanical" data-ar="الميكانيكية">Mechanical</a></li>
+                            <li><a href="electrical.html" data-en="Electrical" data-ar="الكهربائية">Electrical</a></li>
+                            <li><a href="construction.html" data-en="Construction" data-ar="البناء">Construction</a></li>
+                            <li><a href="manpower.html" data-en="Manpower" data-ar="القوى العاملة">Manpower</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+966 58 262 7405</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@rawabialwasit.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Dammam, Saudi Arabia" data-ar="الدمام، المملكة العربية السعودية">Dammam, Saudi Arabia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p data-en="&copy; 2024 Rawabi Alwasit Company. All rights reserved." data-ar="&copy; 2024 شركة روابي الوسيط. جميع الحقوق محفوظة.">&copy; 2024 Rawabi Alwasit Company. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
+

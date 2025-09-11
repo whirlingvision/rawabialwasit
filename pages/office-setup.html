@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Setup Services - Rawabi Alwasit Company</title>
+    <meta name="description" content="Professional office setup and design services including furniture, equipment, and IT infrastructure by Rawabi Alwasit Company.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/responsive.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/img/logos/logoC.png" alt="Rawabi Alwasit Company" class="logo">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="services.html" data-en="Services" data-ar="الخدمات">Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="mechanical.html" data-en="Mechanical" data-ar="الميكانيكية">Mechanical</a></li>
+                                <li><a class="dropdown-item" href="electrical.html" data-en="Electrical" data-ar="الكهربائية">Electrical</a></li>
+                                <li><a class="dropdown-item" href="construction.html" data-en="Construction & Maintenance" data-ar="البناء والصيانة">Construction & Maintenance</a></li>
+                                <li><a class="dropdown-item" href="operation.html" data-en="Operation & Maintenance" data-ar="التشغيل والصيانة">Operation & Maintenance</a></li>
+                                <li><a class="dropdown-item" href="manpower.html" data-en="Manpower Services" data-ar="خدمات القوى العاملة">Manpower Services</a></li>
+                                <li><a class="dropdown-item active" href="office-setup.html" data-en="Office Setup" data-ar="إعداد المكاتب">Office Setup</a></li>
+                                <li><a class="dropdown-item" href="telecommunication.html" data-en="Telecommunication" data-ar="الاتصالات">Telecommunication</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="steel.html" data-en="Steel Products" data-ar="منتجات الصلب">Steel Products</a></li>
+                                <li><a class="dropdown-item" href="stainless-steel.html" data-en="Stainless Steel" data-ar="الستانلس ستيل">Stainless Steel</a></li>
+                                <li><a class="dropdown-item" href="aluminium.html" data-en="Aluminium Products" data-ar="منتجات الألومنيوم">Aluminium Products</a></li>
+                                <li><a class="dropdown-item" href="fasteners.html" data-en="Fasteners" data-ar="المثبتات">Fasteners</a></li>
+                                <li><a class="dropdown-item" href="fiber.html" data-en="Fiber Products" data-ar="منتجات الألياف">Fiber Products</a></li>
+                                <li><a class="dropdown-item" href="industrial-supplies.html" data-en="Industrial Supplies" data-ar="الإمدادات الصناعية">Industrial Supplies</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="safety.html" data-en="Safety" data-ar="السلامة">Safety</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="head-protection.html" data-en="Head Protection" data-ar="حماية الرأس">Head Protection</a></li>
+                                <li><a class="dropdown-item" href="eye-protection.html" data-en="Eye Protection" data-ar="حماية العين">Eye Protection</a></li>
+                                <li><a class="dropdown-item" href="face-shields.html" data-en="Face Shields" data-ar="واقيات الوجه">Face Shields</a></li>
+                                <li><a class="dropdown-item" href="hearing-protection.html" data-en="Hearing Protection" data-ar="حماية السمع">Hearing Protection</a></li>
+                                <li><a class="dropdown-item" href="hand-protection.html" data-en="Hand Protection" data-ar="حماية اليد">Hand Protection</a></li>
+                                <li><a class="dropdown-item" href="fall-protection.html" data-en="Fall Protection" data-ar="حماية من السقوط">Fall Protection</a></li>
+                                <li><a class="dropdown-item" href="protective-workwear.html" data-en="Protective Workwear" data-ar="ملابس العمل الواقية">Protective Workwear</a></li>
+                                <li><a class="dropdown-item" href="safety-shoes.html" data-en="Safety Shoes" data-ar="أحذية السلامة">Safety Shoes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="header-actions">
+                        <button class="language-toggle" onclick="toggleLanguage()">
+                            <span class="lang-en">العربية</span>
+                            <span class="lang-ar">English</span>
+                        </button>
+                        <a href="contact.html" class="btn btn-primary cta-btn" data-en="Get Quote" data-ar="احصل على عرض">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                            <li class="breadcrumb-item"><a href="services.html" data-en="Services" data-ar="الخدمات">Services</a></li>
+                            <li class="breadcrumb-item active" data-en="Office Setup" data-ar="إعداد المكاتب">Office Setup</li>
+                        </ol>
+                    </nav>
+                    <h1 class="page-title" data-en="Office Setup Services" data-ar="خدمات إعداد المكاتب">Office Setup Services</h1>
+                    <p class="page-subtitle" data-en="Complete office design and setup solutions for modern workspaces" data-ar="حلول تصميم وإعداد المكاتب الكاملة لمساحات العمل الحديثة">Complete office design and setup solutions for modern workspaces</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="service-overview section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="service-content">
+                        <h2 data-en="Professional Office Setup Solutions" data-ar="حلول إعداد المكاتب المهنية">Professional Office Setup Solutions</h2>
+                        <p data-en="Our office setup division provides comprehensive workspace design and implementation services. We specialize in creating functional, efficient, and aesthetically pleasing office environments that enhance productivity and employee satisfaction." data-ar="يوفر قسم إعداد المكاتب لدينا خدمات تصميم وتنفيذ مساحات العمل الشاملة. نحن متخصصون في إنشاء بيئات مكتبية وظيفية وفعالة وممتعة من الناحية الجمالية تعزز الإنتاجية ورضا الموظفين.">Our office setup division provides comprehensive workspace design and implementation services. We specialize in creating functional, efficient, and aesthetically pleasing office environments that enhance productivity and employee satisfaction.</p>
+                        <p data-en="From initial space planning to final installation, we handle every aspect of your office setup project with attention to detail and commitment to quality." data-ar="من التخطيط الأولي للمساحة إلى التركيب النهائي، نتعامل مع كل جانب من جوانب مشروع إعداد مكتبك بعناية بالتفاصيل والالتزام بالجودة.">From initial space planning to final installation, we handle every aspect of your office setup project with attention to detail and commitment to quality.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-image">
+                        <img src="../assets/img/services/4.jpg" alt="Office Setup Services" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Setup Services -->
+    <section class="office-services section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 data-en="Our Office Setup Services" data-ar="خدمات إعداد المكاتب لدينا">Our Office Setup Services</h2>
+                        <p data-en="Comprehensive solutions for modern office environments" data-ar="حلول شاملة لبيئات المكاتب الحديثة">Comprehensive solutions for modern office environments</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/products/office-setup/1.jpeg" alt="Space Planning" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Space Planning & Design" data-ar="تخطيط وتصميم المساحة">Space Planning & Design</h4>
+                            <p data-en="Professional space planning and interior design services to optimize your office layout for maximum efficiency and comfort." data-ar="خدمات التخطيط المهني للمساحة والتصميم الداخلي لتحسين تخطيط مكتبك لتحقيق أقصى كفاءة وراحة.">Professional space planning and interior design services to optimize your office layout for maximum efficiency and comfort.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chair"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/products/office-setup/2.jpeg" alt="Furniture Supply" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Furniture Supply & Installation" data-ar="توريد وتركيب الأثاث">Furniture Supply & Installation</h4>
+                            <p data-en="High-quality office furniture selection, procurement, and professional installation services for complete workspace solutions." data-ar="اختيار أثاث المكاتب عالي الجودة والمشتريات وخدمات التركيب المهنية لحلول مساحة العمل الكاملة.">High-quality office furniture selection, procurement, and professional installation services for complete workspace solutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/products/electrical/e-ups.jpg" alt="IT Infrastructure" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="IT Infrastructure Setup" data-ar="إعداد البنية التحتية لتكنولوجيا المعلومات">IT Infrastructure Setup</h4>
+                            <p data-en="Complete IT infrastructure setup including network cabling, power systems, and technology integration for modern offices." data-ar="إعداد البنية التحتية الكاملة لتكنولوجيا المعلومات بما في ذلك كابلات الشبكة وأنظمة الطاقة وتكامل التكنولوجيا للمكاتب الحديثة.">Complete IT infrastructure setup including network cabling, power systems, and technology integration for modern offices.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/products/electrical/e-lighting.jpg" alt="Lighting Solutions" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Lighting Solutions" data-ar="حلول الإضاءة">Lighting Solutions</h4>
+                            <p data-en="Energy-efficient lighting design and installation to create comfortable and productive work environments." data-ar="تصميم وتركيب الإضاءة الموفرة للطاقة لخلق بيئات عمل مريحة ومنتجة.">Energy-efficient lighting design and installation to create comfortable and productive work environments.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/products/electrical/e-generator.jpg" alt="HVAC Systems" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="HVAC & Climate Control" data-ar="التدفئة والتهوية وتكييف الهواء">HVAC & Climate Control</h4>
+                            <p data-en="Heating, ventilation, and air conditioning systems installation and maintenance for optimal indoor climate control." data-ar="تركيب وصيانة أنظمة التدفئة والتهوية وتكييف الهواء للتحكم الأمثل في المناخ الداخلي.">Heating, ventilation, and air conditioning systems installation and maintenance for optimal indoor climate control.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/products/office-setup/6.png" alt="Security Systems" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Security Systems" data-ar="أنظمة الأمان">Security Systems</h4>
+                            <p data-en="Comprehensive security system installation including access control, surveillance, and alarm systems for office protection." data-ar="تركيب نظام الأمان الشامل بما في ذلك التحكم في الوصول والمراقبة وأنظمة الإنذار لحماية المكتب.">Comprehensive security system installation including access control, surveillance, and alarm systems for office protection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Categories -->
+    <section class="office-categories section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 data-en="Office Setup Categories" data-ar="فئات إعداد المكاتب">Office Setup Categories</h2>
+                        <p data-en="We provide specialized setup services for different types of office environments" data-ar="نحن نقدم خدمات الإعداد المتخصصة لأنواع مختلفة من بيئات المكاتب">We provide specialized setup services for different types of office environments</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h5 data-en="Corporate Offices" data-ar="المكاتب الشركات">Corporate Offices</h5>
+                        <p data-en="Executive offices and corporate headquarters setup" data-ar="إعداد المكاتب التنفيذية والمقرات الشركات">Executive offices and corporate headquarters setup</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h5 data-en="Open Workspaces" data-ar="مساحات العمل المفتوحة">Open Workspaces</h5>
+                        <p data-en="Modern open office layouts and collaborative spaces" data-ar="تخطيطات المكاتب المفتوحة الحديثة والمساحات التعاونية">Modern open office layouts and collaborative spaces</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h5 data-en="Technical Offices" data-ar="المكاتب التقنية">Technical Offices</h5>
+                        <p data-en="Engineering and technical workspace solutions" data-ar="حلول مساحة العمل الهندسية والتقنية">Engineering and technical workspace solutions</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h5 data-en="Remote Offices" data-ar="المكاتب البعيدة">Remote Offices</h5>
+                        <p data-en="Home office and remote workspace setup" data-ar="إعداد المكتب المنزلي ومساحة العمل عن بُعد">Home office and remote workspace setup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Process -->
+    <section class="project-process section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 data-en="Our Setup Process" data-ar="عملية الإعداد لدينا">Our Setup Process</h2>
+                        <p data-en="A systematic approach to delivering exceptional office setup projects" data-ar="نهج منهجي لتقديم مشاريع إعداد المكاتب الاستثنائية">A systematic approach to delivering exceptional office setup projects</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step text-center">
+                        <div class="step-number">1</div>
+                        <h5 data-en="Consultation" data-ar="الاستشارة">Consultation</h5>
+                        <p data-en="Initial consultation to understand your requirements and vision" data-ar="الاستشارة الأولية لفهم متطلباتك ورؤيتك">Initial consultation to understand your requirements and vision</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step text-center">
+                        <div class="step-number">2</div>
+                        <h5 data-en="Design & Planning" data-ar="التصميم والتخطيط">Design & Planning</h5>
+                        <p data-en="Detailed space planning and design development" data-ar="التخطيط المفصل للمساحة وتطوير التصميم">Detailed space planning and design development</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step text-center">
+                        <div class="step-number">3</div>
+                        <h5 data-en="Procurement" data-ar="المشتريات">Procurement</h5>
+                        <p data-en="Sourcing and procurement of furniture and equipment" data-ar="المصادر والمشتريات من الأثاث والمعدات">Sourcing and procurement of furniture and equipment</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step text-center">
+                        <div class="step-number">4</div>
+                        <h5 data-en="Installation" data-ar="التركيب">Installation</h5>
+                        <p data-en="Professional installation and final setup completion" data-ar="التركيب المهني وإكمال الإعداد النهائي">Professional installation and final setup completion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 data-en="Ready to Setup Your Office?" data-ar="هل أنت مستعد لإعداد مكتبك؟">Ready to Setup Your Office?</h2>
+                    <p data-en="Contact us today to discuss your office setup requirements and get a customized solution for your workspace." data-ar="اتصل بنا اليوم لمناقشة متطلبات إعداد مكتبك والحصول على حل مخصص لمساحة عملك.">Contact us today to discuss your office setup requirements and get a customized solution for your workspace.</p>
+                </div>
+                <div class="col-lg-4 text-end">
+                    <a href="contact.html" class="btn btn-outline btn-lg" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <img src="../assets/img/logos/logoC.png" alt="Rawabi Alwasit Company" class="footer-logo">
+                        <p data-en="Professional industrial supplies and services provider specializing in fabrication, maintenance, and trading." data-ar="مزود محترف للإمدادات والخدمات الصناعية متخصص في التصنيع والصيانة والتجارة.">Professional industrial supplies and services provider specializing in fabrication, maintenance, and trading.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                            <li><a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a></li>
+                            <li><a href="services.html" data-en="Services" data-ar="الخدمات">Services</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Services" data-ar="الخدمات">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="mechanical.html" data-en="Mechanical" data-ar="الميكانيكية">Mechanical</a></li>
+                            <li><a href="electrical.html" data-en="Electrical" data-ar="الكهربائية">Electrical</a></li>
+                            <li><a href="construction.html" data-en="Construction" data-ar="البناء">Construction</a></li>
+                            <li><a href="manpower.html" data-en="Manpower" data-ar="القوى العاملة">Manpower</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+966 58 262 7405</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@rawabialwasit.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Dammam, Saudi Arabia" data-ar="الدمام، المملكة العربية السعودية">Dammam, Saudi Arabia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p data-en="&copy; 2024 Rawabi Alwasit Company. All rights reserved." data-ar="&copy; 2024 شركة روابي الوسيط. جميع الحقوق محفوظة.">&copy; 2024 Rawabi Alwasit Company. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
+

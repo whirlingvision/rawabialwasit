@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical Services - Rawabi Alwasit Company</title>
+    <meta name="description" content="Professional electrical services including system design, installation, and maintenance by Rawabi Alwasit Company.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/responsive.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/img/logos/logoC.png" alt="Rawabi Alwasit Company" class="logo">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="services.html" data-en="Services" data-ar="الخدمات">Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="mechanical.html" data-en="Mechanical" data-ar="الميكانيكية">Mechanical</a></li>
+                                <li><a class="dropdown-item active" href="electrical.html" data-en="Electrical" data-ar="الكهربائية">Electrical</a></li>
+                                <li><a class="dropdown-item" href="construction.html" data-en="Construction & Maintenance" data-ar="البناء والصيانة">Construction & Maintenance</a></li>
+                                <li><a class="dropdown-item" href="operation.html" data-en="Operation & Maintenance" data-ar="التشغيل والصيانة">Operation & Maintenance</a></li>
+                                <li><a class="dropdown-item" href="manpower.html" data-en="Manpower Services" data-ar="خدمات القوى العاملة">Manpower Services</a></li>
+                                <li><a class="dropdown-item" href="office-setup.html" data-en="Office Setup" data-ar="إعداد المكاتب">Office Setup</a></li>
+                                <li><a class="dropdown-item" href="telecommunication.html" data-en="Telecommunication" data-ar="الاتصالات">Telecommunication</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="steel.html" data-en="Steel Products" data-ar="منتجات الصلب">Steel Products</a></li>
+                                <li><a class="dropdown-item" href="stainless-steel.html" data-en="Stainless Steel" data-ar="الستانلس ستيل">Stainless Steel</a></li>
+                                <li><a class="dropdown-item" href="aluminium.html" data-en="Aluminium Products" data-ar="منتجات الألومنيوم">Aluminium Products</a></li>
+                                <li><a class="dropdown-item" href="fasteners.html" data-en="Fasteners" data-ar="المثبتات">Fasteners</a></li>
+                                <li><a class="dropdown-item" href="fiber.html" data-en="Fiber Products" data-ar="منتجات الألياف">Fiber Products</a></li>
+                                <li><a class="dropdown-item" href="industrial-supplies.html" data-en="Industrial Supplies" data-ar="الإمدادات الصناعية">Industrial Supplies</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="safety.html" data-en="Safety" data-ar="السلامة">Safety</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="head-protection.html" data-en="Head Protection" data-ar="حماية الرأس">Head Protection</a></li>
+                                <li><a class="dropdown-item" href="eye-protection.html" data-en="Eye Protection" data-ar="حماية العين">Eye Protection</a></li>
+                                <li><a class="dropdown-item" href="face-shields.html" data-en="Face Shields" data-ar="واقيات الوجه">Face Shields</a></li>
+                                <li><a class="dropdown-item" href="hearing-protection.html" data-en="Hearing Protection" data-ar="حماية السمع">Hearing Protection</a></li>
+                                <li><a class="dropdown-item" href="hand-protection.html" data-en="Hand Protection" data-ar="حماية اليد">Hand Protection</a></li>
+                                <li><a class="dropdown-item" href="fall-protection.html" data-en="Fall Protection" data-ar="حماية من السقوط">Fall Protection</a></li>
+                                <li><a class="dropdown-item" href="protective-workwear.html" data-en="Protective Workwear" data-ar="ملابس العمل الواقية">Protective Workwear</a></li>
+                                <li><a class="dropdown-item" href="safety-shoes.html" data-en="Safety Shoes" data-ar="أحذية السلامة">Safety Shoes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="header-actions">
+                        <button class="language-toggle" onclick="toggleLanguage()">
+                            <span class="lang-en">العربية</span>
+                            <span class="lang-ar">English</span>
+                        </button>
+                        <a href="contact.html" class="btn btn-primary cta-btn" data-en="Get Quote" data-ar="احصل على عرض">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                            <li class="breadcrumb-item"><a href="services.html" data-en="Services" data-ar="الخدمات">Services</a></li>
+                            <li class="breadcrumb-item active" data-en="Electrical Services" data-ar="الخدمات الكهربائية">Electrical Services</li>
+                        </ol>
+                    </nav>
+                    <h1 class="page-title" data-en="Electrical Services" data-ar="الخدمات الكهربائية">Electrical Services</h1>
+                    <p class="page-subtitle" data-en="Professional electrical engineering solutions for industrial applications" data-ar="حلول الهندسة الكهربائية المهنية للتطبيقات الصناعية">Professional electrical engineering solutions for industrial applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="service-overview section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="service-content">
+                        <h2 data-en="Expert Electrical Engineering Solutions" data-ar="حلول الهندسة الكهربائية الخبيرة">Expert Electrical Engineering Solutions</h2>
+                        <p data-en="Our electrical services division provides comprehensive electrical engineering solutions for industrial applications. We specialize in electrical system design, installation, maintenance, and safety compliance to ensure reliable and efficient electrical infrastructure." data-ar="يوفر قسم الخدمات الكهربائية لدينا حلول هندسة كهربائية شاملة للتطبيقات الصناعية. نحن متخصصون في تصميم الأنظمة الكهربائية والتركيب والصيانة والامتثال للسلامة لضمان البنية التحتية الكهربائية الموثوقة والفعالة.">Our electrical services division provides comprehensive electrical engineering solutions for industrial applications. We specialize in electrical system design, installation, maintenance, and safety compliance to ensure reliable and efficient electrical infrastructure.</p>
+                        <p data-en="With certified electrical engineers and technicians, we deliver safe, reliable, and code-compliant electrical solutions that meet the highest industry standards." data-ar="مع المهندسين الكهربائيين والفنيين المعتمدين، نقدم حلول كهربائية آمنة وموثوقة ومتوافقة مع الكود تلبي أعلى معايير الصناعة.">With certified electrical engineers and technicians, we deliver safe, reliable, and code-compliant electrical solutions that meet the highest industry standards.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-image">
+                        <img src="../assets/img/products/electrical/electrical.jpg" alt="Electrical Services" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electrical Services -->
+    <section class="electrical-services section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 data-en="Our Electrical Services" data-ar="خدماتنا الكهربائية">Our Electrical Services</h2>
+                        <p data-en="Comprehensive electrical solutions for all your industrial needs" data-ar="حلول كهربائية شاملة لجميع احتياجاتك الصناعية">Comprehensive electrical solutions for all your industrial needs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/products/electrical/e-switch-gear.jpg" alt="System Design" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Electrical System Design" data-ar="تصميم الأنظمة الكهربائية">Electrical System Design</h4>
+                            <p data-en="Custom electrical system design for industrial facilities including power distribution, control systems, and automation solutions." data-ar="تصميم نظام كهربائي مخصص للمرافق الصناعية بما في ذلك توزيع الطاقة وأنظمة التحكم وحلول الأتمتة.">Custom electrical system design for industrial facilities including power distribution, control systems, and automation solutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/products/electrical/e-cables.jpg" alt="Installation" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Installation Services" data-ar="خدمات التركيب">Installation Services</h4>
+                            <p data-en="Professional installation of electrical systems, cables, conduits, switchgear, and control panels with precision and safety." data-ar="التركيب المهني للأنظمة الكهربائية والكابلات والقنوات ومعدات التبديل ولوحات التحكم بدقة وأمان.">Professional installation of electrical systems, cables, conduits, switchgear, and control panels with precision and safety.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/products/electrical/e-testing.png" alt="Maintenance" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Maintenance & Testing" data-ar="الصيانة والاختبار">Maintenance & Testing</h4>
+                            <p data-en="Preventive maintenance, electrical testing, troubleshooting, and repair services to ensure optimal system performance." data-ar="الصيانة الوقائية والاختبار الكهربائي واستكشاف الأخطاء وإصلاحها وخدمات الإصلاح لضمان الأداء الأمثل للنظام.">Preventive maintenance, electrical testing, troubleshooting, and repair services to ensure optimal system performance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/products/electrical/e-generator.jpg" alt="Power Systems" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Power Generation" data-ar="توليد الطاقة">Power Generation</h4>
+                            <p data-en="Generator installation, UPS systems, and backup power solutions for uninterrupted industrial operations." data-ar="تركيب المولدات وأنظمة UPS وحلول الطاقة الاحتياطية للعمليات الصناعية المتواصلة.">Generator installation, UPS systems, and backup power solutions for uninterrupted industrial operations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/products/electrical/e-lighting.jpg" alt="Lighting" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Industrial Lighting" data-ar="الإضاءة الصناعية">Industrial Lighting</h4>
+                            <p data-en="Energy-efficient lighting solutions including LED systems, emergency lighting, and specialized industrial lighting." data-ar="حلول الإضاءة الموفرة للطاقة بما في ذلك أنظمة LED وإضاءة الطوارئ والإضاءة الصناعية المتخصصة.">Energy-efficient lighting solutions including LED systems, emergency lighting, and specialized industrial lighting.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="service-image">
+                            <img src="../assets/img/products/electrical/e-grounding.jpg" alt="Safety Systems" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h4 data-en="Safety & Grounding" data-ar="السلامة والتأريض">Safety & Grounding</h4>
+                            <p data-en="Electrical safety systems, grounding solutions, and protection systems to ensure safe electrical operations." data-ar="أنظمة السلامة الكهربائية وحلول التأريض وأنظمة الحماية لضمان العمليات الكهربائية الآمنة.">Electrical safety systems, grounding solutions, and protection systems to ensure safe electrical operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electrical Products -->
+    <section class="electrical-products section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 data-en="Electrical Products & Equipment" data-ar="المنتجات والمعدات الكهربائية">Electrical Products & Equipment</h2>
+                        <p data-en="High-quality electrical components and equipment for industrial applications" data-ar="مكونات ومعدات كهربائية عالية الجودة للتطبيقات الصناعية">High-quality electrical components and equipment for industrial applications</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="../assets/img/products/electrical/e-cables.jpg" alt="Electrical Cables" class="img-fluid">
+                        </div>
+                        <div class="product-content">
+                            <h5 data-en="Electrical Cables" data-ar="الكابلات الكهربائية">Electrical Cables</h5>
+                            <p data-en="High-quality electrical cables for power and control applications" data-ar="كابلات كهربائية عالية الجودة لتطبيقات الطاقة والتحكم">High-quality electrical cables for power and control applications</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="../assets/img/products/electrical/e-conduits.jpg" alt="Conduits" class="img-fluid">
+                        </div>
+                        <div class="product-content">
+                            <h5 data-en="Conduits & Fittings" data-ar="القنوات والتركيبات">Conduits & Fittings</h5>
+                            <p data-en="Protective conduits and fittings for cable management" data-ar="قنوات وتركيبات واقية لإدارة الكابلات">Protective conduits and fittings for cable management</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="../assets/img/products/electrical/e-switch-gear.jpg" alt="Switchgear" class="img-fluid">
+                        </div>
+                        <div class="product-content">
+                            <h5 data-en="Switchgear" data-ar="معدات التبديل">Switchgear</h5>
+                            <p data-en="Industrial switchgear and control equipment" data-ar="معدات التبديل الصناعية ومعدات التحكم">Industrial switchgear and control equipment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="../assets/img/products/electrical/e-capacitor.jpg" alt="Capacitors" class="img-fluid">
+                        </div>
+                        <div class="product-content">
+                            <h5 data-en="Capacitors" data-ar="المكثفات">Capacitors</h5>
+                            <p data-en="Power factor correction and electrical capacitors" data-ar="تصحيح معامل القدرة والمكثفات الكهربائية">Power factor correction and electrical capacitors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Served -->
+    <section class="industries-served section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 data-en="Industries We Serve" data-ar="الصناعات التي نخدمها">Industries We Serve</h2>
+                        <p data-en="Our electrical services cater to various industrial sectors" data-ar="تلبي خدماتنا الكهربائية القطاعات الصناعية المختلفة">Our electrical services cater to various industrial sectors</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="industry-card text-center">
+                        <div class="industry-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h5 data-en="Manufacturing" data-ar="التصنيع">Manufacturing</h5>
+                        <p data-en="Production facilities and manufacturing plants" data-ar="مرافق الإنتاج ومصانع التصنيع">Production facilities and manufacturing plants</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="industry-card text-center">
+                        <div class="industry-icon">
+                            <i class="fas fa-oil-can"></i>
+                        </div>
+                        <h5 data-en="Oil & Gas" data-ar="النفط والغاز">Oil & Gas</h5>
+                        <p data-en="Refineries and petrochemical facilities" data-ar="المصافي ومرافق البتروكيماويات">Refineries and petrochemical facilities</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="industry-card text-center">
+                        <div class="industry-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h5 data-en="Power Generation" data-ar="توليد الطاقة">Power Generation</h5>
+                        <p data-en="Power plants and energy facilities" data-ar="محطات الطاقة ومرافق الطاقة">Power plants and energy facilities</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="industry-card text-center">
+                        <div class="industry-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h5 data-en="Commercial" data-ar="التجاري">Commercial</h5>
+                        <p data-en="Commercial buildings and facilities" data-ar="المباني والمرافق التجارية">Commercial buildings and facilities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 data-en="Need Electrical Services?" data-ar="تحتاج خدمات كهربائية؟">Need Electrical Services?</h2>
+                    <p data-en="Contact us today to discuss your electrical engineering needs and get a customized solution for your business." data-ar="اتصل بنا اليوم لمناقشة احتياجاتك في الهندسة الكهربائية والحصول على حل مخصص لعملك.">Contact us today to discuss your electrical engineering needs and get a customized solution for your business.</p>
+                </div>
+                <div class="col-lg-4 text-end">
+                    <a href="contact.html" class="btn btn-outline btn-lg" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <img src="../assets/img/logos/logoC.png" alt="Rawabi Alwasit Company" class="footer-logo">
+                        <p data-en="Professional industrial supplies and services provider specializing in fabrication, maintenance, and trading." data-ar="مزود محترف للإمدادات والخدمات الصناعية متخصص في التصنيع والصيانة والتجارة.">Professional industrial supplies and services provider specializing in fabrication, maintenance, and trading.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                            <li><a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a></li>
+                            <li><a href="services.html" data-en="Services" data-ar="الخدمات">Services</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Services" data-ar="الخدمات">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="mechanical.html" data-en="Mechanical" data-ar="الميكانيكية">Mechanical</a></li>
+                            <li><a href="electrical.html" data-en="Electrical" data-ar="الكهربائية">Electrical</a></li>
+                            <li><a href="construction.html" data-en="Construction" data-ar="البناء">Construction</a></li>
+                            <li><a href="manpower.html" data-en="Manpower" data-ar="القوى العاملة">Manpower</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+966 58 262 7405</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@rawabialwasit.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Dammam, Saudi Arabia" data-ar="الدمام، المملكة العربية السعودية">Dammam, Saudi Arabia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p data-en="&copy; 2024 Rawabi Alwasit Company. All rights reserved." data-ar="&copy; 2024 شركة روابي الوسيط. جميع الحقوق محفوظة.">&copy; 2024 Rawabi Alwasit Company. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
+
