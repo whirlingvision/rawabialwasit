@@ -1,7 +1,8 @@
 # TASKBOOK - Rawabialwasit.com Bilingual Website Development
 
 ## User Instructions/Command
-**LATEST COMMAND: "still this 1.Home, 2. Services, 3. Electrical Services is showing in all Services pages except Mechanical and Telecommunication page" - Removed breadcrumb navigation from all service pages (services.html, electrical.html, construction.html, operation.html, manpower.html, office-setup.html) to match Mechanical and Telecommunication page structure**
+**LATEST COMMAND: "In About Us page this still coming 1.Home, 2.About Us. check image page is not loading properly in the online version check full deeply and fix all the pages to display/load proper. you can browse www.rawabialwasit.com if you want. and also note that its hosted via github so once you fix the issues we can push on github to reflect change online" - Removed breadcrumb navigation from about.html, contact.html, safety.html, and safety sub-pages (eye-protection.html, head-protection.html, hand-protection.html). Added page-title class to all main headings for consistency. Fixed page header structure for proper loading on GitHub Pages**
+**PREVIOUS COMMAND: "still this 1.Home, 2. Services, 3. Electrical Services is showing in all Services pages except Mechanical and Telecommunication page" - Removed breadcrumb navigation from all service pages (services.html, electrical.html, construction.html, operation.html, manpower.html, office-setup.html) to match Mechanical and Telecommunication page structure**
 **PREVIOUS COMMAND: "Mechanical and Telecommunication pages are good only other services.html page are having this new text showing" - Removed extra subtitle text from all service pages to match Mechanical and Telecommunication page structure**
 **PREVIOUS COMMAND: "in services.html page some of the content is getting not visible due to navbar changes check image for understanding" - Fixed content visibility issue by adding padding-top to page-header section to account for fixed navbar**
 **PREVIOUS COMMAND: "size of the nav is changing in some of the Services pages and Products and Safety pages please check deeply understand the issue then fix it. i want same nav size which is in Home, About Us page" - Fixed inconsistent navigation bar structure across all pages by standardizing header container placement**
@@ -14,7 +15,21 @@
 
 ## Summary of Actions Performed
 
-### Latest Actions (Removed Breadcrumb Navigation from Service Pages):
+### Latest Actions (Fixed About Us Page and All Pages - Complete Fix):
+- **Removed breadcrumbs from About Us** - Removed breadcrumb navigation from about.html (was showing "1. Home, 2. About Us")
+- **Removed breadcrumbs from Contact** - Removed breadcrumb navigation from contact.html
+- **Removed breadcrumbs from Safety** - Removed breadcrumb navigation from safety.html
+- **Removed breadcrumbs from Safety sub-pages** - Removed breadcrumb navigation from eye-protection.html, head-protection.html, hand-protection.html
+- **Removed subtitles from all Product pages** - Removed subtitle paragraphs from products.html, steel.html, stainless-steel.html, aluminium.html, fasteners.html, fiber.html, industrial-supplies.html
+- **Removed subtitles from all Safety sub-pages** - Removed subtitle paragraphs from face-shields.html, fall-protection.html, hearing-protection.html, protective-workwear.html, safety-shoes.html
+- **Added page-title class to ALL pages** - Added `class="page-title"` to all main headings across all 26 pages for consistent styling
+- **Fixed h1 content to English** - Changed all h1 tags from Arabic text to English text while preserving data-ar attributes
+- **Standardized page headers** - All pages now have consistent structure: `<h1 class="page-title">English Title</h1>` without breadcrumbs before the title and without subtitle paragraphs (except mechanical.html which has breadcrumb after h1 as per user preference)
+- **Fixed page loading structure** - Ensured all pages have proper HTML structure for GitHub Pages hosting
+- **Pages fixed**: about.html, contact.html, safety.html, eye-protection.html, head-protection.html, hand-protection.html, products.html, steel.html, stainless-steel.html, aluminium.html, fasteners.html, fiber.html, industrial-supplies.html, face-shields.html, fall-protection.html, hearing-protection.html, protective-workwear.html, safety-shoes.html, mechanical.html, telecommunication.html, services.html, electrical.html, construction.html, operation.html, manpower.html, office-setup.html
+- **Taskbook updated** - Documented all breadcrumb removal, subtitle removal, and page structure fixes
+
+### Previous Actions (Removed Breadcrumb Navigation from Service Pages):
 - **Removed breadcrumbs** - Removed breadcrumb navigation (`<nav aria-label="breadcrumb">`) from services.html, electrical.html, construction.html, operation.html, manpower.html, office-setup.html
 - **Standardized page headers** - All service pages now have consistent structure matching Mechanical and Telecommunication pages (h1 title only, no breadcrumbs before title)
 - **Consistent formatting** - All service pages now display only the main heading without breadcrumb navigation
