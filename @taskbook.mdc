@@ -1,7 +1,8 @@
 # TASKBOOK - Rawabialwasit.com Bilingual Website Development
 
 ## User Instructions/Command
-**LATEST COMMAND: "still contact us page form and maps is not loading or working propler please check and fix it" - Fixed contact form and map loading issues: removed duplicate form submission handler that conflicted with main.js, updated Google Maps embed URL to use search-based embed, improved form validation to handle optional phone field correctly, enhanced CSS for proper form and map display, fixed button HTML preservation during form submission**
+**LATEST COMMAND: "check image how its loading and showing not good and still maps are also not loading error" - Fixed contact form display and map loading: improved form layout with flexbox and proper box-sizing, added responsive column constraints, shortened phone placeholder text, updated Google Maps embed URL to standard working format, fixed map iframe positioning with absolute layout, ensured proper width constraints and responsive behavior**
+**PREVIOUS COMMAND: "still contact us page form and maps is not loading or working propler please check and fix it" - Fixed contact form and map loading issues: removed duplicate form submission handler that conflicted with main.js, updated Google Maps embed URL to use search-based embed, improved form validation to handle optional phone field correctly, enhanced CSS for proper form and map display, fixed button HTML preservation during form submission**
 **PREVIOUS COMMAND: "@Rawabi_icon.png please change address bar icon to this" - Updated favicon across site: replaced all `<link rel="icon" ...>` references to use `assets/img/logos/Rawabi_icon.png` (root) and `../assets/img/logos/Rawabi_icon.png` (pages). Verified no remaining references to `logo_icon.png`.**
 **LATEST COMMAND: "bootstrap.min.css is not getting loaded on https://rawabialwasit.com/pages/steel also happening on all products,Safety, and Services pages in live version find what is the cause for it and fix it do deeply research then act intellectually" - Fixed Bootstrap CSS loading issue: identified 13 pages using CDN (cdn.jsdelivr.net) instead of local file, replaced all CDN Bootstrap CSS links with local path ../assets/css/bootstrap.min.css for consistency and reliability on GitHub Pages. All Products, Safety, and Services pages now use local Bootstrap CSS**
 **PREVIOUS COMMAND: "<div class=\"contact-form-wrapper\">Get In Touch Send us a message and we'll respond as soon as possible. We're here to help with all your industrial needs. Full Name * Email Address * Phone Number Company Name Subject * Select a</div> this is not loading properly" - Fixed contact form display issues: added proper CSS display properties for form controls (display: block, width: 100%), fixed color variables (replaced primary-orange with primary-blue), added proper form styling for inputs, selects, and textareas, ensured Bootstrap compatibility**
@@ -21,7 +22,17 @@
 
 ## Summary of Actions Performed
 
-### Latest Actions (Fixed Contact Form and Map Loading Issues):
+### Latest Actions (Fixed Contact Form Display and Map Loading):
+- **Improved form layout** - Added flexbox layout to form rows with proper column constraints, added box-sizing: border-box to all form elements
+- **Fixed form width constraints** - Added max-width and width constraints to contact-form-wrapper and form controls to prevent overflow
+- **Shortened phone placeholder** - Changed from long placeholder to shorter "+966 XX XXX XXXX" format
+- **Fixed Google Maps embed** - Updated iframe URL to use standard Google Maps embed format with proper encoding
+- **Improved map wrapper** - Fixed map iframe positioning using absolute layout within relative container for better display
+- **Enhanced responsive design** - Added proper responsive breakpoints for mobile devices with adjusted map height
+- **Pages updated**: contact.html
+- **Taskbook updated** - Documented form and map display fixes
+
+### Previous Actions (Fixed Contact Form and Map Loading Issues):
 - **Removed duplicate form handler** - Removed inline form submission script from contact.html that conflicted with main.js form handler, ensuring single source of truth
 - **Fixed Google Maps embed** - Updated iframe URL to use Google Maps embed API with search-based location (more reliable than coordinates)
 - **Improved form validation** - Fixed phone validation to only trigger when phone value is provided (phone field is optional)
