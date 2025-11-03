@@ -1,7 +1,9 @@
 # TASKBOOK - Rawabialwasit.com Bilingual Website Development
 
 ## User Instructions/Command
-**LATEST COMMAND: "check image this is how its loading on online version why and Contact us form is not loading properly and map is also not loading, and in service>mechanical page stil 1.Home,2.About Us,3.Services is showing check image and same for Head Protection page. Telecommunications page is not loading properly, Products full pages not loading properly, Safety only Head Protection and Eye Protection is coming good rest same issue" - Fixed all page loading issues: standardized HTML lang/dir attributes to 'en'/'ltr' for all 26 pages, removed breadcrumbs from mechanical.html, fixed dropdown menu CSS for LTR direction, standardized navbar structure with ms-auto, updated Google Maps embed URL, verified JavaScript loading on all pages**
+**LATEST COMMAND: "<div class=\"contact-form-wrapper\">Get In Touch Send us a message and we'll respond as soon as possible. We're here to help with all your industrial needs. Full Name * Email Address * Phone Number Company Name Subject * Select a</div> this is not loading properly" - Fixed contact form display issues: added proper CSS display properties for form controls (display: block, width: 100%), fixed color variables (replaced primary-orange with primary-blue), added proper form styling for inputs, selects, and textareas, ensured Bootstrap compatibility**
+**PREVIOUS COMMAND: "@rawabi_logo_horizontal_white.png use this logo here <img src=\"../assets/img/logos/rawabi_logo_horizontal.png\" alt=\"Rawabi Alwasit Company\" class=\"footer-logo\"></img>" - Replaced all footer logos with white version (rawabi_logo_horizontal_white.png) across all 26 pages and index.html. Header logos remain as regular horizontal logo**
+**PREVIOUS COMMAND: "check image this is how its loading on online version why and Contact us form is not loading properly and map is also not loading, and in service>mechanical page stil 1.Home,2.About Us,3.Services is showing check image and same for Head Protection page. Telecommunications page is not loading properly, Products full pages not loading properly, Safety only Head Protection and Eye Protection is coming good rest same issue" - Fixed all page loading issues: standardized HTML lang/dir attributes to 'en'/'ltr' for all 26 pages, removed breadcrumbs from mechanical.html, fixed dropdown menu CSS for LTR direction, standardized navbar structure with ms-auto, updated Google Maps embed URL, verified JavaScript loading on all pages**
 **PREVIOUS COMMAND: "In About Us page this still coming 1.Home, 2.About Us. check image page is not loading properly in the online version check full deeply and fix all the pages to display/load proper. you can browse www.rawabialwasit.com if you want. and also note that its hosted via github so once you fix the issues we can push on github to reflect change online" - Removed breadcrumb navigation from about.html, contact.html, safety.html, and safety sub-pages (eye-protection.html, head-protection.html, hand-protection.html). Added page-title class to all main headings for consistency. Fixed page header structure for proper loading on GitHub Pages**
 **PREVIOUS COMMAND: "still this 1.Home, 2. Services, 3. Electrical Services is showing in all Services pages except Mechanical and Telecommunication page" - Removed breadcrumb navigation from all service pages (services.html, electrical.html, construction.html, operation.html, manpower.html, office-setup.html) to match Mechanical and Telecommunication page structure**
 **PREVIOUS COMMAND: "Mechanical and Telecommunication pages are good only other services.html page are having this new text showing" - Removed extra subtitle text from all service pages to match Mechanical and Telecommunication page structure**
@@ -16,7 +18,22 @@
 
 ## Summary of Actions Performed
 
-### Latest Actions (Fixed All Page Loading and Structure Issues - Complete Fix):
+### Latest Actions (Fixed Contact Form Display Issues):
+- **Fixed form control display** - Added `display: block` and `width: 100%` to `.form-control` to ensure proper rendering
+- **Fixed color variables** - Replaced all `--primary-orange` references with `--primary-blue` to match color scheme
+- **Enhanced form styling** - Added explicit styling for inputs, selects, and textareas with proper appearance properties
+- **Added form wrapper styling** - Ensured proper spacing and layout for form elements with Bootstrap compatibility
+- **Fixed responsive form** - Added mobile-specific styling to prevent iOS zoom and ensure proper display
+- **Pages updated**: contact.html
+- **Taskbook updated** - Documented contact form fixes
+
+### Previous Actions (Replaced Footer Logos with White Version):
+- **Replaced footer logos** - Changed all footer logos from `rawabi_logo_horizontal.png` to `rawabi_logo_horizontal_white.png` in index.html and all 26 pages in pages/ directory
+- **Preserved header logos** - Header logos remain as regular `rawabi_logo_horizontal.png` (only footer logos use white version)
+- **Pages updated**: index.html, about.html, contact.html, services.html, products.html, safety.html, and all sub-pages
+- **Taskbook updated** - Documented footer logo replacement
+
+### Previous Actions (Fixed All Page Loading and Structure Issues - Complete Fix):
 - **Standardized HTML lang/dir attributes** - Changed all 13 pages from `lang="ar" dir="rtl"` to `lang="en" dir="ltr"` to match homepage structure (stainless-steel.html, steel.html, aluminium.html, fasteners.html, fiber.html, industrial-supplies.html, products.html, telecommunication.html, safety-shoes.html, protective-workwear.html, hearing-protection.html, fall-protection.html, face-shields.html)
 - **Removed breadcrumbs from Mechanical page** - Removed breadcrumb navigation from mechanical.html (lines 104-110), now matches other pages structure
 - **Fixed dropdown menu CSS** - Updated `.dropdown-menu` styles in `assets/css/style.css` to work correctly with LTR direction (added left: auto, right: auto, min-width, z-index)

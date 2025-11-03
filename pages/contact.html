@@ -26,7 +26,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="../index.html">
-                    <img src="../assets/img/logos/rawabi_logo_horizontal.png?v=2" alt="Rawabi Alwasit Company" class="logo">
+                    <img src="../assets/img/logos/rawabi_logo_horizontal.png" alt="Rawabi Alwasit Company" class="logo">
                 </a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -241,7 +241,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="footer-widget">
-                        <img src="../assets/img/logos/rawabi_logo_horizontal.png?v=2" alt="Rawabi Alwasit Company" class="footer-logo">
+                        <img src="../assets/img/logos/rawabi_logo_horizontal_white.png" alt="Rawabi Alwasit Company" class="footer-logo">
                         <p data-en="Professional industrial supplies and services provider in Saudi Arabia. We specialize in fabrication, maintenance, and trading services." data-ar="مزود محترف للإمدادات والخدمات الصناعية في المملكة العربية السعودية. نحن متخصصون في خدمات التصنيع والصيانة والتجارة.">
                             Professional industrial supplies and services provider in Saudi Arabia. We specialize in fabrication, maintenance, and trading services.
                         </p>
@@ -309,7 +309,7 @@
     <!-- Additional CSS for Contact Page -->
     <style>
         .page-header {
-            background: linear-gradient(135deg, var(--secondary-gray) 0%, var(--primary-orange) 100%);
+            background: linear-gradient(135deg, var(--secondary-gray) 0%, var(--primary-blue) 100%);
             color: var(--white);
             padding: 120px 0 60px;
             margin-top: 80px;
@@ -346,10 +346,29 @@
             margin-bottom: 15px;
         }
         
+        .contact-form-wrapper p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+        
         .form-label {
             font-weight: 500;
             color: var(--text-dark);
             margin-bottom: 8px;
+            display: block;
+        }
+        
+        .contact-form {
+            margin-top: 20px;
+        }
+        
+        .contact-form .row {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+        
+        .contact-form .mb-3 {
+            margin-bottom: 1rem !important;
         }
         
         .form-control {
@@ -358,21 +377,45 @@
             padding: 12px 15px;
             font-size: 14px;
             transition: var(--transition-fast);
+            width: 100%;
+            display: block;
+            background-color: #fff;
+            color: var(--text-dark);
+            font-family: inherit;
+            line-height: 1.5;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
         }
         
         .form-control:focus {
-            border-color: var(--primary-orange);
-            box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.25);
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+            outline: none;
         }
         
         .form-control.error {
             border-color: #dc3545;
         }
         
+        select.form-control {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 12px center;
+            background-repeat: no-repeat;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
         .error-message {
             color: #dc3545;
             font-size: 12px;
             margin-top: 5px;
+            display: block;
         }
         
         .form-message {
@@ -380,6 +423,7 @@
             border-radius: 5px;
             margin-bottom: 20px;
             font-weight: 500;
+            display: block;
         }
         
         .form-message.success {
@@ -416,7 +460,7 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, var(--primary-orange), #ff8c5a);
+            background: linear-gradient(135deg, var(--primary-blue), var(--sky-blue));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -439,12 +483,12 @@
         }
         
         .contact-details a {
-            color: var(--primary-orange);
+            color: var(--primary-blue);
             text-decoration: none;
         }
         
         .contact-details a:hover {
-            color: #e55a2b;
+            color: var(--primary-dark);
         }
         
         .map-section {
@@ -469,6 +513,10 @@
                 padding: 30px 20px;
             }
             
+            .contact-form-wrapper h2 {
+                font-size: 1.75rem;
+            }
+            
             .contact-info-item {
                 margin-bottom: 25px;
             }
@@ -477,6 +525,10 @@
                 width: 40px;
                 height: 40px;
                 font-size: 1rem;
+            }
+            
+            .form-control {
+                font-size: 16px; /* Prevents zoom on iOS */
             }
         }
     </style>
