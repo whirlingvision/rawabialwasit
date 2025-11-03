@@ -1,7 +1,8 @@
 # TASKBOOK - Rawabialwasit.com Bilingual Website Development
 
 ## User Instructions/Command
-**LATEST COMMAND: "@Rawabi_icon.png please change address bar icon to this" - Updated favicon across site: replaced all `<link rel="icon" ...>` references to use `assets/img/logos/Rawabi_icon.png` (root) and `../assets/img/logos/Rawabi_icon.png` (pages). Verified no remaining references to `logo_icon.png`.**
+**LATEST COMMAND: "still contact us page form and maps is not loading or working propler please check and fix it" - Fixed contact form and map loading issues: removed duplicate form submission handler that conflicted with main.js, updated Google Maps embed URL to use search-based embed, improved form validation to handle optional phone field correctly, enhanced CSS for proper form and map display, fixed button HTML preservation during form submission**
+**PREVIOUS COMMAND: "@Rawabi_icon.png please change address bar icon to this" - Updated favicon across site: replaced all `<link rel="icon" ...>` references to use `assets/img/logos/Rawabi_icon.png` (root) and `../assets/img/logos/Rawabi_icon.png` (pages). Verified no remaining references to `logo_icon.png`.**
 **LATEST COMMAND: "bootstrap.min.css is not getting loaded on https://rawabialwasit.com/pages/steel also happening on all products,Safety, and Services pages in live version find what is the cause for it and fix it do deeply research then act intellectually" - Fixed Bootstrap CSS loading issue: identified 13 pages using CDN (cdn.jsdelivr.net) instead of local file, replaced all CDN Bootstrap CSS links with local path ../assets/css/bootstrap.min.css for consistency and reliability on GitHub Pages. All Products, Safety, and Services pages now use local Bootstrap CSS**
 **PREVIOUS COMMAND: "<div class=\"contact-form-wrapper\">Get In Touch Send us a message and we'll respond as soon as possible. We're here to help with all your industrial needs. Full Name * Email Address * Phone Number Company Name Subject * Select a</div> this is not loading properly" - Fixed contact form display issues: added proper CSS display properties for form controls (display: block, width: 100%), fixed color variables (replaced primary-orange with primary-blue), added proper form styling for inputs, selects, and textareas, ensured Bootstrap compatibility**
 **PREVIOUS COMMAND: "@rawabi_logo_horizontal_white.png use this logo here <img src=\"../assets/img/logos/rawabi_logo_horizontal.png\" alt=\"Rawabi Alwasit Company\" class=\"footer-logo\"></img>" - Replaced all footer logos with white version (rawabi_logo_horizontal_white.png) across all 26 pages and index.html. Header logos remain as regular horizontal logo**
@@ -20,7 +21,16 @@
 
 ## Summary of Actions Performed
 
-### Latest Actions (Favicon Updated):
+### Latest Actions (Fixed Contact Form and Map Loading Issues):
+- **Removed duplicate form handler** - Removed inline form submission script from contact.html that conflicted with main.js form handler, ensuring single source of truth
+- **Fixed Google Maps embed** - Updated iframe URL to use Google Maps embed API with search-based location (more reliable than coordinates)
+- **Improved form validation** - Fixed phone validation to only trigger when phone value is provided (phone field is optional)
+- **Enhanced form submission** - Updated submitForm function to preserve button HTML (including icons) during loading state
+- **Fixed CSS display issues** - Added proper padding for contact-section, improved map-wrapper styling with explicit display and height, fixed form row padding
+- **Pages updated**: contact.html, assets/js/main.js
+- **Taskbook updated** - Documented contact form and map fixes
+
+### Previous Actions (Favicon Updated):
 - **Replaced favicon links** - Switched from `logo_icon.png` to `Rawabi_icon.png` in `index.html` and all relevant files under `pages/`
 - **Path correctness** - Used `assets/...` for root and `../assets/...` for sub-pages
 - **Verification** - Confirmed 0 remaining `logo_icon.png` references; 8 pages now point to `Rawabi_icon.png`

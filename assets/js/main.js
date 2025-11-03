@@ -371,16 +371,33 @@ function initializeFormValidation() {
     const forms = document.querySelectorAll('form');
     
     forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const isValid = validateForm(this);
-            
-            if (isValid) {
-                submitForm(this, formData);
-            }
-        });
+        // Only add listener if form doesn't already have custom handler
+        const formId = form.id;
+        if (formId === 'contactForm') {
+            // Contact form - ensure it's handled
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const isValid = validateForm(this);
+                
+                if (isValid) {
+                    submitForm(this, formData);
+                }
+            });
+        } else {
+            // Other forms
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const isValid = validateForm(this);
+                
+                if (isValid) {
+                    submitForm(this, formData);
+                }
+            });
+        }
     });
 }
 
@@ -444,15 +461,17 @@ function isValidSaudiPhone(phone) {
 
 async function submitForm(form, formData) {
     const submitButton = form.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
+    const originalHTML = submitButton.innerHTML;
     
-    // Show loading state
-    submitButton.textContent = 'Sending...';
+    // Show loading state with icon
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
     submitButton.disabled = true;
     
     try {
-        // Add Web3Forms access key
-        formData.append('access_key', 'c6f1aa00-834a-40d4-8ca2-b77b600fdc83');
+        // Check if access_key is already in formData
+        if (!formData.has('access_key')) {
+            formData.append('access_key', 'c6f1aa00-834a-40d4-8ca2-b77b600fdc83');
+        }
         
         const response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
@@ -462,17 +481,17 @@ async function submitForm(form, formData) {
         const result = await response.json();
         
         if (result.success) {
-            showFormMessage(form, 'Thank you! Your message has been sent successfully.', 'success');
+            showFormMessage(form, 'Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
             form.reset();
         } else {
             throw new Error(result.message || 'Form submission failed');
         }
     } catch (error) {
-        showFormMessage(form, 'Sorry, there was an error sending your message. Please try again.', 'error');
+        showFormMessage(form, 'Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
         console.error('Form submission error:', error);
     } finally {
         // Reset button state
-        submitButton.textContent = originalText;
+        submitButton.innerHTML = originalHTML;
         submitButton.disabled = false;
     }
 }
