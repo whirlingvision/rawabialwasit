@@ -3,25 +3,82 @@
 // Ensure Bootstrap CSS is present; if local file is blocked online, inject CDN
 (function ensureBootstrapCss() {
     try {
-        // Wait a moment for CSS to apply, then check a Bootstrap token class
-        setTimeout(function() {
+        // Wait longer for CSS to fully apply and check multiple times
+        var checkAttempts = 0;
+        var maxAttempts = 3;
+        
+        function checkBootstrap() {
+            checkAttempts++;
             var test = document.createElement('div');
-            test.className = 'd-none'; // should compute to display: none when Bootstrap is present
+            test.className = 'd-none'; // Bootstrap utility class
+            test.style.position = 'absolute';
+            test.style.left = '-9999px';
             document.body.appendChild(test);
-            var hasBootstrap = window.getComputedStyle(test).display === 'none';
+            var computedStyle = window.getComputedStyle(test);
+            var hasBootstrap = computedStyle.display === 'none';
             document.body.removeChild(test);
-            if (!hasBootstrap) {
+            
+            if (hasBootstrap) {
+                console.log('Bootstrap CSS detected successfully.');
+                return;
+            }
+            
+            // If Bootstrap not found and we haven't exceeded attempts, try again
+            if (checkAttempts < maxAttempts) {
+                setTimeout(checkBootstrap, 800);
+                return;
+            }
+            
+            // Final attempt - check if Bootstrap classes exist in stylesheets
+            var styleSheets = Array.from(document.styleSheets);
+            var bootstrapFound = false;
+            
+            try {
+                styleSheets.forEach(function(sheet) {
+                    try {
+                        if (sheet.href && (sheet.href.includes('bootstrap') || sheet.href.includes('bootstrap.min.css'))) {
+                            bootstrapFound = true;
+                        }
+                        // Check for Bootstrap-specific rules
+                        if (sheet.cssRules) {
+                            for (var i = 0; i < sheet.cssRules.length; i++) {
+                                if (sheet.cssRules[i].selectorText && sheet.cssRules[i].selectorText.includes('.d-none')) {
+                                    bootstrapFound = true;
+                                    break;
+                                }
+                            }
+                        }
+                    } catch (e) {
+                        // Cross-origin stylesheets may throw errors - ignore
+                    }
+                });
+            } catch (e) {
+                // Ignore cross-origin errors
+            }
+            
+            if (!bootstrapFound) {
+                console.warn('Bootstrap CSS not detected after multiple attempts. Local CSS may be missing or blocked.');
+                // Only inject CDN if absolutely necessary and CSP allows it
                 var cdn = document.createElement('link');
                 cdn.rel = 'stylesheet';
                 cdn.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
                 cdn.crossOrigin = 'anonymous';
                 cdn.integrity = 'sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH';
                 document.head.appendChild(cdn);
-                console.log('Local Bootstrap CSS missing; injected CDN fallback.');
+                console.log('Injected Bootstrap CDN fallback.');
             }
-        }, 600);
+        }
+        
+        // Start checking after DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(checkBootstrap, 1000);
+            });
+        } else {
+            setTimeout(checkBootstrap, 1000);
+        }
     } catch (e) {
-        // ignore
+        console.error('Bootstrap CSS detection error:', e);
     }
 })();
 
