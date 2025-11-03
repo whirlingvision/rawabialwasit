@@ -1,9 +1,6 @@
 # Apache .htaccess file for Rawabi Alwasit Website
 # This file sets Content Security Policy headers to fix form submission and resource loading issues
 
-# Set default directory index file (required for Bluehost)
-DirectoryIndex index.html index.htm index.php
-
 # Enable mod_headers if available
 <IfModule mod_headers.c>
     # Set Content Security Policy
