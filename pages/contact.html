@@ -227,10 +227,10 @@
                 <iframe 
                     id="googleMap"
                     src="https://maps.google.com/maps?width=100%25&height=450&hl=en&q=Prince%20Muhammad%20Ibn%20Fahad%20Rd,%20Ash%20Shati%20Ash%20Sharqi%20Dist.,%20Dammam,%20Saudi%20Arabia&t=&z=14&ie=UTF8&iwloc=B&output=embed" 
-                    width="100%" 
-                    height="450" 
-                    frameborder="0" 
-                    style="border:0; display:block;" 
+                    class="map-iframe"
+                    width="100%"
+                    height="450"
+                    frameborder="0"
                     allowfullscreen="" 
                     loading="lazy" 
                     referrerpolicy="strict-origin-when-cross-origin"
@@ -240,13 +240,13 @@
                 <!-- OpenStreetMap fallback (shown if Google Maps fails to load) -->
                 <iframe
                     id="osmMap"
-                    style="display:none; border:0; width:100%; height:450px;"
+                    class="map-iframe is-hidden"
                     loading="lazy"
                     title="Rawabi Alwasit Company Location (OpenStreetMap)"
                     aria-label="Rawabi Alwasit Company Location (OpenStreetMap)"
                     src="https://www.openstreetmap.org/export/embed.html?bbox=50.02%2C26.37%2C50.16%2C26.46&layer=mapnik&marker=26.42%2C50.08">
                 </iframe>
-                <div id="mapFallback" style="display:none; padding:20px; text-align:center; background:#f8f9fa;">
+                <div id="mapFallback" class="map-fallback is-hidden">
                     <p style="margin:0 0 10px; color:#6c757d;">Map preview is blocked on this network.</p>
                     <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Prince+Muhammad+Ibn+Fahad+Road,+Ash+Shati+Ash+Sharqi+District,+Dammam,+Saudi+Arabia" target="_blank" rel="noopener">Open in Google Maps</a>
                 </div>

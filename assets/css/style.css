@@ -601,6 +601,9 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 .map-section { margin-top:60px; padding-bottom:60px; }
 .map-wrapper { position:relative; border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); background-color:#f0f0f0; }
 .map-wrapper iframe { width:100%; height:450px; min-height:450px; border:none; display:block; }
+.map-iframe { width:100%; height:450px; border:0; display:block; }
+.map-fallback { padding:20px; text-align:center; background:#f8f9fa; }
+.is-hidden { display:none; }
 .footer-logo {
     max-height: 80px; /* Proper height for horizontal logo in footer */
     width: auto;
