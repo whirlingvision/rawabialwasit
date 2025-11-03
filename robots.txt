@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow all important pages
+Allow: /index.html
+Allow: /pages/
+Allow: /assets/
+
+# Sitemap location
+Sitemap: https://rawabialwasit.com/sitemap.xml
+
+# Crawl-delay (optional, remove if not needed)
+Crawl-delay: 1
+
