@@ -1,5 +1,30 @@
 // Rawabi Alwasit Company - Main JavaScript
 
+// Ensure Bootstrap CSS is present; if local file is blocked online, inject CDN
+(function ensureBootstrapCss() {
+    try {
+        // Wait a moment for CSS to apply, then check a Bootstrap token class
+        setTimeout(function() {
+            var test = document.createElement('div');
+            test.className = 'd-none'; // should compute to display: none when Bootstrap is present
+            document.body.appendChild(test);
+            var hasBootstrap = window.getComputedStyle(test).display === 'none';
+            document.body.removeChild(test);
+            if (!hasBootstrap) {
+                var cdn = document.createElement('link');
+                cdn.rel = 'stylesheet';
+                cdn.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+                cdn.crossOrigin = 'anonymous';
+                cdn.integrity = 'sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH';
+                document.head.appendChild(cdn);
+                console.log('Local Bootstrap CSS missing; injected CDN fallback.');
+            }
+        }, 600);
+    } catch (e) {
+        // ignore
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initializeNavigation();
@@ -506,8 +531,33 @@ async function submitForm(form, formData) {
             form.submit();
             return; // stop further UI handling; browser will navigate
         } catch (nativeErr) {
-            // If native submit also fails (shouldn't), show message
-            showFormMessage(form, 'Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
+            // If native submit also fails, offer a mailto fallback with prefilled content
+            try {
+                var name = form.querySelector('#name')?.value || '';
+                var email = form.querySelector('#email')?.value || '';
+                var phone = form.querySelector('#phone')?.value || '';
+                var subj = form.querySelector('#subject')?.value || 'General Inquiry';
+                var msg = form.querySelector('#message')?.value || '';
+                var body = encodeURIComponent(
+                    'Name: ' + name + '\n' +
+                    'Email: ' + email + '\n' +
+                    'Phone: ' + phone + '\n' +
+                    'Subject: ' + subj + '\n\n' +
+                    msg
+                );
+                var mailto = 'mailto:info@rawabialwasit.com?subject=' + encodeURIComponent('Website Contact: ' + subj) + '&body=' + body;
+                showFormMessage(form, 'We could not send your message automatically. Please click the button below to email us directly.', 'error');
+                var container = form.querySelector('.form-message.error');
+                if (container) {
+                    var a = document.createElement('a');
+                    a.href = mailto;
+                    a.className = 'btn btn-primary mt-2';
+                    a.textContent = 'Open Email App';
+                    container.appendChild(a);
+                }
+            } catch (e2) {
+                showFormMessage(form, 'Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
+            }
         }
     } finally {
         // Reset button state
