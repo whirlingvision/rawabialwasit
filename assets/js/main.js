@@ -475,7 +475,9 @@ async function submitForm(form, formData) {
         
         const response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
-            body: formData
+            headers: { 'Accept': 'application/json' },
+            body: formData,
+            redirect: 'follow'
         });
         
         const result = await response.json();
@@ -484,7 +486,11 @@ async function submitForm(form, formData) {
             showFormMessage(form, 'Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
             form.reset();
         } else {
-            throw new Error(result.message || 'Form submission failed');
+            // Provide a clearer hint if domain is not allowed on Web3Forms
+            const msg = /domain|origin|unauthorized/i.test(String(result.message))
+                ? 'Form service blocked this domain. Please add rawabialwasit.com to the allowed domains in Web3Forms settings and try again.'
+                : (result.message || 'Form submission failed');
+            throw new Error(msg);
         }
     } catch (error) {
         showFormMessage(form, 'Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
