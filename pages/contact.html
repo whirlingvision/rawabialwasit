@@ -19,8 +19,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome removed due to CSP; optional: serve locally if needed -->
 </head>
 <body>
     <!-- Header -->
@@ -261,6 +260,7 @@
                     var o = document.getElementById('osmMap');
                     var f = document.getElementById('mapFallback');
                     var loaded = false;
+                    if (f) { f.style.display = 'block'; }
                     if (g) {
                         g.addEventListener('load', function() { loaded = true; });
                     }
@@ -350,7 +350,8 @@
         </div>
     </footer>
 
-    <!-- Additional CSS for Contact Page -->
+    <!-- Additional CSS for Contact Page moved to assets/css/style.css to satisfy CSP -->
+    <!--
     <style>
         .page-header {
             background: linear-gradient(135deg, var(--secondary-gray) 0%, var(--primary-blue) 100%);
@@ -689,9 +690,8 @@
             }
         }
     </style>
+    -->
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="../assets/js/main.js"></script>
     
