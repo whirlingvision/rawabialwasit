@@ -1,0 +1,2 @@
+# Test .htaccess - Simple DirectoryIndex
+DirectoryIndex index.html
