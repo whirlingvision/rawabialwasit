@@ -1,7 +1,8 @@
 # TASKBOOK - Rawabialwasit.com Bilingual Website Development
 
 ## User Instructions/Command
-**LATEST COMMAND: "check image how its loading and showing not good and still maps are also not loading error" - Fixed contact form display and map loading: improved form layout with flexbox and proper box-sizing, added responsive column constraints, shortened phone placeholder text, updated Google Maps embed URL to standard working format, fixed map iframe positioning with absolute layout, ensured proper width constraints and responsive behavior**
+**LATEST COMMAND: "i think you need to include this in head top level for all pages . what you you think ?<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH\" crossorigin=\"anonymous\"> as still not working" - Replaced all local Bootstrap CSS with Bootstrap 5.3.3 CDN version (with integrity and crossorigin) in head section of index.html and all 26 pages. CDN link positioned right after favicon and before other CSS files for proper loading order**
+**PREVIOUS COMMAND: "check image how its loading and showing not good and still maps are also not loading error" - Fixed contact form display and map loading: improved form layout with flexbox and proper box-sizing, added responsive column constraints, shortened phone placeholder text, updated Google Maps embed URL to standard working format, fixed map iframe positioning with absolute layout, ensured proper width constraints and responsive behavior**
 **PREVIOUS COMMAND: "still contact us page form and maps is not loading or working propler please check and fix it" - Fixed contact form and map loading issues: removed duplicate form submission handler that conflicted with main.js, updated Google Maps embed URL to use search-based embed, improved form validation to handle optional phone field correctly, enhanced CSS for proper form and map display, fixed button HTML preservation during form submission**
 **PREVIOUS COMMAND: "@Rawabi_icon.png please change address bar icon to this" - Updated favicon across site: replaced all `<link rel="icon" ...>` references to use `assets/img/logos/Rawabi_icon.png` (root) and `../assets/img/logos/Rawabi_icon.png` (pages). Verified no remaining references to `logo_icon.png`.**
 **LATEST COMMAND: "bootstrap.min.css is not getting loaded on https://rawabialwasit.com/pages/steel also happening on all products,Safety, and Services pages in live version find what is the cause for it and fix it do deeply research then act intellectually" - Fixed Bootstrap CSS loading issue: identified 13 pages using CDN (cdn.jsdelivr.net) instead of local file, replaced all CDN Bootstrap CSS links with local path ../assets/css/bootstrap.min.css for consistency and reliability on GitHub Pages. All Products, Safety, and Services pages now use local Bootstrap CSS**
@@ -22,7 +23,15 @@
 
 ## Summary of Actions Performed
 
-### Latest Actions (Fixed Contact Form Display and Map Loading):
+### Latest Actions (Replaced Bootstrap CSS with CDN Version):
+- **Replaced local Bootstrap CSS with CDN** - Changed all Bootstrap CSS references from local file (`../assets/css/bootstrap.min.css`) to Bootstrap 5.3.3 CDN with integrity hash and crossorigin
+- **Proper head section placement** - Added Bootstrap CDN link right after favicon and before other CSS files in head section for optimal loading order
+- **Security and integrity** - Included integrity hash (`sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH`) and crossorigin attributes for secure CDN loading
+- **Consistent structure** - All 27 files (index.html + 26 pages) now use the same Bootstrap CDN link with consistent comment structure
+- **Files updated**: index.html, all 26 pages in pages/ directory
+- **Taskbook updated** - Documented Bootstrap CDN replacement
+
+### Previous Actions (Fixed Contact Form Display and Map Loading):
 - **Improved form layout** - Added flexbox layout to form rows with proper column constraints, added box-sizing: border-box to all form elements
 - **Fixed form width constraints** - Added max-width and width constraints to contact-form-wrapper and form controls to prevent overflow
 - **Shortened phone placeholder** - Changed from long placeholder to shorter "+966 XX XXX XXXX" format
