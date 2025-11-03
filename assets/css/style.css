@@ -637,7 +637,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     justify-content:center; 
     padding:40px;
     min-height:450px;
-    background-image: url('https://staticmap.openstreetmap.de/staticmap.php?center=26.433056,50.123456&zoom=14&size=600x400&markers=26.433056,50.123456&layer=transport');
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

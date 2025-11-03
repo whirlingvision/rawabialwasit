@@ -473,23 +473,92 @@ function initializeFormValidation() {
     forms.forEach(form => {
         const formId = form.id;
         if (formId === 'contactForm') {
-            // Contact form - FormSubmit.co uses native POST, so we just validate and show loading
+            // Contact form - Use JavaScript fetch to FormSubmit.co AJAX endpoint (bypasses form-action CSP)
             form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Always prevent default for JavaScript submission
+                
+                const formData = new FormData(this);
                 const isValid = validateForm(this);
                 
                 if (!isValid) {
-                    e.preventDefault();
                     return;
                 }
                 
-                // Form is valid - show loading state but allow native submission
                 const submitButton = this.querySelector('button[type="submit"]');
                 const originalHTML = submitButton.innerHTML;
                 submitButton.innerHTML = '⏳ Sending...';
                 submitButton.disabled = true;
                 
-                // Form will submit natively to FormSubmit.co - no need to prevent default
-                // Loading state will remain until page redirects
+                // Add FormSubmit.co required fields
+                formData.append('_subject', 'New Contact Form Submission - Rawabi Alwasit Website');
+                formData.append('_next', 'https://rawabialwasit.com/pages/contact.html?success=true');
+                formData.append('_captcha', 'false');
+                formData.append('_template', 'box');
+                formData.append('_autoresponse', 'Thank you for contacting Rawabi Alwasit. We have received your message and will get back to you soon.');
+                
+                // Submit via FormSubmit.co AJAX endpoint
+                fetch('https://formsubmit.co/ajax/info@rawabialwasit.com', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams(formData)
+                })
+                .then(async (response) => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        showFormMessage(this, 'Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
+                        this.reset();
+                        
+                        // Redirect to success page after 2 seconds
+                        setTimeout(() => {
+                            window.location.href = 'https://rawabialwasit.com/pages/contact.html?success=true';
+                        }, 2000);
+                    } else {
+                        throw new Error(result.message || 'Submission failed');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Form submission error:', error);
+                    showFormMessage(this, 'There was an error submitting your form. Please try again or email us directly at info@rawabialwasit.com', 'error');
+                    
+                    // Add mailto fallback link
+                    const name = form.querySelector('#name')?.value || '';
+                    const email = form.querySelector('#email')?.value || '';
+                    const phone = form.querySelector('#phone')?.value || '';
+                    const subj = form.querySelector('#subject')?.value || 'General Inquiry';
+                    const msg = form.querySelector('#message')?.value || '';
+                    
+                    if (name && email && msg) {
+                        const body = encodeURIComponent(
+                            'Name: ' + name + '\n' +
+                            'Email: ' + email + '\n' +
+                            'Phone: ' + phone + '\n' +
+                            'Subject: ' + subj + '\n\n' +
+                            msg
+                        );
+                        const mailtoLink = 'mailto:info@rawabialwasit.com?subject=' + encodeURIComponent('Website Contact: ' + subj) + '&body=' + body;
+                        
+                        const errorContainer = this.querySelector('.form-message.error');
+                        if (errorContainer) {
+                            const mailtoBtn = document.createElement('a');
+                            mailtoBtn.href = mailtoLink;
+                            mailtoBtn.className = 'btn btn-primary mt-3';
+                            mailtoBtn.style.display = 'inline-block';
+                            mailtoBtn.textContent = 'Send via Email Instead';
+                            errorContainer.appendChild(mailtoBtn);
+                        }
+                    }
+                })
+                .finally(() => {
+                    submitButton.innerHTML = originalHTML;
+                    submitButton.disabled = false;
+                });
             });
         } else {
             // Other forms
