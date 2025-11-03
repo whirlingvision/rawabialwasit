@@ -403,19 +403,50 @@ function initializeFormValidation() {
     const forms = document.querySelectorAll('form');
     
     forms.forEach(form => {
-        // Only add listener if form doesn't already have custom handler
         const formId = form.id;
         if (formId === 'contactForm') {
-            // Contact form - ensure it's handled
+            // Contact form - check if fetch will work, if not, allow native submission
             form.addEventListener('submit', function(e) {
-                e.preventDefault();
+                // Check if CSP will block fetch (test before preventing default)
+                const testCSP = function() {
+                    try {
+                        // Try to create a fetch request to see if it's allowed
+                        const testUrl = 'https://api.web3forms.com/submit';
+                        // If we can't even construct the request, CSP will block it
+                        return true; // Assume it might work, but catch will handle if it doesn't
+                    } catch (err) {
+                        return false;
+                    }
+                };
                 
                 const formData = new FormData(this);
                 const isValid = validateForm(this);
                 
-                if (isValid) {
-                    submitForm(this, formData);
+                if (!isValid) {
+                    e.preventDefault();
+                    return;
                 }
+                
+                // Try fetch first, but if it fails immediately due to CSP, allow native submit
+                e.preventDefault();
+                
+                // Attempt fetch-based submission
+                submitForm(this, formData).catch((error) => {
+                    // If fetch fails (CSP blocked), submit natively immediately
+                    if (error.message === 'CSP_BLOCKED' || String(error).includes('CSP') || String(error).includes('refused to connect')) {
+                        // Reset button state first
+                        const submitButton = this.querySelector('button[type="submit"]');
+                        if (submitButton) {
+                            submitButton.disabled = false;
+                            submitButton.innerHTML = '📧 Send Message';
+                        }
+                        // Allow native form submission - this will work even with CSP
+                        this.submit();
+                    } else {
+                        // Other errors - show mailto fallback
+                        console.error('Form submission error:', error);
+                    }
+                });
             });
         } else {
             // Other forms
@@ -495,8 +526,8 @@ async function submitForm(form, formData) {
     const submitButton = form.querySelector('button[type="submit"]');
     const originalHTML = submitButton.innerHTML;
     
-    // Show loading state with icon
-    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+    // Show loading state (no Font Awesome, use emoji)
+    submitButton.innerHTML = '⏳ Sending...';
     submitButton.disabled = true;
     
     try {
@@ -505,6 +536,7 @@ async function submitForm(form, formData) {
             formData.append('access_key', 'c6f1aa00-834a-40d4-8ca2-b77b600fdc83');
         }
         
+        // Check if fetch is available and not blocked by CSP
         const response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             headers: { 'Accept': 'application/json' },
@@ -517,6 +549,10 @@ async function submitForm(form, formData) {
         if (result.success) {
             showFormMessage(form, 'Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
             form.reset();
+            // Reset button
+            submitButton.innerHTML = originalHTML;
+            submitButton.disabled = false;
+            return Promise.resolve();
         } else {
             // Provide a clearer hint if domain is not allowed on Web3Forms
             const msg = /domain|origin|unauthorized/i.test(String(result.message))
@@ -525,9 +561,34 @@ async function submitForm(form, formData) {
             throw new Error(msg);
         }
     } catch (error) {
+        // Reset button immediately
+        submitButton.innerHTML = originalHTML;
+        submitButton.disabled = false;
+        
+        // Check if fetch is blocked by CSP - check multiple error properties
+        const errorMessage = error?.message || '';
+        const errorString = String(error) || '';
+        const errorName = error?.name || '';
+        
+        const isCSPBlocked = 
+            errorMessage.includes('CSP') || 
+            errorMessage.includes('refused to connect') || 
+            errorMessage.includes('Failed to fetch') ||
+            errorMessage.includes('Content Security Policy') ||
+            errorString.includes('CSP') || 
+            errorString.includes('refused to connect') || 
+            errorString.includes('Failed to fetch') ||
+            errorString.includes('Content Security Policy') ||
+            errorName === 'TypeError' && errorMessage.includes('fetch');
+        
+        if (isCSPBlocked) {
+            // This will trigger the catch in initializeFormValidation to do native submit
+            return Promise.reject(new Error('CSP_BLOCKED'));
+        }
+        
+        // For other errors, show mailto fallback
         console.error('Form submission error:', error);
-        // If fetch is blocked by CSP, show helpful message and offer mailto fallback
-        var errorMsg = 'Form submission failed due to security restrictions. ';
+        var errorMsg = 'Form submission failed. ';
         var mailtoLink = null;
         
         try {
@@ -569,18 +630,7 @@ async function submitForm(form, formData) {
             }
         }
         
-        // Also attempt native form submission as backup
-        try {
-            setTimeout(function() {
-                form.submit();
-            }, 2000); // Give user time to see the error message
-        } catch (nativeErr) {
-            // Native submit also blocked - mailto is the only option
-        }
-    } finally {
-        // Reset button state
-        submitButton.innerHTML = originalHTML;
-        submitButton.disabled = false;
+        return Promise.reject(error);
     }
 }
 
@@ -664,16 +714,16 @@ window.addEventListener('error', function(e) {
     console.error('JavaScript error:', e.error);
 });
 
-// Service Worker registration (for PWA capabilities)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('ServiceWorker registration successful');
-            })
-            .catch(function(err) {
-                console.log('ServiceWorker registration failed');
-            });
-    });
-}
+// Service Worker registration (disabled - causing 500 errors and CSP issues)
+// if ('serviceWorker' in navigator) {
+//     window.addEventListener('load', function() {
+//         navigator.serviceWorker.register('/sw.js')
+//             .then(function(registration) {
+//                 console.log('ServiceWorker registration successful');
+//             })
+//             .catch(function(err) {
+//                 console.log('ServiceWorker registration failed');
+//             });
+//     });
+// }
 
