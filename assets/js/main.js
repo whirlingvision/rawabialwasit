@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeMobileMenu();
     initializeDropdowns();
     initializeFormValidation();
+    initializeMapFallback();
 });
 
 // Navigation functionality
@@ -73,6 +74,32 @@ function initializeNavigation() {
             }
         });
     });
+}
+
+// Map fallback initializer (moved from inline script to satisfy CSP)
+function initializeMapFallback() {
+    try {
+        var googleFrame = document.getElementById('googleMap');
+        var osmFrame = document.getElementById('osmMap');
+        var fallbackDiv = document.getElementById('mapFallback');
+        if (!googleFrame && !osmFrame && !fallbackDiv) return; // not on contact page
+
+        var googleLoaded = false;
+        if (fallbackDiv) { fallbackDiv.style.display = 'block'; }
+        if (googleFrame) {
+            googleFrame.addEventListener('load', function() { googleLoaded = true; });
+        }
+        setTimeout(function() {
+            if (!googleLoaded && osmFrame) {
+                osmFrame.style.display = 'block';
+                var osmLoaded = false;
+                osmFrame.addEventListener('load', function() { osmLoaded = true; });
+                setTimeout(function(){ if (!osmLoaded && fallbackDiv) { fallbackDiv.style.display = 'block'; } }, 3000);
+            }
+        }, 4000);
+    } catch (e) {
+        // noop
+    }
 }
 
 // Language toggle functionality
