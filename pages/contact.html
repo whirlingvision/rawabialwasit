@@ -6,6 +6,9 @@
     <title>Contact Us - Rawabi Alwasit Company</title>
     <meta name="description" content="Contact Rawabi Alwasit Company for industrial supplies and services. Get in touch for quotes, inquiries, and professional consultation.">
     
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://formsubmit.co; frame-src 'none'; worker-src 'none';">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/img/logos/Rawabi_icon.png">
     
@@ -225,9 +228,10 @@
     <section class="map-section">
         <div class="container">
             <div class="map-wrapper">
-                <!-- Clickable map placeholder (no iframe, no CSP violation) -->
+                <!-- Clickable map placeholder with static map image (no iframe, no CSP violation) -->
                 <a href="https://www.google.com/maps/search/?api=1&query=Prince+Muhammad+Ibn+Fahad+Road,+Ash+Shati+Ash+Sharqi+District,+Dammam,+Saudi+Arabia" target="_blank" rel="noopener" class="static-map-link">
                     <div class="map-placeholder">
+                        <div class="map-placeholder-overlay"></div>
                         <div class="map-placeholder-content">
                             <div class="map-icon">📍</div>
                             <h3>View Our Location</h3>

@@ -599,19 +599,113 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 .contact-details a:hover { color: var(--primary-dark); }
 .contact-section { padding:80px 0; }
 .map-section { margin-top:60px; padding-bottom:60px; }
-.map-wrapper { position:relative; border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); background-color:#f0f0f0; }
-.map-wrapper iframe { width:100%; height:450px; min-height:450px; border:none; display:block; }
-.static-map-link { display:block; position:relative; width:100%; height:450px; overflow:hidden; border-radius:10px; text-decoration:none; background:linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
-.map-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; padding:40px; }
-.map-placeholder-content { text-align:center; color:#fff; }
-.map-icon { font-size:4rem; margin-bottom:20px; opacity:0.9; }
-.map-placeholder-content h3 { font-size:1.75rem; margin-bottom:15px; color:#fff; }
-.map-placeholder-content p { font-size:1.1rem; margin-bottom:25px; line-height:1.6; opacity:0.95; }
-.map-placeholder-content .btn { background-color:#fff; color:#3498db; border-color:#fff; }
-.map-placeholder-content .btn:hover { background-color:#f8f9fa; color:#2980b9; }
-.static-map-link:hover { transform:scale(1.01); transition:transform 0.3s ease; }
-.map-fallback { padding:20px; text-align:center; background:#f8f9fa; }
-.is-hidden { display:none; }
+.map-wrapper { 
+    position:relative; 
+    border-radius:10px; 
+    overflow:hidden; 
+    box-shadow:0 10px 30px rgba(0,0,0,0.1); 
+    background-color:#f0f0f0; 
+}
+.map-wrapper iframe { 
+    width:100%; 
+    height:450px; 
+    min-height:450px; 
+    border:none; 
+    display:block; 
+}
+.static-map-link { 
+    display:block; 
+    position:relative; 
+    width:100%; 
+    height:450px; 
+    overflow:hidden; 
+    border-radius:10px; 
+    text-decoration:none; 
+    background:linear-gradient(135deg, #3498db 0%, #2980b9 100%); 
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+.static-map-link:hover { 
+    transform:scale(1.01); 
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+.map-placeholder { 
+    width:100%; 
+    height:100%; 
+    position:relative;
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    padding:40px;
+    min-height:450px;
+    background-image: url('https://staticmap.openstreetmap.de/staticmap.php?center=26.433056,50.123456&zoom=14&size=600x400&markers=26.433056,50.123456&layer=transport');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.map-placeholder-overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(52, 152, 219, 0.75);
+    z-index:1;
+}
+.map-placeholder-content { 
+    position:relative;
+    z-index:2;
+    text-align:center; 
+    color:#fff; 
+    padding:30px;
+    background:rgba(255,255,255,0.1);
+    border-radius:10px;
+    backdrop-filter:blur(10px);
+}
+.map-icon { 
+    font-size:4rem; 
+    margin-bottom:20px; 
+    opacity:0.95; 
+    filter:drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+.map-placeholder-content h3 { 
+    font-size:1.75rem; 
+    margin-bottom:15px; 
+    color:#fff; 
+    font-weight:600;
+    text-shadow:0 2px 4px rgba(0,0,0,0.2);
+}
+.map-placeholder-content p { 
+    font-size:1.1rem; 
+    margin-bottom:25px; 
+    line-height:1.6; 
+    opacity:0.95; 
+    text-shadow:0 1px 2px rgba(0,0,0,0.2);
+}
+.map-placeholder-content .btn { 
+    background-color:#fff; 
+    color:#3498db; 
+    border-color:#fff; 
+    padding:12px 30px;
+    font-weight:600;
+    font-size:1rem;
+    border-radius:50px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    transition:all 0.3s ease;
+}
+.map-placeholder-content .btn:hover { 
+    background-color:#f8f9fa; 
+    color:#2980b9; 
+    transform:translateY(-2px);
+    box-shadow:0 6px 20px rgba(0,0,0,0.3);
+}
+.map-fallback { 
+    padding:20px; 
+    text-align:center; 
+    background:#f8f9fa; 
+}
+.is-hidden { 
+    display:none; 
+}
 .footer-logo {
     max-height: 80px; /* Proper height for horizontal logo in footer */
     width: auto;
