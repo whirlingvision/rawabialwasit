@@ -35,6 +35,17 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeDropdowns();
     initializeFormValidation();
     initializeMapFallback();
+    
+    // Check if form was submitted successfully (FormSubmit.co redirect)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            showFormMessage(contactForm, 'Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
+            // Clean URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    }
 });
 
 // Navigation functionality
@@ -405,9 +416,8 @@ function initializeFormValidation() {
     forms.forEach(form => {
         const formId = form.id;
         if (formId === 'contactForm') {
-            // Contact form - handle CSP blocking gracefully
+            // Contact form - FormSubmit.co uses native POST, so we just validate and show loading
             form.addEventListener('submit', function(e) {
-                const formData = new FormData(this);
                 const isValid = validateForm(this);
                 
                 if (!isValid) {
@@ -415,40 +425,14 @@ function initializeFormValidation() {
                     return;
                 }
                 
-                // Prevent default to try fetch first
-                e.preventDefault();
-                
+                // Form is valid - show loading state but allow native submission
                 const submitButton = this.querySelector('button[type="submit"]');
                 const originalHTML = submitButton.innerHTML;
                 submitButton.innerHTML = '⏳ Sending...';
                 submitButton.disabled = true;
                 
-                // Try fetch, but catch CSP errors immediately
-                fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: { 'Accept': 'application/json' },
-                    body: formData
-                })
-                .then(async (response) => {
-                    if (!response.ok) throw new Error('Response not ok');
-                    const result = await response.json();
-                    if (result.success) {
-                        showFormMessage(this, 'Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
-                        this.reset();
-                        submitButton.innerHTML = originalHTML;
-                        submitButton.disabled = false;
-                    } else {
-                        throw new Error(result.message || 'Submission failed');
-                    }
-                })
-                .catch((error) => {
-                    // CSP blocked or other error - submit natively
-                    console.log('Fetch blocked by CSP, submitting form natively...');
-                    submitButton.innerHTML = originalHTML;
-                    submitButton.disabled = false;
-                    // Submit form natively - this bypasses CSP restrictions
-                    this.submit();
-                });
+                // Form will submit natively to FormSubmit.co - no need to prevent default
+                // Loading state will remain until page redirects
             });
         } else {
             // Other forms

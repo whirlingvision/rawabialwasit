@@ -118,7 +118,7 @@
                             Send us a message and we'll respond as soon as possible. We're here to help with all your industrial needs.
                         </p>
                         
-                        <form id="contactForm" class="contact-form" method="POST" action="https://api.web3forms.com/submit" accept-charset="UTF-8">
+                        <form id="contactForm" class="contact-form" method="POST" action="https://formsubmit.co/info@rawabialwasit.com" accept-charset="UTF-8">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="name" class="form-label" data-en="Full Name *" data-ar="الاسم الكامل *">Full Name *</label>
@@ -155,11 +155,13 @@
                                 <textarea class="form-control" id="message" name="message" rows="6" required placeholder="Please describe your requirements or inquiry in detail..."></textarea>
                             </div>
                             
-                            <!-- Hidden fields for Web3Forms -->
-                            <input type="hidden" name="access_key" value="c6f1aa00-834a-40d4-8ca2-b77b600fdc83">
-                            <input type="hidden" name="from_name" value="Rawabi Alwasit Website">
-                            <input type="hidden" name="replyto" value="{{email}}">
-                            <input type="hidden" name="redirect" value="https://rawabialwasit.com/pages/contact.html#sent">
+                            <!-- Hidden fields for FormSubmit.co -->
+                            <input type="hidden" name="_subject" value="New Contact Form Submission - Rawabi Alwasit Website">
+                            <input type="hidden" name="_next" value="https://rawabialwasit.com/pages/contact.html?success=true">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="box">
+                            <input type="hidden" name="_format" value="plain">
+                            <input type="hidden" name="_autoresponse" value="Thank you for contacting Rawabi Alwasit. We have received your message and will get back to you soon.">
                             
                             <button type="submit" class="btn btn-primary btn-lg" data-en="Send Message" data-ar="إرسال الرسالة">
                                 📧 Send Message
