@@ -1,6 +1,12 @@
 # Apache .htaccess file for Rawabi Alwasit Website
 # This file sets Content Security Policy headers to fix form submission and resource loading issues
 
+# Set default directory index file - ONLY index.html (no index.php)
+DirectoryIndex index.html index.htm
+
+# Custom 404 error page
+ErrorDocument 404 /404.html
+
 # Enable mod_headers if available
 <IfModule mod_headers.c>
     # Set Content Security Policy
