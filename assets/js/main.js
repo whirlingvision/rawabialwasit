@@ -405,20 +405,8 @@ function initializeFormValidation() {
     forms.forEach(form => {
         const formId = form.id;
         if (formId === 'contactForm') {
-            // Contact form - check if fetch will work, if not, allow native submission
+            // Contact form - handle CSP blocking gracefully
             form.addEventListener('submit', function(e) {
-                // Check if CSP will block fetch (test before preventing default)
-                const testCSP = function() {
-                    try {
-                        // Try to create a fetch request to see if it's allowed
-                        const testUrl = 'https://api.web3forms.com/submit';
-                        // If we can't even construct the request, CSP will block it
-                        return true; // Assume it might work, but catch will handle if it doesn't
-                    } catch (err) {
-                        return false;
-                    }
-                };
-                
                 const formData = new FormData(this);
                 const isValid = validateForm(this);
                 
@@ -427,25 +415,39 @@ function initializeFormValidation() {
                     return;
                 }
                 
-                // Try fetch first, but if it fails immediately due to CSP, allow native submit
+                // Prevent default to try fetch first
                 e.preventDefault();
                 
-                // Attempt fetch-based submission
-                submitForm(this, formData).catch((error) => {
-                    // If fetch fails (CSP blocked), submit natively immediately
-                    if (error.message === 'CSP_BLOCKED' || String(error).includes('CSP') || String(error).includes('refused to connect')) {
-                        // Reset button state first
-                        const submitButton = this.querySelector('button[type="submit"]');
-                        if (submitButton) {
-                            submitButton.disabled = false;
-                            submitButton.innerHTML = '📧 Send Message';
-                        }
-                        // Allow native form submission - this will work even with CSP
-                        this.submit();
+                const submitButton = this.querySelector('button[type="submit"]');
+                const originalHTML = submitButton.innerHTML;
+                submitButton.innerHTML = '⏳ Sending...';
+                submitButton.disabled = true;
+                
+                // Try fetch, but catch CSP errors immediately
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
+                })
+                .then(async (response) => {
+                    if (!response.ok) throw new Error('Response not ok');
+                    const result = await response.json();
+                    if (result.success) {
+                        showFormMessage(this, 'Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
+                        this.reset();
+                        submitButton.innerHTML = originalHTML;
+                        submitButton.disabled = false;
                     } else {
-                        // Other errors - show mailto fallback
-                        console.error('Form submission error:', error);
+                        throw new Error(result.message || 'Submission failed');
                     }
+                })
+                .catch((error) => {
+                    // CSP blocked or other error - submit natively
+                    console.log('Fetch blocked by CSP, submitting form natively...');
+                    submitButton.innerHTML = originalHTML;
+                    submitButton.disabled = false;
+                    // Submit form natively - this bypasses CSP restrictions
+                    this.submit();
                 });
             });
         } else {
