@@ -601,7 +601,15 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 .map-section { margin-top:60px; padding-bottom:60px; }
 .map-wrapper { position:relative; border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); background-color:#f0f0f0; }
 .map-wrapper iframe { width:100%; height:450px; min-height:450px; border:none; display:block; }
-.map-iframe { width:100%; height:450px; border:0; display:block; }
+.static-map-link { display:block; position:relative; width:100%; height:450px; overflow:hidden; border-radius:10px; text-decoration:none; background:linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
+.map-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; padding:40px; }
+.map-placeholder-content { text-align:center; color:#fff; }
+.map-icon { font-size:4rem; margin-bottom:20px; opacity:0.9; }
+.map-placeholder-content h3 { font-size:1.75rem; margin-bottom:15px; color:#fff; }
+.map-placeholder-content p { font-size:1.1rem; margin-bottom:25px; line-height:1.6; opacity:0.95; }
+.map-placeholder-content .btn { background-color:#fff; color:#3498db; border-color:#fff; }
+.map-placeholder-content .btn:hover { background-color:#f8f9fa; color:#2980b9; }
+.static-map-link:hover { transform:scale(1.01); transition:transform 0.3s ease; }
 .map-fallback { padding:20px; text-align:center; background:#f8f9fa; }
 .is-hidden { display:none; }
 .footer-logo {
@@ -659,6 +667,14 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     font-size: 1.1rem;
     margin-top: 2px;
     min-width: 20px;
+}
+
+.contact-icon-text {
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    margin-right: 15px;
+    min-width: 20px;
+    display: inline-block;
 }
 
 .contact-item span {

@@ -76,30 +76,10 @@ function initializeNavigation() {
     });
 }
 
-// Map fallback initializer (moved from inline script to satisfy CSP)
+// Map fallback initializer (removed - using static map image now)
 function initializeMapFallback() {
-    try {
-        var googleFrame = document.getElementById('googleMap');
-        var osmFrame = document.getElementById('osmMap');
-        var fallbackDiv = document.getElementById('mapFallback');
-        if (!googleFrame && !osmFrame && !fallbackDiv) return; // not on contact page
-
-        var googleLoaded = false;
-        if (fallbackDiv) { fallbackDiv.style.display = 'block'; }
-        if (googleFrame) {
-            googleFrame.addEventListener('load', function() { googleLoaded = true; });
-        }
-        setTimeout(function() {
-            if (!googleLoaded && osmFrame) {
-                osmFrame.style.display = 'block';
-                var osmLoaded = false;
-                osmFrame.addEventListener('load', function() { osmLoaded = true; });
-                setTimeout(function(){ if (!osmLoaded && fallbackDiv) { fallbackDiv.style.display = 'block'; } }, 3000);
-            }
-        }, 4000);
-    } catch (e) {
-        // noop
-    }
+    // Static map image is used instead of iframe to avoid CSP frame-src violations
+    // No initialization needed
 }
 
 // Language toggle functionality
@@ -546,25 +526,18 @@ async function submitForm(form, formData) {
         }
     } catch (error) {
         console.error('Form submission error:', error);
-        // As a fallback (e.g., CORS/adblock on production), do a native POST submit.
+        // If fetch is blocked by CSP, show helpful message and offer mailto fallback
+        var errorMsg = 'Form submission failed due to security restrictions. ';
+        var mailtoLink = null;
+        
         try {
-            // Create a hidden input to indicate fallback path if needed by the service
-            const fallbackFlag = document.createElement('input');
-            fallbackFlag.type = 'hidden';
-            fallbackFlag.name = 'fallback_submit';
-            fallbackFlag.value = '1';
-            form.appendChild(fallbackFlag);
-            // Native submit does not trigger submit handlers again
-            form.submit();
-            return; // stop further UI handling; browser will navigate
-        } catch (nativeErr) {
-            // If native submit also fails, offer a mailto fallback with prefilled content
-            try {
-                var name = form.querySelector('#name')?.value || '';
-                var email = form.querySelector('#email')?.value || '';
-                var phone = form.querySelector('#phone')?.value || '';
-                var subj = form.querySelector('#subject')?.value || 'General Inquiry';
-                var msg = form.querySelector('#message')?.value || '';
+            var name = form.querySelector('#name')?.value || '';
+            var email = form.querySelector('#email')?.value || '';
+            var phone = form.querySelector('#phone')?.value || '';
+            var subj = form.querySelector('#subject')?.value || 'General Inquiry';
+            var msg = form.querySelector('#message')?.value || '';
+            
+            if (name && email && msg) {
                 var body = encodeURIComponent(
                     'Name: ' + name + '\n' +
                     'Email: ' + email + '\n' +
@@ -572,19 +545,37 @@ async function submitForm(form, formData) {
                     'Subject: ' + subj + '\n\n' +
                     msg
                 );
-                var mailto = 'mailto:info@rawabialwasit.com?subject=' + encodeURIComponent('Website Contact: ' + subj) + '&body=' + body;
-                showFormMessage(form, 'We could not send your message automatically. Please click the button below to email us directly.', 'error');
-                var container = form.querySelector('.form-message.error');
-                if (container) {
-                    var a = document.createElement('a');
-                    a.href = mailto;
-                    a.className = 'btn btn-primary mt-2';
-                    a.textContent = 'Open Email App';
-                    container.appendChild(a);
-                }
-            } catch (e2) {
-                showFormMessage(form, 'Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
+                mailtoLink = 'mailto:info@rawabialwasit.com?subject=' + encodeURIComponent('Website Contact: ' + subj) + '&body=' + body;
+                errorMsg += 'Please use the email button below to send your message directly.';
+            } else {
+                errorMsg += 'Please email us at info@rawabialwasit.com';
             }
+        } catch (e) {
+            errorMsg += 'Please email us at info@rawabialwasit.com';
+        }
+        
+        showFormMessage(form, errorMsg, 'error');
+        
+        // Add mailto button if available
+        if (mailtoLink) {
+            var container = form.querySelector('.form-message.error');
+            if (container) {
+                var mailtoBtn = document.createElement('a');
+                mailtoBtn.href = mailtoLink;
+                mailtoBtn.className = 'btn btn-primary mt-3';
+                mailtoBtn.style.display = 'inline-block';
+                mailtoBtn.textContent = 'Send via Email';
+                container.appendChild(mailtoBtn);
+            }
+        }
+        
+        // Also attempt native form submission as backup
+        try {
+            setTimeout(function() {
+                form.submit();
+            }, 2000); // Give user time to see the error message
+        } catch (nativeErr) {
+            // Native submit also blocked - mailto is the only option
         }
     } finally {
         // Reset button state

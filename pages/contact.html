@@ -162,8 +162,7 @@
                             <input type="hidden" name="redirect" value="https://rawabialwasit.com/pages/contact.html#sent">
                             
                             <button type="submit" class="btn btn-primary btn-lg" data-en="Send Message" data-ar="إرسال الرسالة">
-                                <i class="fas fa-paper-plane me-2"></i>
-                                Send Message
+                                📧 Send Message
                             </button>
                         </form>
                     </div>
@@ -175,7 +174,7 @@
                         
                         <div class="contact-info-item">
                             <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+                                📍
                             </div>
                             <div class="contact-details">
                                 <h4 data-en="Address" data-ar="العنوان">Address</h4>
@@ -187,7 +186,7 @@
                         
                         <div class="contact-info-item">
                             <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
+                                📞
                             </div>
                             <div class="contact-details">
                                 <h4 data-en="Phone" data-ar="الهاتف">Phone</h4>
@@ -197,7 +196,7 @@
                         
                         <div class="contact-info-item">
                             <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
+                                ✉️
                             </div>
                             <div class="contact-details">
                                 <h4 data-en="Email" data-ar="البريد الإلكتروني">Email</h4>
@@ -207,7 +206,7 @@
                         
                         <div class="contact-info-item">
                             <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
+                                🕐
                             </div>
                             <div class="contact-details">
                                 <h4 data-en="Business Hours" data-ar="ساعات العمل">Business Hours</h4>
@@ -224,37 +223,18 @@
     <section class="map-section">
         <div class="container">
             <div class="map-wrapper">
-                <iframe 
-                    id="googleMap"
-                    src="https://maps.google.com/maps?width=100%25&height=450&hl=en&q=Prince%20Muhammad%20Ibn%20Fahad%20Rd,%20Ash%20Shati%20Ash%20Sharqi%20Dist.,%20Dammam,%20Saudi%20Arabia&t=&z=14&ie=UTF8&iwloc=B&output=embed" 
-                    class="map-iframe"
-                    width="100%"
-                    height="450"
-                    frameborder="0"
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    title="Rawabi Alwasit Company Location"
-                    aria-label="Rawabi Alwasit Company Location Map">
-                </iframe>
-                <!-- OpenStreetMap fallback (shown if Google Maps fails to load) -->
-                <iframe
-                    id="osmMap"
-                    class="map-iframe is-hidden"
-                    loading="lazy"
-                    title="Rawabi Alwasit Company Location (OpenStreetMap)"
-                    aria-label="Rawabi Alwasit Company Location (OpenStreetMap)"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=50.02%2C26.37%2C50.16%2C26.46&layer=mapnik&marker=26.42%2C50.08">
-                </iframe>
-                <div id="mapFallback" class="map-fallback is-hidden">
-                    <p style="margin:0 0 10px; color:#6c757d;">Map preview is blocked on this network.</p>
-                    <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Prince+Muhammad+Ibn+Fahad+Road,+Ash+Shati+Ash+Sharqi+District,+Dammam,+Saudi+Arabia" target="_blank" rel="noopener">Open in Google Maps</a>
-                </div>
-                <noscript>
-                    <p>Your browser does not support JavaScript. <a href="https://www.google.com/maps/search/?api=1&query=Prince+Muhammad+Ibn+Fahad+Road,+Ash+Shati+Ash+Sharqi+District,+Dammam,+Saudi+Arabia" target="_blank" rel="noopener">View on Google Maps</a></p>
-                </noscript>
+                <!-- Clickable map placeholder (no iframe, no CSP violation) -->
+                <a href="https://www.google.com/maps/search/?api=1&query=Prince+Muhammad+Ibn+Fahad+Road,+Ash+Shati+Ash+Sharqi+District,+Dammam,+Saudi+Arabia" target="_blank" rel="noopener" class="static-map-link">
+                    <div class="map-placeholder">
+                        <div class="map-placeholder-content">
+                            <div class="map-icon">📍</div>
+                            <h3>View Our Location</h3>
+                            <p>Prince Muhammad Ibn Fahad Rd<br>Ash Shati Ash Sharqi Dist., Dammam<br>Saudi Arabia</p>
+                            <span class="btn btn-primary">Open in Google Maps</span>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <!-- Map fallback script moved to assets/js/main.js to satisfy CSP -->
         </div>
     </section>
 
@@ -297,19 +277,19 @@
                         <h4 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h4>
                         <div class="contact-info">
                             <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <span class="contact-icon-text">📍</span>
                                 <span data-en="Prince Muhammad Ibn Fahad Rd, Ash Shati Ash Sharqi Dist., Dammam, Saudi Arabia" data-ar="طريق الأمير محمد بن فهد، حي الشاطئ الشرقي، الدمام، المملكة العربية السعودية">Prince Muhammad Ibn Fahad Rd, Ash Shati Ash Sharqi Dist., Dammam, Saudi Arabia</span>
                             </div>
                             <div class="contact-item">
-                                <i class="fas fa-phone"></i>
+                                <span class="contact-icon-text">📞</span>
                                 <span>+966 58 262 7405 / +966 53 989 4707</span>
                             </div>
                             <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
+                                <span class="contact-icon-text">✉️</span>
                                 <span>info@rawabialwasit.com</span>
                             </div>
                             <div class="contact-item">
-                                <i class="fas fa-clock"></i>
+                                <span class="contact-icon-text">🕐</span>
                                 <span data-en="8 AM to 5 PM, Sunday to Thursday" data-ar="8 صباحاً إلى 5 مساءً، الأحد إلى الخميس">8 AM to 5 PM, Sunday to Thursday</span>
                             </div>
                         </div>
