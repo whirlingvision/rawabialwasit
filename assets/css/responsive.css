@@ -140,6 +140,102 @@
     }
 }
 
+/* Handheld-first improvements */
+@media (max-width: 991.98px) {
+    /* Prevent horizontal scrolling on small screens */
+    body, html {
+        overflow-x: hidden;
+    }
+
+    /* Header and navbar spacing */
+    .header .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .navbar-toggler {
+        padding: 8px 10px;
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .navbar-collapse {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .navbar-collapse .nav-link {
+        display: block;
+        padding: 12px 10px;
+        margin: 2px 0;
+    }
+
+    /* Dropdown inside collapsed navbar should be static */
+    .navbar-collapse .dropdown-menu {
+        position: static;
+        float: none;
+        box-shadow: none;
+        border: 1px solid #e9ecef;
+        margin: 6px 0 10px;
+    }
+
+    /* Section spacing */
+    .section {
+        padding: 56px 0;
+    }
+
+    /* Page header spacing */
+    .page-header {
+        padding-top: 96px;
+        padding-bottom: 36px;
+    }
+
+    /* Buttons: comfortable touch targets */
+    .btn, .btn-lg {
+        min-height: 44px;
+    }
+
+    /* Make images/media fully responsive */
+    img, video, canvas, svg {
+        max-width: 100%;
+        height: auto;
+    }
+
+    iframe {
+        max-width: 100%;
+    }
+
+    /* Footer alignment */
+    .footer .text-end {
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    /* Stack columns tighter and add gaps */
+    .row {
+        row-gap: 20px;
+    }
+
+    .contact-cta .btn-lg,
+    .cta-btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* Cards padding */
+    .service-card,
+    .product-card {
+        padding: 24px 18px;
+    }
+
+    /* Forms spacing */
+    .contact-form .mb-3 {
+        margin-bottom: 0.9rem !important;
+    }
+}
+
 /* Extra Small Devices (480px and down) */
 @media (max-width: 479.98px) {
     .hero-title {
