@@ -247,6 +247,10 @@
                     aria-label="Rawabi Alwasit Company Location (OpenStreetMap)"
                     src="https://www.openstreetmap.org/export/embed.html?bbox=50.02%2C26.37%2C50.16%2C26.46&layer=mapnik&marker=26.42%2C50.08">
                 </iframe>
+                <div id="mapFallback" style="display:none; padding:20px; text-align:center; background:#f8f9fa;">
+                    <p style="margin:0 0 10px; color:#6c757d;">Map preview is blocked on this network.</p>
+                    <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Prince+Muhammad+Ibn+Fahad+Road,+Ash+Shati+Ash+Sharqi+District,+Dammam,+Saudi+Arabia" target="_blank" rel="noopener">Open in Google Maps</a>
+                </div>
                 <noscript>
                     <p>Your browser does not support JavaScript. <a href="https://www.google.com/maps/search/?api=1&query=Prince+Muhammad+Ibn+Fahad+Road,+Ash+Shati+Ash+Sharqi+District,+Dammam,+Saudi+Arabia" target="_blank" rel="noopener">View on Google Maps</a></p>
                 </noscript>
@@ -255,13 +259,20 @@
                 (function() {
                     var g = document.getElementById('googleMap');
                     var o = document.getElementById('osmMap');
+                    var f = document.getElementById('mapFallback');
                     var loaded = false;
                     if (g) {
                         g.addEventListener('load', function() { loaded = true; });
                     }
                     // If Google map didn't finish loading within 4 seconds, show OSM fallback
                     setTimeout(function() {
-                        if (!loaded && o) { o.style.display = 'block'; }
+                        if (!loaded && o) {
+                            o.style.display = 'block';
+                            // If OSM also fails to load within another 3 seconds, show clickable fallback
+                            var osmLoaded = false;
+                            o.addEventListener('load', function() { osmLoaded = true; });
+                            setTimeout(function(){ if (!osmLoaded && f) { f.style.display = 'block'; } }, 3000);
+                        }
                     }, 4000);
                 })();
             </script>

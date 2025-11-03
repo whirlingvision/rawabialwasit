@@ -493,8 +493,22 @@ async function submitForm(form, formData) {
             throw new Error(msg);
         }
     } catch (error) {
-        showFormMessage(form, 'Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
         console.error('Form submission error:', error);
+        // As a fallback (e.g., CORS/adblock on production), do a native POST submit.
+        try {
+            // Create a hidden input to indicate fallback path if needed by the service
+            const fallbackFlag = document.createElement('input');
+            fallbackFlag.type = 'hidden';
+            fallbackFlag.name = 'fallback_submit';
+            fallbackFlag.value = '1';
+            form.appendChild(fallbackFlag);
+            // Native submit does not trigger submit handlers again
+            form.submit();
+            return; // stop further UI handling; browser will navigate
+        } catch (nativeErr) {
+            // If native submit also fails (shouldn't), show message
+            showFormMessage(form, 'Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
+        }
     } finally {
         // Reset button state
         submitButton.innerHTML = originalHTML;
