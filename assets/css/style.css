@@ -778,3 +778,85 @@ a:hover {
     }
 }
 
+/* Dark Mode Support (System preference) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --white: #0f141a;
+        --light-gray: #121821;
+        --text-dark: #e6edf3;
+        --text-light: #c1c8d0;
+        --secondary-gray: #0b1016;
+        --primary-blue: #5aa7ff;
+        --primary-dark: #2f8ae0;
+    }
+
+    body {
+        background-color: var(--white);
+        color: var(--text-dark);
+    }
+
+    .header {
+        background-color: rgba(15, 20, 26, 0.95);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .navbar-collapse {
+        background-color: #0f141a;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+
+    .navbar-nav .nav-link { color: var(--text-dark); }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        color: var(--primary-blue);
+        background-color: rgba(90, 167, 255, 0.12);
+    }
+
+    .dropdown-menu {
+        background-color: #0f141a;
+        border: 1px solid #1f2a36;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+    .dropdown-item { color: var(--text-light); }
+    .dropdown-item:hover { background-color: rgba(90, 167, 255, 0.15); color: var(--text-dark); }
+
+    .section,
+    .about-preview,
+    .products-preview,
+    .services-preview { background-color: var(--light-gray); }
+
+    .service-card,
+    .product-card {
+        background-color: #111924;
+        color: var(--text-dark);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .page-header { background-color: #0f141a; }
+    .contact-cta { background: linear-gradient(135deg, #0f141a 0%, #1b3656 100%); }
+
+    .footer { background-color: #0b1016; color: var(--text-dark); }
+    .footer-links a, .footer-bottom a { color: #a9b4bf; }
+    .footer-links a:hover, .footer-bottom a:hover { color: var(--primary-blue); }
+
+    /* Forms */
+    .form-control {
+        background-color: #0f141a;
+        color: var(--text-dark);
+        border-color: #233042;
+    }
+    .form-control:focus {
+        border-color: var(--primary-blue);
+        box-shadow: 0 0 0 0.2rem rgba(90, 167, 255, 0.25);
+    }
+    .contact-info-wrapper { background: #0f141a; }
+
+    /* Buttons */
+    .btn-primary { background-color: var(--primary-blue); border-color: var(--primary-blue); color: #0a0f14; }
+    .btn-primary:hover { background-color: var(--primary-dark); border-color: var(--primary-dark); color: #0a0f14; }
+
+    /* Links */
+    a { color: var(--primary-blue); }
+    a:hover { color: var(--primary-dark); }
+}
+
